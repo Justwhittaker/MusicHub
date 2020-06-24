@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Cloud</title>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
-        <li><a href="{{ url_for('listings') }}"></a>Recipe Lists</li>
-        <li><a href="{{ url_for('input_recipes') }}">Add your Own</a></li>
-      </ul>
-    </nav>
 
-    {% block content %} {% endblock %}
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/business-casual.min.css') }}" type="text/css" />
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+	<title>Recipe Cloud</title>
+</head>
+<nav class="navbar">
+	<ul>
+		<li><a href="{{ url_for('index') }}">Home</a></li>
+		<li><a href="{{ url_for('about') }}">About</a></li>
+		<li><a href="{{ url_for('listings') }}"></a>Recipe Lists</li>
+
+	</ul>
+</nav>
+
+<body>
+
+	{% block content %} {% endblock %}
+
+</body>
+
 </html>
