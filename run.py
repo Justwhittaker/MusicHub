@@ -14,11 +14,12 @@ def about():
     return render_template("about.html")
 
 
-@app.route('/listings.html')
+@app.route('/listings')
 def listings():
     return render_template("listings.html")
 
-@app.route('/input.html')
+
+@app.route('/input')
 def input():
     return render_template("input.html")
 
