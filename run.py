@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -19,8 +19,17 @@ def listings():
     return render_template("listings.html")
 
 
-@app.route('/input')
+@app.route("/input", methods=["GET", "POST"])
 def input():
+
+    if request.method == "POST":
+
+        if request.files:
+            image = request.files["image"]
+
+            print(image)
+            return redirect(request.url)
+
     return render_template("input.html")
 
 

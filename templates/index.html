@@ -5,10 +5,55 @@
 
 <h1>Home Page</h1>
 <!-- Home page should have a search option for recipes-->
-<div>
-    <canvas>Search your Recipe
-    </canvas>
-</div>
+<div class="container">
+	<div class="row">
+		<h2>Upload Image</h2>
+		<form action="/input" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" name="image" id="image">
+					<label class="custom-file-label" for="image">Select image...</label>
+				</div>
+			</div>
 
-{% endblock %}
+			<button type="submit" class="btn btn-primary">Upload</button>
+
+		</form>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<h2>Upload Recipe</h2>
+		<form action="/input" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" name="pdf" id="pdf">
+					<label class="custom-file-label" for="image">Select document...</label>
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Upload</button>
+
+		</form>
+
+	</div>
+	<div class="container">
+		<div class="row">
+			<h2>Upload Video    </h2>
+			<form action="/input" method="POST" enctype="multipart/form-data">
+				<div class="form-group">
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" name="video" id="video">
+						<label class="custom-file-label" for="image">Select Video...</label>
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Upload</button>
+
+			</form>
+
+		</div>
+	</div>
+	{% endblock %}
+
 </html>
