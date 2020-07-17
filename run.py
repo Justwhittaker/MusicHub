@@ -18,6 +18,10 @@ def about():
 def listings():
     return render_template("listings.html")
 
+@app.route('/input.html')
+def input():
+    return render_template("input.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
