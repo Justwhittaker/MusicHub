@@ -20,7 +20,7 @@ def listings():
     return render_template("listings.html")
 
 
-app.config["IMAGES"] = "/workspace/PRO3-RecipeCloud/static/img"
+app.config["IMAGES"] = "/workspace/PRO3-RecipeCloud/static/img/uploads"
 app.config["ALLOWED_IMAGE"] = ["PNG", "JPG", "JPEG"]
 
 
