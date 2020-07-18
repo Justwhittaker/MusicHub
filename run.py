@@ -19,6 +19,9 @@ def listings():
     return render_template("listings.html")
 
 
+app.config["IMAGES"] = "/workspace/PRO3-RecipeCloud/static/img"
+
+
 @app.route("/input", methods=["GET", "POST"])
 def input():
 
@@ -27,7 +30,10 @@ def input():
         if request.files:
             image = request.files["image"]
 
-            print(image)
+            image.save(os.path.join(app.config["IMAGES"], image.filename))
+
+            print("Saved Image")
+
             return redirect(request.url)
 
     return render_template("input.html")
