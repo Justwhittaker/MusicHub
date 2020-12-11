@@ -1,268 +1,274 @@
-<h1>Milestone Project User Centric Python</h1>
+# Recipe Cloud #
 
-<h1>MusicHub</h1>
+![logo]()
+
+## Contents ##
+---
+
+* [UX](#User-Experience)
+    * [Project Goals](#project-goals)
+    * [User Goals](#user-goals)
+    * [User Stories](#user-stories)
+    * [User Requirements and Expectations](#requirements)
+    * [Design Choices](#design-choices)
+        * [Fonts](#fonts)
+        * [Icons](#icons)
+        * [Colors](#colors)
+* [Wireframing](#wireframing)
+* [Features](#features)
+    * [Features that have been developed](#developed)
+    * [Features that will be implemented in the future](#implemented)
+* [Technologies](#technologies)
+* [Testing](#testing)
+* [Issues](#issues)
+* [Deployment](#deployment)
+* [Credit](#credits)
+
+<a name="User-Experience"></a>
+## UX (User Experience) ##
+---
+<a name="project-goals"></a>
+### Project Goals ###
+
+The are many places on the internet to find recipes but their are not many that allow you to add your own recipes swap and share 
+
+The **goal** for this project is to to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily.
+A safe space to find inspiration with the items already in theor fridge.
+
+<a name="user-goals"></a>
+### User Goals ###
+
+For the UX on this project I wanted to create a simple and user friendly site. My target audience is young and mature adults.<br>
+
+* **Testing his/her/their Recipes** with **quick reflexes** within the **Boundry**
+* **Being excited** to find new recipes and **share** their own.
+* Get a **inspiration** for cooking out of the box.
+* **Keep adding more and more recipes** to the website **again & again**.
+
+<a name="user-stories"></a>
+### User Stories ### 
+
+* The **user** wants an **attractive website** with a **non-distracting** background.
+* The **user** wants to see **clear instructions** on how to add recipes to the website.
+* The **user** wants there to be a **find column** so that the user can quickly identify **recipes**.
+* The **user** wants to be **challenged** in his/her/their **skills**
+* The **user** wants a **conveint sized recipes box** to be able to read the recipe clearfully
+* The **user** wants to start **finding recipes immedaitely** 
+* The **user** wants to know the **recipe** details such as **ingredients, method and cooking instruction**
+* The **user** wants to **know** when a **their recipe has been launched**.
+* The **user** wants to get a maximum of advantage of the **recipe cloud**.
+* The **user** wants to **easily add their own recipe** to the website.
+* The **user** wants to **have the possibility** to **upload picture or videos**.
+
+<a name="requirements"></a>
+
+### Research ###
+
+* When developing this **website**, I kept in mind that the aesthetic should be inspired by similar Recipe hubs on the internet. 
+* I tried to create a **simple and easy feel** to for a cleaner approach for the landing page.
+* I checked **previously made recipe websites** and used **my own experience** as a trained chef.
+
+<a name="design-choices"></a>
+
+### Design Choices ###
+---
+
+<a name="fonts"></a>
+
+### Fonts ###
+
+* The **landing page** is using the classic website **Google Fonts** **#** for the H1 and H3. 
+* I paired it with the **Google Fonts** **#** for readability.
+* I kept the **#** font for **better user experience**
+
+<a name="icons"></a>
+
+### Icons and Images ###
+
+* **The icon** used on the website are provided by [**FontAwesome**](https://fontawesome.com/)
+* The **image** used for the **landing page** is a **free image** from the image bank [**PNGtree**](https://PNGtree.com/) and (https://pngtree.com/) with a simple research with the keyword **cooking and baking**.
+
+<a name="colors"></a>
+
+### Colors ###
+
+* The **color scheme** used for the website is a classic **90's gamer palette** composed of a combination of **dark and light green** for the **title** and a **classic bright yellow** for the **buttons** on the **gaming consol** 
+ 
+![Inspiration](assets/img/snakeExample.png)
+
+<a name="wireframing"></a>
+
+## Wireframing ##
+---
+For **wireframing** I used the tool [**Balsamiq**](https://balsamiq.com/).
+
+Please follow the link to find the preview [here] 
+!["Wireframe"](assets/#)
+!["Wireframe"](assets/#)
+
+href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
+
+* Herewith the **wireframe** and I pushed a few changes for better readability and engagement:
+* I added **a full-screen hero image** on the landing page.
+* I used a **form** to allow for the user to add recipes.
+* I added an easy link to **upload** videos.
+
+<a name="features"></a>
+## Features ## 
+---
+
+<a name="developed"></a>
+### Implemented Features ###
+
+* **Responsiveness** on all screen sizes.
+* **large title** for attractiveness and engagement.
+* **Suggested recipes** on landing page as an introduction.
+* **User login** so that users can keep a tally of their own recipes added and videos uploaded.
+* **Favorites** for user to quickly reference recipes they enjoyed or still want to Experiment with.
+* **Input Recipes** to the website.
+* **Search Recipes** on the Website.
+* **Instructions** so that the user can grasp the concept immedaitely.
+* **Immedaite** recipes with Easy and simple instructions to make the recipe.
+* **Download success** notation when recipe has successfully saved to the database
+* **upload picture** with the recipe to give people a sense of what can be acheived with their recipe.
+* **upload video** allows users to upload videos of themselves creating a recipe.
+
+<a name="implemented"></a>
+### Future implemented features ###
+
+* **Feature 1** - Rating system for others to be able to rate the recipe success.
+* **Feature 2** - Comment box and messages notifications for users to interact with each other.
+* **Feature 3** - 
+
+<a name="technologies"></a>
+## Technologies used ##
+
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Javascript](www.javascript.com)
+* [JQuery](https://jquery.com/)
+* [Python](https://www.python.org/)
+
+**Tools & Libraries**
+
+* [Bootstrap](https://getbootstrap.com/)
+* [Font-Awesome](https://fontawesome.com/icons?d=gallery)
+* [Google fonts](https://fonts.google.com/)
+* [Git](https://git-scm.com/)
+* [PNGtree](https://PNGtree.com/)
+* [Flask](https://pypi.org/project/Flask/)
+
+<a name="testing"></a>
+
+## Testing ##
+---
+
+* I tested the responsiveness of the website by using the [**Google Chrome Developer Tool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
+* I also tested my website on **different browsers and real devices** : **Iphone 6s, Ipad Pro 12", Ipad Mini, Google Chrome, Safari, Mozilla Firefox and Samsung A70.**
+* I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
+* I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/).
+* I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
+* All pages passed the HTML,CSS and Python validator final test with no major issues.
+
+**Responsiveness**
+
+* **Implementation** 
+
+* I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
+
+**Landing Page**
+
+![landingPage](assets/img/landingPage.png)
+
+* **Implementation** 
 
 
-<h2>UX</h2>
+**Add recipes**
 
-For the UX on this project I wanted to create a simple and user friendly site.
-My target audience is between 18-39years old. Hence I chose vibarant colors, many visual aids 
-such as videos, pictures and ensured that my social links are large and clickable.
+![Scorecard](assets/img/scorecard.png) 
 
-I added plenty of href links to allow the user to find out more infomation and navigate the 
-site with ease. I was very careful to ensure that any external links are opened in a seperate 
-tab so that the user doesn't fully leave my site and can quickly return without forgetting how they got there.
+* **Implementation**
 
-<h3>User Perspectective Story</h3>
-Herewith a discriptive step by step breakdown of the UX for User A:
-<li>1. Landing page
-    a. When landing on the Home page the user firsts notices the bright logo to know they have found the right page
-    b. Alongside the logo you have the Nav bar links to help the user navigate the site efficently
-    c. A short video starts to play in a canvas below the logo to keep user A interested and get them excited about the experience on offer
-    d. The Footer has all the social links needed for further experience investigation and to show the User A the wonderful time they are going to experience if they book
-    e. Furthermore there is a ref link in the footer bar to the Signup page to encourage and motivate the User into booking post haste.
-</li>
-<li>2. Event locations
-    a. When the User A clicks the menu nav to event locations they will find all the event locations nationwide with images and titles.
-    b. User A has the option of following the Href for each Location to City Facebooks links which provide further investigative infomation on other events and happenings in the city
-    c. Furthermore there is an experience blog which provides User A different images of what happens at the event.
-    d. The footer has been duplicated to provide further motivation to the signup page as well and the social links
-</li>
-<li>3. Wines 
-    a. When the User A clicks the menu nav to Wines they will find all the wines showcased on a monthly basis.
-    b. User A has the option of following the Href links for each winery's website link to provide further investigative infomation on the showedcased product as well as other products that the farm produces.
-    c. The footer has been duplicated to provide further motivation to the signup page as well and the social links
-</li>
-<li>4. Sign up page
-    a. This is the most valuable section of the website in terms of customer retention as well as income generation for the business
-    b. The user has mutliple methods for reaching this page, the Nav bar and footer both have ref links to guide the User A into this important page.
-    c. When the User lands on the page they will find a quick and easy sign up option, asking for basic infomation to help the marketing element as well as book the correct event.
-    d. Once the user has entered all the infomation they would be directed to a paypal encription to safely enter their perferred payment method.
-    e. once the payment is completed they will receive a ticket via email as well as a reference for their booking.
-</li>
-<li>5. The action that the User is taking on the website to to find further information regarding the event, it's locations and the price per ticket
-</li>
-<li>6. The goal of the User is to have a user friendly experience and to navigate though the pages with ease, completing a purchase by the end of the experience.
-</li>
+**About**
 
-With this website I would like to achieve a higher pre event ticket sales,
-giving the user many various methods in arriving to the signup menu, buttons and nav links, ensures that the user is very aware that 
-tickets are available and are easy to buy for friends too.
+![Scorecard](assets/img/scorecard.png) 
 
-With more pre-sales it allows the company to better estimate the total people that are coming,
-bringing in early revenue allowing for less intitial capital expediture at the begining of the events.
+* **Implementation**
 
-Also it allows the company to liase correctly with the Wineries and distributers to ensure that they 
-bring enough stock for the number of guests coming. 
+**Recipes links**
 
-The Wireframes were designed to ensure that the ease of use is continued throughout the website and that the UX is following the design process.
-Wireframe was done on Balsamiq
-        
-<li>href ="https://balsamiq.cloud/s6vjh9d/pktgf7d"</li>
-I have also included a word Document with the work done on Balsamiq as I fear that the link might have expired
-https://github.com/Justwhittaker/PRO1-CITYVINE/blob/6e3a333c5ebb2b53708d4bdfef6d1bf7e7a54076/assets/images/wireframe%20cityvine.docx
+![Scorecard](assets/img/scorecard.png) 
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+* **Implementation**
 
-<h2>Features</h2>
 
-<h3>Existing Features</h3>
+<a name="issues"></a>
+## Issues ##
+---
 
-Feature 1 - allows users buy tickets to the events , by having them fill out the signup form. (signup.html)
-Feature 2 - allows the user to see exactly which wineries will be taking part (wines.HTML)
-Feature 3 - Allows users to link directly with the wineries by simply clicking onto the wine they want more info on.
-Feature 4 - a visual breakdown on the various locations chosen to host the events. (location.HTML)
+**During development**
 
-Additional Features in the future include:
-Feature 5 - gallery page dedicated to pictures taken by guests and professional photographers allowing people to use 
-            our socail platforms more often creating more engagement and thus more traffic on google anatlytics
-Feature 6 - Competition Modual to win a prizr of a case of the "wine of the Month"
 
-<h3>Technologies Used</h3>
 
-    1. HTML
-    2. CSS
-    3 Wireframe was done on Balsamiq
-        href ="https://balsamiq.cloud/s6vjh9d/pktgf7d" 
-    4. Used mostly the Code Institute liberies rewatched a fwe videos
-    5. Google searches to add video content and do basic input adjustments to my form file.
-    6. No JQuery used
+## Deployment ##
+---
+**RecipeCloud** was developed on **GitPod**, using **GitHub** to host the repository and deployed on **GitHub Pages**.
+**GitHub** made the deployment extremely painless:
 
-Sign-up form:
+* Connected to Github
+* Selected the repository **JustWhittaker/PRO3-RecipeCloud**
+* Clicked on **"settings"** in the navigation bar
+* In the **GitHub Pages** I selected **Master Branch** and **/root** in the dropdown menu and clicked **Save**
+* I waited 2 minutes.
+* **The website is now live on https://justwhittaker.github.io/PRO3-RecipeCloud/**.
 
-"SignUp" page
-1. Submitted an empty form and verified that an error message about the required fields appears
-2. Submitted an an invalid email address and verified that a relevant error message appears
-3. Submitted the form with all inputs valid and verify that a success message appears.
+**Cloning** No issues:
 
-<h2>Brower interchange</h2>
+* Why do we is it important to be able to clone successfully first **Collaboration** with team members if you are working in a scrum and secondly **Assist** other developers to use my main project to grow their own version.
+* In my repository **JustWhittaker/PRO3-RecipeCloud**, click on the **"Code** green button, **copy in clipboard the HTTPS link**, open your **IDE** and look through my files.
+* The link : **https://github.com/JustWhittaker/PRO3-RecipeCloud.git**
 
-I used Bootstrap4 to ensure that my website is mobile first and used the veiwport abilty to ensure that the website is responisive at any device size
+<a name="credits"></a>
+## Credits ##
+---
 
-<h2>Debug, Testing & Issues</h2>
+**Text Credits:**
 
-I have used https://validator.w3.org/nu/?doc=https%3A%2F%2Fjustwhittaker.github.io%2FPRO1-CITYVINE%2Findex.html to check my code errors and correct the issues.
+* All text content has been written by Justin Whittaker.
 
-Nu Html Checker
-This tool is an ongoing experiment in better HTML checking, and its behavior remains subject to change
+I received inspiration and technical knowledge for this project from the following platforms
+1. Alignment <br>
+https://www.w3schools.com/tags/att_img_align.asp<br>
+https://www.w3schools.com/graphics/game_canvas.asp
 
-Showing results for https://justwhittaker.github.io/PRO1-CITYVINE/index.html
-Checker Input and points of fixes and debugging noted
-Show sourceoutlineimage report
-<ul>
-1. Error: Stray end tag div.
-        From line 47, column 9; to line 47, column 14
-        >↩        </div>↩    <
-        <li>tag removed</li>
-2. Error: The frameborder attribute on the iframe element is obsolete. Use CSS instead.
-        From line 52, column 9; to line 52, column 201
-        ↩↩ <--iframe width="709" height="399" sr="https://www.youtube.com/embed/F-5HwTNK2Ug"*/ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>↩-->
-        <li>added css to frame border</li>
-    Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.
-        From line 50, column 5; to line 50, column 43
-        ns-->↩    <section class="container-fluid video">↩↩  
-        <li> No heading nessecary</li>  
-3. Error: Element h2 not allowed as child of element span in this context. (Suppressing further errors from this subtree.)
-        From line 58, column 19; to line 58, column 47
-        <span>< class="location-heading">Choose
-        <li>Changed span to a div and seperated from outline</li>
-4. Error: Element p not allowed as child of element span in this context. (Suppressing further errors from this subtree.)
-        From line 59, column 17; to line 59, column 38
-        p class="location-p">Catch 
-        <li>Changed p into a listed element</li>
-5. Error: Attribute href not allowed on element button at this point.
-        From line 70, column 17; to line 70, column 59
-        button href="signup.html" class="button" >Buy Ti
-        <li> included an attitibute to add the href into this attitibute and corrected over multiple pages.</li>
-6. Error: Element p not allowed as child of element h5 in this context. (Suppressing further errors from this subtree.)
-        From line 90, column 50; to line 90, column 52
-        Copyright <p>all ri
-    Contexts in which element p may be used:
-        Where flow content is expected.
-</ul>
-Document checking completed.
+2. JQuery <br>
+https://stackoverflow.com/a/1527820/2124254 <br>
+https://tutorialzine.com/2015/06/making-your-first-html5-game-with-phaser<br>
+https://github.com/infusion/HTML5-Experiments/blob/master/html5-snake.html<br>
+https://www.html5canvastutorials.com/advanced/html5-canvas-snake-game/ <br>
+https://stackoverflow.com/questions/10879955/how-to-align-an-image-dead-center-with-bootstrap<br>
+https://developers.google.com/speed/libraries
 
-Used the HTML parser. Externally specified character encoding was utf-8.
+3. JQuery research <br>
+    1. CodeInstitute Python Funadementals <br>
+    2. https://www.w3schools.com/js/js_random.asp <br>
+    3. https://www.w3schools.com/tags/canvas_arc.asp
 
-1. I found it difficult to ensure that the text-decoration was removed from the wineries web references on the wines page
-        it also took me awhile to figure out the gallery method to ensure a good flow to the veiw.
+4. Better Git Commit terms <br>
+http://karma-runner.github.io/5.0/dev/git-commit-msg.html
 
-2. Debug issues found
-     File "/tmp/vscode-extensions/ms-python.python@2019.11.50794/extension/pythonFiles/lib/python/new_ptvsd/wheels/ptvsd/../ptvsd/server/cli.py", line 204, in run_file
-        runpy.run_path(options.target, run_name="__main__")
-    File "/home/gitpod/.pyenv/versions/3.7.7/lib/python3.7/runpy.py", line 261, in run_path
-        code, fname = _get_code_from_file(run_name, path_name)
-    File "/home/gitpod/.pyenv/versions/3.7.7/lib/python3.7/runpy.py", line 236, in _get_code_from_file
-        code = compile(f.read(), fname, 'exec')
-    File "/workspace/PRO1-CITYVINE/README.md", line 1
-        Milestone Project html/css
-    SyntaxError: invalid syntax
+5. Dependencies <br>
+    1. keymaster.js [https://github.com/madrobby/keymaster]// https://www.npmjs.com/search?q=keymaster <br>
+    2. JQuery (html js middleware) <br>
+    The project uses JQuery to simplify DOM manipulation. <br>
+    3. bootstrap 
 
-<h2>Deployment</h2>
-I used Github pages in Github to control the deployment of the website.
-    You will find the deployment at https://justwhittaker.github.io/PRO1-CITYVINE/ 
 
-Herewith a step by step guide to setup GitHub deployment
-1. Go to the project repository in GitHub.
-2. Go to your project's Code & Deploys page, in the Repository tab.
-3. Click the CONNECT TO GITHUB button to connect your project with GitHub. 
-4. Connect to one of your GitHub repositories.
-5. Configure the deploy options. 
-    if you prefer, you can select a particular branch instead of the master one.
-    You can also disable automatic deploys. In this case, you can deploy your project manually by clicking the Deploy this branch button
-6. Deploy your project.
-    After you've triggered the deployment, you can follow it and also view the details about the build process
-That’s it! Your website is deployed to the Internet! You and anyone with whom you share this link can view your 
-project by navigating in your browser to the URL http://<your-github-username>.github.io.
+**Many thanks to:**
 
-<h2>Credits</h2>
+* My mentor **Ignatius Ukwuoma** for his patience and kindness
+* **AudreyLL88** for her very inspiring ReadME
+* **Code Institute Slack community** for the technical and emotional support
+* **Carl Lubbe**, for all the assistance and help with guidence and UX
 
-<h3>Content</h3>
-text for Location.html was copied from quotefancy
-"Life is too short to drink bad wine"_Johann Wolfgang Van Goete
-https://quotefancy.com/quote/839582/Johann-Wolfgang-von-Goethe-Life-is-too-short-to-drink-bad-wine
-
-<h3>Media</h3>
-The photos used in this site were obtained from:
-
-<h3>Video used to embed</h3>
-    Was created using Promo and launched onto Youtube
-    https://www.youtube.com/embed/F-5HwTNK2Ug
-
-background image
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.independent.co.uk%2Flife-style%2Ffood-and-drink%2Fdrinking-wine-beer-makes-you-more-creative-australian-study-mathias-benedek-a7883826.html&psig=AOvVaw3R42qFUC2TjK5IDt3gDCUc&ust=1585266695179000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCF2ezotugCFQAAAAAdAAAAABAD
-
-<h3>Location images</h3>
-
-Dublin
-Viagem.com
-https://viagemeturismo.abril.com.br/cidades/dublin-4/
-https://abrilviagemeturismo.files.wordpress.com/2016/12/stockbyte.jpg?quality=70&strip=info&w=680&h=453&crop=1
-
-Galway
-www.irishtimes.com
-https://www.irishtimes.com/life-and-style/travel/ireland/galway-ranked-among-world-s-top-cities-for-2020-by-lonely-planet-1.4058093
-https://www.irishtimes.com/polopoly_fs/1.4058092.1571674612!/image/image.jpg_gen/derivatives/box_620_330/image.jpg
-
-Cork
-www.irishtimes.com
-https://www.irishtimes.com/sponsored/ulster-bank/quality-of-life-cheaper-housing-and-jobs-puts-cork-firmly-on-first-time-buyer-s-map-1.3671728
-https://www.irishtimes.com/polopoly_fs/1.3671744.1540219115!/image/image.jpg_gen/derivatives/box_620_330/image.jpg
-
-Experience
-www.foodandwine.ie
-https://foodandwine.ie/australian-wine-tasting-meet-winemakers-and-taste-a-selection-of-250-wines
-https://foodandwine.ie/uploads/assets/2019/1/C.Wine_Tasting.jpg
-
-Wine pictures gallery
-
-https://www.waitrose.com/ecom/products/reyneke-organic-cabernet-merlot/650833-691724-691725
-reyneke wines
-https://www.reynekewines.co.za/
-
-https://www.waitrose.com/ecom/products/villa-maria-private-bin-merlot-75cl/008259-3929-3930
-villa maria wines
-https://www.villamaria.co.nz/
-
-https://www.waitrose.com/ecom/products/darkhorsewine
-https://duetogsaij514.cloudfront.net/images/products/11/LN_863072_BP_11.jpg
-dark horse california
-http://www.darkhorsewine.ie/
-
-https://www.waitrose.com/ecom/products/campo-viejo-rioja-tempranillo/032705-15995-15996
-https://duetogsaij514.cloudfront.net/images/products/11/LN_032705_BP_11.jpg
-campo viejo spain
-https://www.campoviejo.com/en
-
-https://www.waitrose.com/ecom/products/villa-antinori-rosso-tuscany-italy/082394-41915-41916
-https://d1ycl3zewbvuig.cloudfront.net/images/products/11/LN_082394_BP_11.jpg
-villa antinori italy
-https://www.antinori.it/en/vino/villa-antinori-rosso-en/
-
-https://d1ycl3zewbvuig.cloudfront.net/images/products/11/LN_561355_BP_11.jpg
-georg mosbacher germany wines
-https://www.georg-mosbacher.de/en/index.php 
-
-https://www.waitrose.com/ecom/products/blason-du-rhone-chateauneuf-du-pape/784645-129494-129495
-(https://d25hqtnqp5nl24.cloudfront.net/images/products/11/LN_784645_BP_11.jpg)
-Blason-du-rhone france
-https://www.waitrose.com/ecom/products/blason-du-rhone-cotes-du-rhone-villages/369052-276272-276273
-
-https://d3l6n8hsebkot8.cloudfront.net/images/products/11/LN_583035_BP_11.jpg
-Orovela sapavari georgia
-http://www.orovela.com/
-
-<h2>Acknowledgements</h2>
-I received further coding assitance from
-    1. Pro git (shared by my mentor)
-    2. Assitance to embed a video from tutorialspoint.com
-        video embed
-            https://www.tutorialspoint.com/How-to-embed-a-video-using-HTML-code
-    3. Promo.com was used to create the orignal video
-    4. Waitrose.com was used to collect all the images needed for the wines gallery
-    5. independent.co.uk was used for the background image.
-    6. www.w3schools.com - Assitance to understand the code for Qty: signup.html
-            https://www.w3schools.com/html/html_form_input_types.asp
-    7. https://uicookies.com/css-glow-effects/ - assitance to understand the code for hover effects
-    8. https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
-    9. https://www.w3schools.com/bootstrap/bootstrap_carousel.asp 
+**Site for educational purposes only!**
