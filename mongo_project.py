@@ -32,7 +32,6 @@ def show_menu():
 def get_record():
     print("")
     RecipeName = input("Enter first name > ")
-    
     try:
         doc = coll.find_one({"RecipeName": RecipeName.lower()})
     except:
