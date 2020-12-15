@@ -1,5 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect
+if os.path.exists("env.py"):
+    import env
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
