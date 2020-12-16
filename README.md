@@ -1,6 +1,6 @@
 # Recipe Cloud #
 
-![logo]()
+![logo](static/img/logoCloud.png)
 
 ## Contents ##
 ---
@@ -30,35 +30,43 @@
 <a name="project-goals"></a>
 ### Project Goals ###
 
-The are many places on the internet to find recipes but their are not many that allow you to add your own recipes swap and share 
+The are many places on the internet to find recipes but their are not many that allow you to add your own recipes to swap and share 
 
-The **goal** for this project is to to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily.
+The **goal** for this project is to to recreate a neighbourhood profile where friends,<br> neighbours and relatives can swap and share their favourite recipes, simply and easily.
 A safe space to find inspiration with the items already in theor fridge.
 
 <a name="user-goals"></a>
 ### User Goals ###
 
-For the UX on this project I wanted to create a simple and user friendly site. My target audience is young and mature adults.<br>
+For the UX on this project I wanted to create a simple and user friendly site. My target audience is young and mature adults. <br>
+The site also allows for Profeesional Chefs to share some of thier awards winning recipes but also for the student to swap their <br>
+quick fixes even grandmas can leave their family recipes down for everyone to enjoy!!
 
-* **Testing his/her/their Recipes** with **quick reflexes** within the **Boundry**
+* **Testing his/her/their Cooking abilites** with **quick searches** within the **Category** they are looking for.
 * **Being excited** to find new recipes and **share** their own.
 * Get a **inspiration** for cooking out of the box.
 * **Keep adding more and more recipes** to the website **again & again**.
+* **List their own Recipes** and **favourite** recipes to go to **time and again**
 
 <a name="user-stories"></a>
 ### User Stories ### 
 
 * The **user** wants an **attractive website** with a **non-distracting** background.
 * The **user** wants to see **clear instructions** on how to add recipes to the website.
-* The **user** wants there to be a **find column** so that the user can quickly identify **recipes**.
-* The **user** wants to be **challenged** in his/her/their **skills**
-* The **user** wants a **conveint sized recipes box** to be able to read the recipe clearfully
-* The **user** wants to start **finding recipes immedaitely** 
-* The **user** wants to know the **recipe** details such as **ingredients, method and cooking instruction**
-* The **user** wants to **know** when a **their recipe has been launched**.
-* The **user** wants to get a maximum of advantage of the **recipe cloud**.
+* The **user** wants there to be a **search box** so that the user can quickly identify **recipes**.
+* The **user** wants to be able to **search** categories or ingredients.
+* The **user** wants to be **challenged** in his/her/their **skills**.
+* The **user** wants to know the **difficulty** of the recipe before **deciding**.
+* The **user** wants to start **finding recipes immedaitely**. 
+* The **user** wants to see the **latest recipes** added.
+* The **user** wants a **conveint sized recipes box** to be able to read the recipe clearfully.
+* The **user** wants to know the **recipe** details such as **ingredients, method and cooking instructions**
+* The **user** wants to **have the possibility** of thier **own profile** where their recipes come up first.
+* The **user** wants to **have the possibility** of **favorites** where their best recipes are **saved for later**.
+* The **user** wants to **know** if **their recipe has been submitted**.
 * The **user** wants to **easily add their own recipe** to the website.
-* The **user** wants to **have the possibility** to **upload picture or videos**.
+* The **user** wants to **have the possibility** to **upload pictures or videos**.
+* The **user** wants to get a maximum of advantage of the **recipe cloud**.
 
 <a name="requirements"></a>
 
@@ -66,7 +74,7 @@ For the UX on this project I wanted to create a simple and user friendly site. M
 
 * When developing this **website**, I kept in mind that the aesthetic should be inspired by similar Recipe hubs on the internet. 
 * I tried to create a **simple and easy feel** to for a cleaner approach for the landing page.
-* I checked **previously made recipe websites** and used **my own experience** as a trained chef.
+* I checked **previously made recipe websites** such as [**foodnetwork.co.uk**](https://foodnetwork.co.uk/) and used **my own experience** as a trained chef.
 
 <a name="design-choices"></a>
 
@@ -85,16 +93,17 @@ For the UX on this project I wanted to create a simple and user friendly site. M
 
 ### Icons and Images ###
 
-* **The icon** used on the website are provided by [**FontAwesome**](https://fontawesome.com/)
-* The **image** used for the **landing page** is a **free image** from the image bank [**PNGtree**](https://PNGtree.com/) and (https://pngtree.com/) with a simple research with the keyword **cooking and baking**.
+* The **Favicon** used on the website are provided by [**ICOconvert**](https://icoconvert.com/)
+* The **image** used for the **landing page** is a created **image** from the image bank [**Canva**](https://canva.com/). 
+* Extra **background images** (https://google.com/) with a simple research with the keyword **cooking and baking**.
 
 <a name="colors"></a>
 
 ### Colors ###
 
-* The **color scheme** used for the website is a classic **90's gamer palette** composed of a combination of **dark and light green** for the **title** and a **classic bright yellow** for the **buttons** on the **gaming consol** 
+* The **color scheme** used for the website is a sleek **recipe website palette** composed of a combination of **black and whites** for the **title** and a **classic light teal** for calming affect for the **logo** on the **a sky blue with neon type writing** .
  
-![Inspiration](assets/img/snakeExample.png)
+![Inspiration](static/img/foodnetwork.png)
 
 <a name="wireframing"></a>
 
@@ -103,15 +112,26 @@ For the UX on this project I wanted to create a simple and user friendly site. M
 For **wireframing** I used the tool [**Balsamiq**](https://balsamiq.com/).
 
 Please follow the link to find the preview [here] 
-!["Wireframe"](assets/#)
-!["Wireframe"](assets/#)
 
-href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
+href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * Herewith the **wireframe** and I pushed a few changes for better readability and engagement:
-* I added **a full-screen hero image** on the landing page.
+* I added **a jumbotron hero image** on the landing page.
+* I added **a full-screen background image** on all the other pages.
 * I used a **form** to allow for the user to add recipes.
 * I added an easy link to **upload** videos.
+
+### Landing Page ###
+!["Wireframe LandingPage"](static/img/RCwireFrame1.png)
+### Recipe Menu ###
+!["Wireframe RecipeMenu"](static/img/RCwireFrame2.png)
+### Video Page ###
+!["Wireframe VideoPage"](static/img/RCwireFrame3.png)
+### Add User Page ###
+!["Wireframe AddUser"](static/img/RCwireFrame4.png)
+### Add Recipe Page ###
+!["Wireframe AddRecipe"](static/img/RCwireFrame5.png)
+
 
 <a name="features"></a>
 ## Features ## 
@@ -123,7 +143,7 @@ href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
 * **Responsiveness** on all screen sizes.
 * **large title** for attractiveness and engagement.
 * **Suggested recipes** on landing page as an introduction.
-* **User login** so that users can keep a tally of their own recipes added and videos uploaded.
+* **User login/logout** so that users can keep a tally of their own recipes added and videos uploaded.
 * **Favorites** for user to quickly reference recipes they enjoyed or still want to Experiment with.
 * **Input Recipes** to the website.
 * **Search Recipes** on the Website.
@@ -157,6 +177,8 @@ href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
 * [Git](https://git-scm.com/)
 * [PNGtree](https://PNGtree.com/)
 * [Flask](https://pypi.org/project/Flask/)
+* [Canva](https://canva.com)
+* [MongoDB](https://cloud.mongodb.com/)
 
 <a name="testing"></a>
 
@@ -178,26 +200,28 @@ href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
 
 **Landing Page**
 
-![landingPage](assets/img/landingPage.png)
+![landingPage](assets/img/#)
 
 * **Implementation** 
 
 
 **Add recipes**
 
-![Scorecard](assets/img/scorecard.png) 
+![Recipes](assets/img/#) 
 
 * **Implementation**
 
-**About**
 
-![Scorecard](assets/img/scorecard.png) 
+**Profile**
+
+![Profile](assets/img/#) 
 
 * **Implementation**
+
 
 **Recipes links**
 
-![Scorecard](assets/img/scorecard.png) 
+![Recipe links](assets/img/#) 
 
 * **Implementation**
 
@@ -208,19 +232,48 @@ href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
 
 **During development**
 
+* I had a major issue with my MongoDB file whilst setting up the database because of this issue: 
 
+**Issues**
+
+I did not understand what was going on as my form was good and allowing me to add into the fields, however when I submitted it was not sending it to the <br>
+database and saving it in the collections?
+
+![RecipeForm](static/img/UploadRecipe.png)
+
+To understand the error I went thorugh the code again and fixed it by ********
+
+![RecipeForm](static/img/#)
+
+I also has few errors passing through my GitPod, basic house cleaning fixed most of the issues very quickly
+
+![Html](static/img/indexErrors.png)
+![PY](static/img/runpyErrors.png)
+
+
+After I put my project up for peer-review, it was brought to my attention that the website needed ***********
+
+After my mentor call and my peer-code-review I realized that I needed to add some ********************
+
+![RecipeForm](static/img/#)
 
 ## Deployment ##
 ---
 **RecipeCloud** was developed on **GitPod**, using **GitHub** to host the repository and deployed on **GitHub Pages**.
-**GitHub** made the deployment extremely painless:
+**Heroku** made the deployment extremely painless:
 
-* Connected to Github
+* Connect to [**Heroku**](https://dashboard.heroku.com/apps)
+* Click new/ **create new APP**
+* Add the new app name and choose a region, In my case **Europe**
+* While the app is being generated you will need to **Config Vars** by going to **settings**
+* Config vars change the way your app behaves. In addition to creating your own, some add-ons come with their own
+* In **Config vars** you need to add the **ID,PORT,MONGODB_NAME,MONGO_URI,SECRET_KEY**
+* Now to **Deploy** find deployment method choose **GitHub** sign into your GitHub.
 * Selected the repository **JustWhittaker/PRO3-RecipeCloud**
-* Clicked on **"settings"** in the navigation bar
 * In the **GitHub Pages** I selected **Master Branch** and **/root** in the dropdown menu and clicked **Save**
+* Click on **"Automatic Deploys"** below 
 * I waited 2 minutes.
-* **The website is now live on https://justwhittaker.github.io/PRO3-RecipeCloud/**.
+* **The website is now live on https://recipe-cloud-pro.herokuapp.com/**.
 
 **Cloning** No issues:
 
@@ -237,31 +290,30 @@ href = https://balsamiq.cloud/srsmfvs/pilelvc/r2278
 * All text content has been written by Justin Whittaker.
 
 I received inspiration and technical knowledge for this project from the following platforms
-1. Alignment <br>
-https://www.w3schools.com/tags/att_img_align.asp<br>
-https://www.w3schools.com/graphics/game_canvas.asp
+1. Bootstrap <br>
+https://mdbootstrap.com/docs/standard/forms/input-fields/<br>
+https://getbootstrap.com/docs/4.3/components/card/<br>
+https://www.w3schools.com/bootstrap/bootstrap_ref_css_images.asp
 
-2. JQuery <br>
-https://stackoverflow.com/a/1527820/2124254 <br>
-https://tutorialzine.com/2015/06/making-your-first-html5-game-with-phaser<br>
-https://github.com/infusion/HTML5-Experiments/blob/master/html5-snake.html<br>
-https://www.html5canvastutorials.com/advanced/html5-canvas-snake-game/ <br>
-https://stackoverflow.com/questions/10879955/how-to-align-an-image-dead-center-with-bootstrap<br>
-https://developers.google.com/speed/libraries
+2. MongoDB <br>
+https://cloud.mongodb.com/ <br>
+https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d#9c71<br>
+https://www.w3schools.com/python/python_mongodb_query.asp
 
-3. JQuery research <br>
+
+3. Python research <br>
     1. CodeInstitute Python Funadementals <br>
-    2. https://www.w3schools.com/js/js_random.asp <br>
-    3. https://www.w3schools.com/tags/canvas_arc.asp
+    2. https://randomkeygen.com/ <br>
 
 4. Better Git Commit terms <br>
 http://karma-runner.github.io/5.0/dev/git-commit-msg.html
 
 5. Dependencies <br>
-    1. keymaster.js [https://github.com/madrobby/keymaster]// https://www.npmjs.com/search?q=keymaster <br>
+    1. PyMongo <br>
     2. JQuery (html js middleware) <br>
     The project uses JQuery to simplify DOM manipulation. <br>
-    3. bootstrap 
+    3. bootstrap <br>
+    4. dnspython
 
 
 **Many thanks to:**
@@ -270,5 +322,6 @@ http://karma-runner.github.io/5.0/dev/git-commit-msg.html
 * **AudreyLL88** for her very inspiring ReadME
 * **Code Institute Slack community** for the technical and emotional support
 * **Carl Lubbe**, for all the assistance and help with guidence and UX
+* **Alishia Whittaker**, for the Graphic design and stock images from Canva and your support through all my studies
 
 **Site for educational purposes only!**
