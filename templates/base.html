@@ -4,25 +4,76 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/business-casual.min.css') }}" type="text/css" />
+<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 
 	<title>Recipe Cloud</title>
 </head>
-<nav class="navbar">
-	<ul>
-		<li><a href="{{ url_for('index') }}">Home</a></li>
-		<li><a href="{{ url_for('about') }}">About</a></li>
-        <li><a href="{{ url_for('listings') }}">Recipe Lists</a></li>
-		<li><a href="{{ url_for('input') }}">Add Recipes</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper core code from https://mdbootstrap.com/docs/standard/navigation/navbar/#-->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-target="#navbarRightAlignExample"
+        aria-controls="navbarRightAlignExample"
+        aria-expanded="false"
+        data-mdb-toggle="collapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-	</ul>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+      <!-- Left links -->
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('listings') }}">Recipe Lists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('input') }}">Add Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('register') }}">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
 </nav>
 
 <body>
+  <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
+    <main class="container">
 	{% block content %} {% endblock %}
 
 </body>
@@ -31,20 +82,45 @@
         Social = Href to socail links
         Settings = setup settings and change language
         Copyright = Copyright expression-->
-<footer>
-	<div class="row">
-		<div class="col-sm-3">
-			<ul>
-                <h4>FAQ</h4> 
-            </ul>
-		</div>
-		<div class="col-sm-3">
-        <!-- add user agreement and Privacy policy for the website-->
-			<h4 class="social">User agreement</h4>
-            <h4 class="social">Privacy Policy</h4>
-		</div>
-		<div class="col-sm-3">
-			<h5 class="social"> Connect</h5>
+
+<footer class="bg-light text-center text-lg-left">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark text-uppercase"><h4>FAQ</h4></a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" class="text-dark social"><h4> User agreement</h4></a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark social"><h4>Privacy Policy</h4></a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase social"> Connect</h5>
 			<ul class="list-inline social-links">
 				<li class="list-inline-item">
 					<a href="#" class="hvr-glow" target="_blank">
@@ -59,12 +135,18 @@
 						<i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">instagram</span></a>
 				</li>
 			</ul>
-		</div>
-		<div class="col-sm-3">
-			<h5 class="copyright">Copyright</h5>
-			<a>all rights reserved RecipeCloud</a>
-		</div>
-	</div>
-</footer>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
 
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark">all rights reserved RecipeCloud</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 </html>

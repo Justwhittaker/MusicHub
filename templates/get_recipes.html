@@ -6,7 +6,10 @@
     <title>Get Recipes</title>
 </head>
 <body>
-    {% for recipe in recipe %}
+    {% extends "base.html" %}
+    {% block content %}
+
+    {% for recipes in recipes %}
         {{ recipes.RecipeName }} <br>
         {{ recipes.PrepTime }}<br>
         {{ recipes.CookingTime }}<br>

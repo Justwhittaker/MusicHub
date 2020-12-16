@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   {% extends 'base.html' %} {% block content %}
-
-  <h1>Welcome to RecipeCloud</h1>
-  <!-- Small paragragh explaining the website functionality and user options-->
-  <div>
-    <p>
-      Your one stop shop to find and share exciting new
-      recipes! <br />
-      Share your family recipes to ensure they are always saved for your family
-      members or friends to enjoy or <br />
-      Find new and interesting recipes loaded from thousands of members. <br />
-      We have three options to download, written, visual or tutorial. <br />
-      Share, Use and most importantly Enjoy!!
-    </p>
+<!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="height: 400px;"
+    img="{{ url_for('static', filename='img/food.jpg') }}"
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+            
+          <h1 class="mb-3">Welcome to RecipeCloud</h1>
+          <div class="container">
+    <form class="d-flex input-group w-auto">
+      <input
+        type="search"
+        class="form-control"
+        placeholder="Type query"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-primary" type="button" data-ripple-color="dark">
+        Search
+      </button>
+    </form>
   </div>
+          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+            >Sign UP</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+
+ 
+  
+
+ 
   <!-- Home page should have a search option for recipes-->
   <div class="container">
     <div class="row">
       <h2>Find Recipes</h2>
+      
       <!--Examples of Recipes on the site-->
       <div>
-        <img src="{{ url_for('static', filename='img/bg.jpg') }}" />
-        <img src="{{ url_for('static', filename='img/bg.jpg') }}" />
-        <img src="{{ url_for('static', filename='img/bg.jpg') }}" />
+       
+        <img src="{{ url_for('static', filename='img/food.jpg') }}" />
+        <img src="{{ url_for('static', filename='img/recipe.jpg') }}" />
         <img src="{{ url_for('static', filename='img/bg.jpg') }}" />
       </div>
     </div>
 
     <div class="row">
       <h2>Find Videos</h2>
+      
       <!--list of example videos appear-->
-      <div>
+      <!-- <div>
         <iframe
           src="{{ url_for('static', filename='videos/upload_vid/sample.mp4') }}"
           frameborder="0"
@@ -49,7 +74,7 @@
           frameborder="0"
         ></iframe>
       </div>
-    </div>
+    </div> -->
   </div>
   {% endblock %}
 </html>
