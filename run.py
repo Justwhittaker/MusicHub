@@ -53,27 +53,29 @@ def register():
     return render_template("register.html")
 
 
-@app.route('/login', methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username")})
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(existing_user["password"], request.form.get("passwrod")):
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
             else:
-                #invalid passwrod match
-                flash("incorrect Username and/or Password")
+                # invalid password match
+                flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
+
     return render_template("login.html")
 
 
@@ -109,30 +111,45 @@ def allow_image(filename):
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
-
     if request.method == "POST":
-
-        if request.files:
-            image = request.files["image"]
-
-            if image.filename == "":
-                print("Image needs a filename")
-                return redirect(request.url)
-
-            if not allow_image(image.filename):
-                print("That file extension is not allowed")
-                return redirect(request.url)
-
-            else:
-                filename = secure_filename(image.filename)
-
-                image.save(os.path.join(app.config["IMAGES"], filename))
-
-            print("Saved Image")
-
-            return redirect(request.url)
-
+        upload = {
+            "recipeName": request.form.get("recipeName"),
+            "PrepTime": request.form.get("PrepTime"),
+            "CookingTime": request.form.get("CookingTime"),
+            "DifficultyLevel": request.form.get("DifficultyLevel"),
+            "Serves": request.form.get("Serves"),
+            "Ingredient1": request.form.get("Ingredient1"),
+            "Ingredient2": request.form.get("Ingredient2"),
+            "Ingredient3": request.form.get("Ingredient3"),
+            "Instruction1": request.form.get("Instruction1"),
+            "Instruction2": request.form.get("Instruction2"),
+            "Instruction3": request.form.get("Instruction3"),
+        }
+        mongo.db.recipes.insert_one(upload)
     return render_template("input.html")
+   # if request.method == "POST":
+
+       # if request.files:
+           # image = request.files["image"]
+
+           # if image.filename == "":
+             #   print("Image needs a filename")
+              #  return redirect(request.url)
+
+           # if not allow_image(image.filename):
+              #  print("That file extension is not allowed")
+              #  return redirect(request.url)
+#
+           # else:
+               # filename = secure_filename(image.filename)
+
+              #  image.save(os.path.join(app.config["IMAGES"], filename))
+
+           # print("Saved Image")
+
+           # return redirect(request.url)
+
+   # return render_template("input.html")
 
 
 if __name__ == "__main__":
