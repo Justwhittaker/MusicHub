@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- Background image -->
-  <div
-    class="p-5 text-center bg-image"
-    style="height: 400px;"
-    img="{{ url_for('static', filename='img/food.jpg') }}"
-  >
+<div class="p-5 text-center bg-image" style="height: 400px;" img="{{ url_for('static', filename='img/food.jpg') }}">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-white">
-            
-          <h1 class="mb-3">Welcome to RecipeCloud</h1>
-          <div class="container">
-    <form class="d-flex input-group w-auto">
-      <input
-        type="search"
-        class="form-control"
-        placeholder="Type query"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-primary" type="button" data-ripple-color="dark">
-        Search
-      </button>
-    </form>
-  </div>
-          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
-            >Sign UP</a
-          >
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+
+                <h1 class="mb-3">Welcome to RecipeCloud</h1>
+                <div class="container">
+                    <form class="d-flex input-group w-auto">
+                        <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
+                        <button class="btn btn-outline-primary" type="button" data-ripple-color="dark">
+                            Search
+                        </button>
+                    </form>
+                </div>
+                <a class="btn btn-outline-light btn-lg" href="#!" role="button">Sign UP</a>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- Background image -->
+</div>
+<!-- Background image -->
 
- 
-  
 
- 
-  <!-- Home page should have a search option for recipes-->
-  <div class="container">
+
+<!-- Home page should have a search option for recipes-->
+<div>
+    <h2>Find Recipes</h2>
+</div>
+<div class="container">
     <div class="row">
-      <h2>Find Recipes</h2>
-      
-      <!--Examples of Recipes on the site-->
-      <div>
-       
-        <img src="{{ url_for('static', filename='img/food.jpg') }}" />
-        <img src="{{ url_for('static', filename='img/recipe.jpg') }}" />
-        <img src="{{ url_for('static', filename='img/bg.jpg') }}" />
-      </div>
+
+
+        <!--Examples of Recipes on the site-->
+        <div class="card" style="width: 18rem;">
+            {% for recipes in recipes %}
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipes.RecipeName }}</h5>
+                <p class="card-text">
+                    Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp;
+                    Cooking Time{{ recipes.CookingTime }}<br>
+                    Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp;
+                    Serves {{ recipes.Serves }}</p>
+                <a href="#" class="btn btn-primary">Go to Recipe</a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="row">
-      <h2>Find Videos</h2>
-      
-      <!--list of example videos appear-->
-      <!-- <div>
+        <h2>Find Videos</h2>
+    </div>
+    <!--list of example videos appear-->
+    <!-- <div>
         <iframe
           src="{{ url_for('static', filename='videos/upload_vid/sample.mp4') }}"
           frameborder="0"
@@ -75,6 +73,7 @@
         ></iframe>
       </div>
     </div> -->
-  </div>
-  {% endblock %}
+
+    {% endblock %}
+
 </html>

@@ -36,6 +36,10 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('index') }}">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+        </li>
+         {% if session.user %}
          <li class="nav-item">
           <a class="nav-link" href="{{ url_for('listings') }}">Recipe Lists</a>
         </li>
@@ -43,14 +47,16 @@
           <a class="nav-link" href="{{ url_for('input') }}">Add Recipes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+          <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
         </li>
+         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('register') }}">Users</a>
+          <a class="nav-link" href="{{ url_for('register') }}">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('login') }}">Login</a>
         </li>
+        {% endif %}
       </ul>
       <!-- Left links -->
     </div>
@@ -75,8 +81,6 @@
 
     <main class="container">
 	{% block content %} {% endblock %}
-
-</body>
 <!-- Footer 
         FAQ = Href link to FAQ
         Social = Href to socail links
@@ -149,4 +153,7 @@
   </div>
   <!-- Copyright -->
 </footer>
+
+</main>
+</body>
 </html>

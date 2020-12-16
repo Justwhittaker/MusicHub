@@ -20,6 +20,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    recipes = mongo.db.recipes.find()
+    return render_template("index.html", recipes=recipes)
     return render_template("index.html")
 
 
@@ -66,6 +68,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -79,6 +82,26 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("index"))
+
+
 @app.route('/about')
 def about():
     return render_template("about.html")
@@ -86,6 +109,8 @@ def about():
 
 @app.route('/listings')
 def listings():
+    recipes = mongo.db.recipes.find()
+    return render_template("listings.html", recipes=recipes)
     return render_template("listings.html")
 
 
