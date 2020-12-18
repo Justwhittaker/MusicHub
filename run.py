@@ -27,8 +27,8 @@ def index():
 
 @app.route("/get_recipes")
 def get_recipes():
-    recipe = mongo.db.recipe.find()
-    return render_template(get_recipes.html, recipes=recipe)
+    recipes = mongo.db.recipes.find()
+    return render_template(get_recipes.html, recipes=recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -157,6 +157,15 @@ def input():
         mongo.db.recipes.insert_one(upload)
         flash("Recipe Successfully added!")
     return render_template("input.html")
+
+
+    @app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
+    def edit_recipes(recipes_id):
+        recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+
+        recipes = mongo.db.recipes.find().sort("RecipeName", 1)
+        return render_template("edit_recipes.html", recipes=recipes)
+
    # if request.method == "POST":
 
     # if request.files:

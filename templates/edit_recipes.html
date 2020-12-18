@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% extends 'base.html' %} {% block content %}
+ <!--Create Form and basis for the uploading of files 
+    download your recipes and videos upload-->
+  <h1 class="center-align">Edit your Recipes Here!!</h1>
+
+  <div class="row">
+    <form
+      class="col s12 m8 offset-m2"
+      method="POST"
+     action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
+    >
+      <div class="card-panel">
+        <!-- Recipe Name -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="RecipeName">Recipe Name</label>
+            <input
+              id="RecipeName"
+              name="RecipeName"
+              type="text"
+              minlength="5"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="RecipeName"
+            />
+          </div>
+        </div>
+        <!-- Prep Time -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="PrepTime">Prep Time</label>
+            <input
+              id="PrepTime"
+              name="PrepTime"
+              type="number"
+              minlength="1"
+              maxlength="5"
+              pattern="^[a-zA-Z0-9]{5,15}$"
+              class="validate"
+              required
+              placeholder="PrepTime"
+            />
+          </div>
+        </div>
+        <!-- Cooking Time -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="CookingTime">Cooking Time</label>
+            <input
+              id="CookingTime"
+              name="CookingTime"
+              type="number"
+              minlength="1"
+              maxlength="5"
+              pattern="^[a-zA-Z0-9]{5,15}$"
+              class="validate"
+              required
+              placeholder="CookingTime"
+            />
+          </div>
+        </div>
+        <!-- DifficultyLevel -->
+        <div class="row">
+          <div class="input-field col s12" id="DifficultyLevel">
+            <label for="DifficultyLevel">Difficulty Level</label>
+            <input
+              name="DifficultyLevel"
+              type="radio"
+              class="validate"
+              required
+            />Beginner
+            <input
+              name="DifficultyLevel"
+              type="radio"
+              class="validate"
+              required
+            />Cook
+            <input
+              name="DifficultyLevel"
+              type="radio"
+              class="validate"
+              required
+            />Pro Chef
+          </div>
+        </div>
+        <!-- Serves -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Serves">Serves</label>
+            <input
+              id="Serves"
+              name="Serves"
+              type="number"
+              maxlength="1"
+              class="validate"
+              required
+              placeholder="Serves"
+            />
+          </div>
+        </div>
+        <!-- Ingredients -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Ingredient1">Add Ingredient</label>
+            <input
+              id="Ingredient1"
+              name="Ingredient1"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Ingredient no.1"
+            />
+          </div>
+           <div class="input-field col s12">
+            <label for="Qty1">Add Qty</label>
+            <input
+              id="Qty1"
+              name="Qty1"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add Qty"
+            />
+          </div>
+          </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Ingredient2">Add Ingredient</label>
+            <input
+              id="Ingredient2"
+              name="Ingredient2"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Ingredient no.2"
+            />
+          </div>
+           <div class="input-field col s12">
+            <label for="Qty2">Add Qty</label>
+            <input
+              id="Qty2"
+              name="Qty2"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add Qty"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Ingredient3">Add Ingredient</label>
+            <input
+              id="Ingredient3"
+              name="Ingredient3"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Ingredient no.3"
+            />
+          </div>
+           <div class="input-field col s12">
+            <label for="Qty3">Add Qty</label>
+            <input
+              id="Qty3"
+              name="Qty3"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add Qty"
+            />
+          </div>
+        </div>
+        <!-- add Ingredients field-->
+        <div>
+          <button>+ Ingredient field</button>
+        </div>
+        <!-- Instruction -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Instruction1">Add Instructions</label>
+            <input
+              id="Instruction1"
+              name="Instruction1"
+              type="text"
+              minlength="5"
+              maxlength="50"
+              class="validate"
+              required
+              placeholder="Instruction no.1"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Instruction2">Add Instructions</label>
+            <input
+              id="Instruction2"
+              name="Instruction2"
+              type="text"
+              minlength="5"
+              maxlength="50"
+              class="validate"
+              required
+              placeholder="Instruction no.2"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Instruction3">Add Instructions</label>
+            <input
+              id="Instruction3"
+              name="Instruction3"
+              type="text"
+              minlength="5"
+              maxlength="50"
+              class="validate"
+              required
+              placeholder="Instruction no.3"
+            />
+            <!-- add Ingredients field-->
+            <div>
+              <button>+ Instruction field</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                        Upload <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+        <div class="container">
+          <div class="row">
+            <label>Upload Image</label>
+            <form action="/input" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    name="image"
+                    id="image"
+                  />
+                  <label class="custom-file-label" for="image"
+                    >Select image...</label
+                  >
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary">Edit Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+    
+ 
+  {% endblock %}
+</html>
