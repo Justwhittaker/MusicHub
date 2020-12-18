@@ -65,7 +65,7 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for("profile", username=session["user"]))
@@ -109,7 +109,7 @@ def about():
 
 @app.route('/listings')
 def listings():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find().sort("RecipeName", 1)
     return render_template("listings.html", recipes=recipes)
     return render_template("listings.html")
 
@@ -138,41 +138,46 @@ def allow_image(filename):
 def input():
     if request.method == "POST":
         upload = {
-            "recipeName": request.form.get("recipeName"),
+            "RecipeName": request.form.get("RecipeName"),
             "PrepTime": request.form.get("PrepTime"),
             "CookingTime": request.form.get("CookingTime"),
             "DifficultyLevel": request.form.get("DifficultyLevel"),
             "Serves": request.form.get("Serves"),
             "Ingredient1": request.form.get("Ingredient1"),
+            "Qty1": request.form.get("Qty1"),
             "Ingredient2": request.form.get("Ingredient2"),
+            "Qty2": request.form.get("Qty2"),
             "Ingredient3": request.form.get("Ingredient3"),
+            "Qty3": request.form.get("Qty3"),
             "Instruction1": request.form.get("Instruction1"),
             "Instruction2": request.form.get("Instruction2"),
             "Instruction3": request.form.get("Instruction3"),
+            "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(upload)
+        flash("Recipe Successfully added!")
     return render_template("input.html")
    # if request.method == "POST":
 
-       # if request.files:
-           # image = request.files["image"]
+    # if request.files:
+    # image = request.files["image"]
 
-           # if image.filename == "":
-             #   print("Image needs a filename")
-              #  return redirect(request.url)
+    # if image.filename == "":
+    #   print("Image needs a filename")
+    #  return redirect(request.url)
 
-           # if not allow_image(image.filename):
-              #  print("That file extension is not allowed")
-              #  return redirect(request.url)
+    # if not allow_image(image.filename):
+    #  print("That file extension is not allowed")
+    #  return redirect(request.url)
 #
-           # else:
-               # filename = secure_filename(image.filename)
+    # else:
+    # filename = secure_filename(image.filename)
 
-              #  image.save(os.path.join(app.config["IMAGES"], filename))
+    #  image.save(os.path.join(app.config["IMAGES"], filename))
 
-           # print("Saved Image")
+    # print("Saved Image")
 
-           # return redirect(request.url)
+    # return redirect(request.url)
 
    # return render_template("input.html")
 

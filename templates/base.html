@@ -3,15 +3,17 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+
+        <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> 
+		<link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}" type="text/css">
 
 	<title>Recipe Cloud</title>
 </head>
+<body>
+ 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- Container wrapper core code from https://mdbootstrap.com/docs/standard/navigation/navbar/#-->
   <div class="container-fluid">
@@ -154,5 +156,5 @@
 </footer>
 
 </main>
-</body>
+
 </html>

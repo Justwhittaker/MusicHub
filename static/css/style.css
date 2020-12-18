@@ -1,5 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+
 body {
-  font-family: 'Lora';
+  font-family: 'Eczar';
+  background-color: aqua;
 }
 
 h1,

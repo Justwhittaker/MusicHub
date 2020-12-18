@@ -9,16 +9,16 @@
     <form
       class="col s12 m8 offset-m2"
       method="POST"
-      action="{{ url_for('register') }}"
+      action="{{ url_for('input') }}"
     >
       <div class="card-panel">
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="recipeName">Recipe Name</label>
+            <label for="RecipeName">Recipe Name</label>
             <input
-              id="recipeName"
-              name="recipeName"
+              id="RecipeName"
+              name="RecipeName"
               type="text"
               minlength="5"
               maxlength="30"
@@ -34,7 +34,7 @@
             <label for="PrepTime">Prep Time</label>
             <input
               id="PrepTime"
-              name="recipeName"
+              name="PrepTime"
               type="number"
               minlength="1"
               maxlength="5"
@@ -51,7 +51,7 @@
             <label for="CookingTime">Cooking Time</label>
             <input
               id="CookingTime"
-              name="recipeName"
+              name="CookingTime"
               type="number"
               minlength="1"
               maxlength="5"
@@ -67,19 +67,19 @@
           <div class="input-field col s12" id="DifficultyLevel">
             <label for="DifficultyLevel">Difficulty Level</label>
             <input
-              name="recipeName"
+              name="DifficultyLevel"
               type="radio"
               class="validate"
               required
             />Beginner
             <input
-              name="recipeName"
+              name="DifficultyLevel"
               type="radio"
               class="validate"
               required
             />Cook
             <input
-              name="recipeName"
+              name="DifficultyLevel"
               type="radio"
               class="validate"
               required
@@ -116,19 +116,45 @@
               placeholder="Ingredient no.1"
             />
           </div>
-        </div>
+           <div class="input-field col s12">
+            <label for="Qty1">Add Qty</label>
+            <input
+              id="Qty1"
+              name="Qty1"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add Qty"
+            />
+          </div>
+          </div>
         <div class="row">
           <div class="input-field col s12">
             <label for="Ingredient2">Add Ingredient</label>
             <input
               id="Ingredient2"
-              name="Ingredient1"
+              name="Ingredient2"
               type="text"
               minlength="2"
               maxlength="30"
               class="validate"
               required
               placeholder="Ingredient no.2"
+            />
+          </div>
+           <div class="input-field col s12">
+            <label for="Qty2">Add Qty</label>
+            <input
+              id="Qty2"
+              name="Qty2"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add Qty"
             />
           </div>
         </div>
@@ -144,6 +170,19 @@
               class="validate"
               required
               placeholder="Ingredient no.3"
+            />
+          </div>
+           <div class="input-field col s12">
+            <label for="Qty3">Add Qty</label>
+            <input
+              id="Qty3"
+              name="Qty3"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add Qty"
             />
           </div>
         </div>

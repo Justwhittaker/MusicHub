@@ -9,11 +9,24 @@
         <div class="card-body">
           <h5 class="card-title">{{ recipes.RecipeName }}</h5>
           <p class="card-text">
-            Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp; Cooking Time{{
-            recipes.CookingTime }}<br />
-            Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp; Serves {{
-            recipes.Serves }}
+            Prep Time &nbsp;&nbsp;{{ recipes.PrepTime }} &nbsp;&nbsp; 
+            Cooking Time&nbsp;&nbsp;{{recipes.CookingTime }}<br />
+            Difficulty &nbsp;&nbsp;{{ recipes.DifficultyLevel }} &nbsp;&nbsp; 
+            Serves &nbsp;&nbsp;{{recipes.Serves }}<br />
+            Ingredients <br />
+            - {{recipes.Ingredient1 }} &nbsp;&nbsp; 
+             &nbsp;&nbsp;{{recipes.Qty1 }}<br />
+            - {{recipes.Ingredient2 }} &nbsp;&nbsp; 
+             &nbsp;&nbsp;{{recipes.Qty2 }}<br />
+            - {{recipes.Ingredient3 }} &nbsp;&nbsp; 
+             &nbsp;&nbsp;{{recipes.Qty3 }}<br />
+            Instructions <br />
+            &nbsp;- {{recipes.Instruction1 }} <br /> 
+            &nbsp;- {{recipes.Instruction2 }} <br /> 
+            &nbsp;- {{recipes.Instruction3 }} <br /> 
+            <br />
           </p>
+            
           <a href="#" class="btn btn-primary">Go to Recipe</a>
         </div>
       </div>
