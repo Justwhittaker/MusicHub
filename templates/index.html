@@ -9,9 +9,11 @@
 
                 <h1 class="mb-3">Welcome to RecipeCloud</h1>
                 <div class="container">
-                    <form class="d-flex input-group w-auto">
-                        <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
-                        <button class="btn btn-outline-primary" type="button" data-ripple-color="dark">
+                    <form action="{{ url_for('search') }}" method= "POST" class="d-flex input-group w-auto">
+                        <i class="fas fa-search prefix"></i>
+                        <input placeholder="Search Recipes" type="text" name="query" id="query" minlength="3" class="validate form-control" required/>
+                        <label for="query"></label>
+                        <button type="submit" class="fas fa-search left btn btn-primary" data-ripple-color="dark">
                             Search
                         </button>
                     </form>
