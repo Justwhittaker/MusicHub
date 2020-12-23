@@ -114,6 +114,7 @@ def logout():
 
 @app.route('/about')
 def about():
+    # about section with how to index and FAQ
     return render_template("about.html")
 
 
@@ -146,6 +147,7 @@ def allow_image(filename):
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
+    # POST recipe to recipesDB
     if request.method == "POST":
         upload = {
             "timestamp": datetime.datetime.now(),
@@ -172,6 +174,7 @@ def input():
 
     @app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
     def edit_recipes(recipes_id):
+        # EDIT recipe to recipesDB
         recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
 
         recipes = mongo.db.recipes.find().sort("RecipeName", 1)
