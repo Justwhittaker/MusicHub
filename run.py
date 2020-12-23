@@ -18,9 +18,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-x = datetime.datetime.now()
-print(x)
-
 
 @app.route('/')
 def index():
