@@ -300,6 +300,7 @@ https://cloud.mongodb.com/ <br>
 https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d#9c71<br>
 https://www.w3schools.com/python/python_mongodb_query.asp
 https://docs.mongodb.com/manual/reference/bson-types/
+https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d#9c71
 
 
 3. Python research <br>

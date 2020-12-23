@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
+    import datetime
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -17,6 +18,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+x = datetime.datetime.now()
+print(x)
 
 @app.route("/")
 def index():
@@ -145,6 +148,7 @@ def allow_image(filename):
 def input():
     if request.method == "POST":
         upload = {
+            "timestamp": datetime.datetime.now(),
             "RecipeName": request.form.get("RecipeName"),
             "PrepTime": request.form.get("PrepTime"),
             "CookingTime": request.form.get("CookingTime"),
