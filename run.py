@@ -100,8 +100,7 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
@@ -170,6 +169,7 @@ def input():
         mongo.db.recipes.insert_one(upload)
         flash("Recipe Successfully added!")
     return render_template("input.html")
+
 
     @app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
     def edit_recipes(recipes_id):

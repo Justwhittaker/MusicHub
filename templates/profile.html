@@ -17,23 +17,21 @@
         <div>
             <h3>Favorites</h3>
         </div>
-        <div class="row">
+<div class="row">
     <div class="col-sm-12">
       <div class="card" style="width: 18rem;">
         {% for recipes in recipes %}
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{ recipes.RecipeName }}</h5>
-          <p class="card-text">
-            Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp; Cooking Time{{
-            recipes.CookingTime }}<br />
-            Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp; Serves {{
-            recipes.Serves }}
-          </p>
-          <a href="#" class="btn btn-primary">Go to Recipe</a>
-        </div>
-      </div>
-    </div>
+        <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipes.RecipeName }}</h5>
+                <p class="card-text">
+                    Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp;
+                    Cooking Time{{ recipes.CookingTime }}<br>
+                    Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp;
+                    Serves {{ recipes.Serves }}</p>
+                <a href="#" class="btn btn-primary">Go to Recipe</a>
+            </div>
+      </div></div>
     {% endfor %}
   </div>
     </div>
