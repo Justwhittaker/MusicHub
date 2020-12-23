@@ -21,11 +21,11 @@ mongo = PyMongo(app)
 x = datetime.datetime.now()
 print(x)
 
-@app.route("/")
+
+@app.route('/')
 def index():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find().sort("timestamp", -1)
     return render_template("index.html", recipes=recipes)
-    return render_template("index.html")
 
 
 @app.route("/get_recipes")
@@ -147,7 +147,7 @@ def allow_image(filename):
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
-    # POST recipe to recipesDB
+    # POST recipe to recipes DB
     if request.method == "POST":
         upload = {
             "timestamp": datetime.datetime.now(),
@@ -171,10 +171,9 @@ def input():
         flash("Recipe Successfully added!")
     return render_template("input.html")
 
-
     @app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
     def edit_recipes(recipes_id):
-        # EDIT recipe to recipesDB
+        # POST recipe to recipes DB
         recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
 
         recipes = mongo.db.recipes.find().sort("RecipeName", 1)
