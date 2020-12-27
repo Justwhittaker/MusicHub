@@ -5,7 +5,7 @@
     download your recipes and videos upload-->
   <h1 class="center-align">Add your Recipes Here!!</h1>
 
-  <div class="row">
+  <div id="inputForm"class="row">
     <form
       class="col s12 m8 offset-m2"
       method="POST"
@@ -66,21 +66,26 @@
         <div class="row">
           <div class="input-field col s12" id="DifficultyLevel">
             <label for="DifficultyLevel">Difficulty Level</label>
+             <!-- match the following on button and post beginner in DB instead of "ON" -->
             <input
+              id="beginner"
               name="DifficultyLevel"
               id="DifficultyLevel"
               type="radio"
               class="validate"
               required
             />Beginner
+           <!-- match the following on button and post cook in DB instead of "ON" -->
             <input
               name="DifficultyLevel"
-              id="DifficultyLevel"
+              id="cook"
               type="radio"
               class="validate"
               required
             />Cook
+             <!-- match the following on button and post prochef in DB instead of "ON" -->
             <input
+              id="pro_chef"
               name="DifficultyLevel"
               type="radio"
               class="validate"
@@ -106,23 +111,21 @@
         <!-- Ingredients -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient1">Add Ingredient</label>
+            <label for="Ingredient">Add Ingredient</label>
             <input
-              id="Ingredient1"
-              name="Ingredient1"
+              name="Ingredient"
               type="text"
               minlength="2"
-              maxlength="30"
-              class="validate"
+              maxlength="45"
+              class="Ingredient validate"
               required
               placeholder="Ingredient no.1"
             />
           </div>
            <div class="input-field col s12">
-            <label for="Qty1">Add Qty</label>
+            <label for="Qty">Add Qty</label>
             <input
-              id="Qty1"
-              name="Qty1"
+              name="Qty"
               type="text"
               minlength="2"
               maxlength="30"
@@ -134,23 +137,21 @@
           </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient2">Add Ingredient</label>
+            <label for="Ingredient">Add Ingredient</label>
             <input
-              id="Ingredient2"
-              name="Ingredient2"
+              name="Ingredient"
               type="text"
               minlength="2"
-              maxlength="30"
-              class="validate"
+              maxlength="45"
+              class="Ingredient validate"
               required
               placeholder="Ingredient no.2"
             />
           </div>
            <div class="input-field col s12">
-            <label for="Qty2">Add Qty</label>
+            <label for="Qty">Add Qty</label>
             <input
-              id="Qty2"
-              name="Qty2"
+              name="Qty"
               type="text"
               minlength="2"
               maxlength="30"
@@ -162,14 +163,14 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient3">Add Ingredient</label>
+            <label for="Ingredient">Add Ingredient</label>
             <input
-              id="Ingredient3"
-              name="Ingredient3"
+              
+              name="Ingredient"
               type="text"
               minlength="2"
-              maxlength="30"
-              class="validate"
+              maxlength="45"
+              class="Ingredient validate"
               required
               placeholder="Ingredient no.3"
             />
@@ -190,18 +191,28 @@
         </div>
         <!-- add Ingredients field-->
         <div>
-          <button>+ Ingredient field</button>
+          <button for="Add_ingredient">+ Ingredient field</button>
+          <input
+              name="Add_ingredient"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="validate"
+              required
+              placeholder="Add ingredient"
+            />
+          </div>
+          
         </div>
         <!-- Instruction -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction1">Add Instructions</label>
+            <label for="Instruction">Add Instructions</label>
             <input
-              id="Instruction1"
-              name="Instruction1"
+              name="Instruction"
               type="text"
               minlength="5"
-              maxlength="50"
+              maxlength="120"
               class="validate"
               required
               placeholder="Instruction no.1"
@@ -210,13 +221,12 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction2">Add Instructions</label>
+            <label for="Instruction">Add Instructions</label>
             <input
-              id="Instruction2"
-              name="Instruction2"
+              name="Instruction"
               type="text"
               minlength="5"
-              maxlength="50"
+              maxlength="120"
               class="validate"
               required
               placeholder="Instruction no.2"
@@ -225,20 +235,19 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction3">Add Instructions</label>
+            <label for="Instruction">Add Instructions</label>
             <input
-              id="Instruction3"
-              name="Instruction3"
+              name="Instruction"
               type="text"
               minlength="5"
-              maxlength="50"
+              maxlength="120"
               class="validate"
               required
               placeholder="Instruction no.3"
             />
             <!-- add Ingredients field-->
             <div>
-              <button>+ Instruction field</button>
+              <button class="instruction_field">+ Instruction field</button>
             </div>
           </div>
         </div>

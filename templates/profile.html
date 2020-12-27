@@ -20,15 +20,15 @@
 <div class="row">
     <div class="col-sm-12">
       <div class="card" style="width: 18rem;">
-        {% for recipes in recipes %}
+        {% for recipe in recipes %}
         <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{ recipes.RecipeName }}</h5>
+                <h5 class="card-title">{{ recipe.RecipeName }}</h5>
                 <p class="card-text">
-                    Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp;
-                    Cooking Time{{ recipes.CookingTime }}<br>
-                    Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp;
-                    Serves {{ recipes.Serves }}</p>
+                    Prep Time {{ recipe.PrepTime }} &nbsp;&nbsp;
+                    Cooking Time{{ recipe.CookingTime }}<br>
+                    Difficulty {{ recipe.DifficultyLevel }} &nbsp;&nbsp;
+                    Serves {{ recipe.Serves }}</p>
                 <a href="#" class="btn btn-primary">Go to Recipe</a>
             </div>
       </div></div>

@@ -1,14 +1,17 @@
 import os
+import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-if os.path.exists("env.py"):
-    import env
-    import datetime
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
+
+
+if os.path.exists("env.py"):
+    import env
+
 
 app = Flask(__name__)
 
@@ -152,15 +155,10 @@ def input():
             "CookingTime": request.form.get("CookingTime"),
             "DifficultyLevel": request.form.get("DifficultyLevel"),
             "Serves": request.form.get("Serves"),
-            "Ingredient1": request.form.get("Ingredient1"),
-            "Qty1": request.form.get("Qty1"),
-            "Ingredient2": request.form.get("Ingredient2"),
-            "Qty2": request.form.get("Qty2"),
-            "Ingredient3": request.form.get("Ingredient3"),
-            "Qty3": request.form.get("Qty3"),
-            "Instruction1": request.form.get("Instruction1"),
-            "Instruction2": request.form.get("Instruction2"),
-            "Instruction3": request.form.get("Instruction3"),
+            "Ingredient": request.form.getlist("Ingredient"),
+            "Add_ingredient": request.form.getlist("Ingredient"),
+            "Qty": request.form.get("Qty"),
+            "Instruction": request.form.getlist("Instruction"),
             "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(upload)
@@ -168,13 +166,19 @@ def input():
     return render_template("input.html")
 
 
-    @app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
-    def edit_recipes(recipes_id):
-        # POST recipe to recipes DB
-        recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+@app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
+def edit_recipes(recipes_id):
+    # POST recipe to recipes DB
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    return render_template("edit_recipes.html", recipes=recipes)
 
-        recipes = mongo.db.recipes.find().sort("RecipeName", 1)
-        return render_template("edit_recipes.html", recipes=recipes)
+
+@app.route("/delete_recipes/<recipes_id>", methods=["GET", "POST"])
+def delete_recipes(recipes_id):
+    # Delete recipe to recipes DB
+    recipes = mongo.db.recipes.delete_one({"_id": ObjectId(recipes_id)})
+    flash("Recipe Successfully deleted!")
+    return render_template("listings.html", recipes=recipes)
 
    # if request.method == "POST":
 

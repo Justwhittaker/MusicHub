@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 
         <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> 
-		<link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}" type="text/css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<title>Recipe Cloud</title>
 </head>
@@ -88,9 +90,9 @@
         Settings = setup settings and change language
         Copyright = Copyright expression-->
 
-<footer class="bg-light text-center text-lg-left">
+<footer class="bg-light text-center text-lg-left" >
   <!-- Grid container -->
-  <div class="container p-4">
+  <div id="footer" class="container p-4">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
@@ -148,7 +150,7 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3" id="copyright" >
     © 2020 Copyright:
     <a class="text-dark">all rights reserved RecipeCloud</a>
   </div>
