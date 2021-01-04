@@ -166,17 +166,34 @@ def input():
     return render_template("input.html")
 
 
-@app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
+@app.route("/edit_recipes/<recipes_id>", methods=["GET", "PUT"])
 def edit_recipes(recipes_id):
+    if request.method == "PUT":
+        upload = {
+            "timestamp": datetime.datetime.now(),
+            "RecipeName": request.form.get("RecipeName"),
+            "PrepTime": request.form.get("PrepTime"),
+            "CookingTime": request.form.get("CookingTime"),
+            "DifficultyLevel": request.form.get("DifficultyLevel"),
+            "Serves": request.form.get("Serves"),
+            "Ingredient": request.form.getlist("Ingredient"),
+            "Add_ingredient": request.form.getlist("Ingredient"),
+            "Qty": request.form.get("Qty"),
+            "Instruction": request.form.getlist("Instruction"),
+            "created_by": session["user"],
+        }
+        mongo.db.tasks.update({"_id": ObjectId(recipes_id)}, upload)
+        flash("Task Successfully Updated")
     # POST recipe to recipes DB
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     return render_template("edit_recipes.html", recipes=recipes)
 
 
-@app.route("/delete_recipes/<recipes_id>", methods=["GET", "POST"])
+@app.route("/delete_recipes/<recipes_id>", methods=["GET"])
 def delete_recipes(recipes_id):
     # Delete recipe to recipes DB
-    recipes = mongo.db.recipes.delete_one({"_id": ObjectId(recipes_id)})
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipes_id)})
+    recipes = mongo.db.recipes.find().sort("RecipeName", 1)
     flash("Recipe Successfully deleted!")
     return render_template("listings.html", recipes=recipes)
 

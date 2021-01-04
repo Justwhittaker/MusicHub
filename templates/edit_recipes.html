@@ -8,10 +8,10 @@
   <div class="row">
     <form
       class="col s12 m8 offset-m2"
-      method="POST"
+      method="PUT"
      action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
     >
-      <div class="card-panel">
+      <div class="recipe_box card-panel">
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
@@ -262,7 +262,7 @@
                   >
                 </div>
               </div>
-              <div>
+              <div class="row">
                 <button type="submit" class="btn btn-primary">Edit Submit</button>
               </div>
             </form>

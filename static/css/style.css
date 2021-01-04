@@ -34,3 +34,16 @@ h6 {
     width: 100%;
     
 }
+
+.recipe_box {
+    width: 100%;
+    border: 30px;
+    background-color: rgb(228, 233, 233);
+    border-width: 3px;
+    border-style: solid;
+    text-align: center;
+    display: block;
+    font-family:'SpicyRice';
+    font-size: x-large;
+    padding: 50px;
+}
