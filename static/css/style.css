@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Eczar' !;
-  background-color: rgb(48, 230, 230);
+  background-color:#5ac5ff;
   background-image: "{{ url_for('static', filename='./img/food.jpg') }}";
   width: auto;
 }
@@ -27,8 +27,9 @@ body {
     background-image: url("/static/img/food.jpg");
   background-attachment: relative;
   background-position: center; 
-  background-size: contain;
+  background-size: cover;
   padding: 50px;
+  background-clip: padding-box;
 }
 
 h1,
@@ -40,20 +41,23 @@ h6 {
   font-family: 'Eczar';
 }
 
-#footer {
-    width: 100%;
-    background-color: rgb(52, 93, 112);
-    position: bottom;
-    display: block;
-}
-
-#copyright {
-    background-color: rgba(255, 0, 0, 0.966);
-}
-
 #recipe_cloud {
     width: 100%;
     
+}
+
+.recipe_card {
+      width: 100%;
+      margin: 30px;
+    border: 30px;
+    border-width: 3px;
+    border-style: solid;
+    text-align: left;
+    display: relative;
+    font-family:'SpicyRice';
+    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .recipe_box {
@@ -65,7 +69,7 @@ h6 {
     display: relative;
     font-family:'SpicyRice';
     font-size: x-large;
-    background: linear-gradient(21deg, #10abff, #1beabd);
+    background: linear-gradient(21deg,#5ac5ff, #c1d2ff);
     padding: 50px;
     border-radius: 2em;
 
@@ -73,13 +77,13 @@ h6 {
 
 .text_input {
     border-radius: 10px;
-    background: linear-gradient(21deg, #10abff, #cee9f1);
+    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
     text-align: center;
 }
 
 .num_input {
     border-radius: 10px;
-    background: linear-gradient(21deg, #10abff, #cee9f1);
+    background: linear-gradient(21deg,#5ac5ff, #c1d2ff);
     text-align: center;
     max-width:50px;
 }
@@ -92,13 +96,38 @@ h6 {
     text-align: center;
     font-family:'SpicyRice';
     font-size: x-large;
-    background: linear-gradient(21deg, #60c7ff, #cefcfd);
+    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
     padding: 100px;
     margin: 100px;
     border-radius: 2em;
 }
 
-.footer {
-    width: auto;
+.private_pol {
+    width: 100%;
+    border: 30px;
+    position: center;
+    border-width: 3px;
+    border-style: solid;
+    text-align: left;
+    display: inline-block;
+    font-family:'SpicyRice';
+    font-size: x-large;
+    background: linear-gradient(21deg,#5ac5ff, #c1d2ff);
+    padding: 50px;
+    border-radius: 2em;
+}
 
+.footer {
+        margin:0px;
+        padding:5%;
+        min-width:100%;
+        max-width:100%;
+        background:#ffffff;
+        height:auto;
+        text-align: center;
+}
+
+#copyright {
+    background-color: rgba(63, 143, 228, 0.966);
+    padding: 5%;
 }

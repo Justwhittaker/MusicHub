@@ -95,14 +95,14 @@
 
 <footer class="bg-light text-center text-lg-left" >
   <!-- Grid container -->
-  <div id="footer" class="container p-4">
+  <div class="footer container p-4">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-dark text-uppercase"><h4>FAQ</h4></a>
+            <a href="{{ url_for('about') }}" class="text-dark text-uppercase"><h4>FAQ</h4></a>
           </li>
         </ul>
       </div>
@@ -112,7 +112,7 @@
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
         <ul class="list-unstyled">
           <li>
-            <a href="#!" class="text-dark social"><h4> User agreement</h4></a>
+            <a href="https://www.termsfeed.com/live/e5380f1c-d3d7-4d9e-910d-64ab3cfe499a" target="_blank" class="hvr-glow text-dark social"><h4> User agreement</h4></a>
           </li>
         </ul>
       </div>
@@ -122,7 +122,7 @@
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-dark social"><h4>Privacy Policy</h4></a>
+            <a href="{{ url_for('privacy') }}" class="text-dark social"><h4>Privacy Policy</h4></a>
           </li>
         </ul>
       </div>
@@ -133,15 +133,15 @@
         <h5 class="text-uppercase social"> Connect</h5>
 			<ul class="list-inline social-links">
 				<li class="list-inline-item">
-					<a href="#" class="hvr-glow" target="_blank">
+					<a href="https://www.facebook.com/" class="hvr-glow" target="_blank">
 						<i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">facebook</span></a>
 				</li>
 				<li class="list-inline-item">
-					<a href="#" class="hvr-glow" target="_blank">
+					<a href="https://twitter.com/?lang=en" class="hvr-glow" target="_blank">
 						<i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">twitter</span></a>
 				</li>
 				<li class="list-inline-item">
-					<a href="#" class="hvr-glow" target="_blank">
+					<a href="https://www.instagram.com/" class="hvr-glow" target="_blank">
 						<i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">instagram</span></a>
 				</li>
 			</ul>

@@ -319,6 +319,8 @@ http://karma-runner.github.io/5.0/dev/git-commit-msg.html
     3. bootstrap <br>
     4. dnspython
 
+6. Other platforms <br>
+https://policymaker.io/privacy-policy-ready/ <br>
 
 **Many thanks to:**
 

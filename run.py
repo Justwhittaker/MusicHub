@@ -4,6 +4,8 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from tabulate import tabulate
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -24,8 +26,16 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    recipes = mongo.db.recipes.find().sort("timestamp", -1)
-    return render_template("index.html", recipes=recipes)
+    recipes = mongo.db.recipes.find().sort("timestamp", -1).limit(3)
+    page_num = 1
+    return render_template("index.html", recipes=recipes, page_num = page_num)
+
+
+@app.route('/<page_num>')
+def recipes_paginate(page_num):
+    recipes = mongo.db.recipes.find().sort("timestamp", -1).skip(3).limit(3)
+    page_num = 2
+    return render_template('index.html', recipes = recipes, page_num=page_num)
 
 
 @app.route("/get_recipes")
@@ -117,6 +127,12 @@ def about():
     return render_template("about.html")
 
 
+@app.route('/privacy')
+def privacy():
+    # about section with how to index and FAQ
+    return render_template("privacy_policy.html")
+
+
 @app.route('/listings')
 def listings():
     recipes = mongo.db.recipes.find().sort("RecipeName", 1)
@@ -182,7 +198,6 @@ def delete_recipes(recipes_id):
     return render_template("listings.html", recipes=recipes)
 
 
-
 def allow_image(filename):
 
     # We only want files with a . in the filename
@@ -197,7 +212,6 @@ def allow_image(filename):
         return True
     else:
         return False
-
 
    # if request.method == "POST":
 

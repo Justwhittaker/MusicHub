@@ -7,13 +7,13 @@
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
 <img src="{{ url_for('static', filename='./img/logoCloud.png') }}" class="logo">     
-           <h1 class="mb-3">Welcome to RecipeCloud</h1>
+           <h1 class="mb-3">Welcome to Recipe Cloud</h1>
                 <div class="container ">
                     <form action="{{ url_for('search') }}" method= "POST" class="d-flex input-group w-auto">
-                        <i class="fas fa-search prefix"></i>
+                        
                         <input placeholder="Search Recipes" type="text" name="query" id="query" minlength="3" class="validate form-control" required/>
                         <label for="query"></label>
-                        <button type="submit" class="fas fa-search left btn btn-primary" data-ripple-color="dark">
+                        <button type="submit" class="fas fa-search left btn btn-primary" data-ripple-color="dark"><i class="fas fa-search prefix"></i>
                             Search
                         </button>
                     </form>
@@ -32,14 +32,15 @@
     <h2>Find Recipes</h2>
 </div>
 <div class="container-fluid" >
-    <div class="row">
+    <div class="col-sm-4">
 
 
         <!--Examples of Recipes on the site-->
-        <div class="card" style="width: 18rem;">
+        <div>
             {% for recipes in recipes %}
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="recipe_card">
+            <img src="..." class="card-img-top " alt="...">
+            <div class="card-body ">
                 <h5 class="card-title">{{ recipes.RecipeName }}</h5>
                 <p class="card-text">
                     Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp;
@@ -48,9 +49,17 @@
                     Serves {{ recipes.Serves }}</p>
                 <a href="#" class="btn btn-primary">Go to Recipe</a>
             </div>
+            </div>
             {% endfor %}
         </div>
     </div>
+    <ul class="pagination justify-content-center">
+  <li><a href="{{ url_for('index') }}">1</a></li>
+  <li><a href="{{ url_for('recipes_paginate', page_num=2) }}">2</a></li>
+  <li><a href="{{ url_for('recipes_paginate', page_num=3) }}">3</a></li>
+  <li><a href="{{ url_for('recipes_paginate', page_num=4) }}">4</a></li>
+  <li><a href="{{ url_for('recipes_paginate', page_num=5) }}">5</a></li>
+</ul>
 
     <div class="row">
         <h2>Find Videos</h2>

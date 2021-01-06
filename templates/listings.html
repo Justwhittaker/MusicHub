@@ -2,11 +2,11 @@
 <html lang="en">
   {% extends "base.html" %} {% block content %}
   <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
+    <div>
+      <div>
         {% for recipes in recipes %}
         <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div class="card-body recipe_card">
           <h5 class="card-title">{{ recipes.RecipeName }}</h5>
             <h5 class="card-title">{{ recipes._id }}</h5>
 
