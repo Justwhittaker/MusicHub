@@ -154,7 +154,7 @@ def input():
 def edit_recipes(recipes_id):
     # Update recipe to recipes DB
     if request.method == "PUT":
-        upload = {'$set'
+        upload = {'$set': {
                   "timestamp": datetime.datetime.now(),
                   "RecipeName": request.form.get("RecipeName"),
                   "PrepTime": request.form.get("PrepTime"),
@@ -166,7 +166,7 @@ def edit_recipes(recipes_id):
                   "Qty": request.form.get("Qty"),
                   "Instruction": request.form.getlist("Instruction"),
                   "created_by": session["user"],
-                  }
+                  }}
         mongo.db.tasks.update_one({"_id": ObjectId(recipes_id)}, upload)
         flash("Task Successfully Updated")
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})

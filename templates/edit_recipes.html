@@ -31,7 +31,7 @@
         <!-- Categories -->
         <div class="dropdown">
             <label for="Category">Category</label>
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" 
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownCat" 
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose one</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <button class="dropdown-item" name="category" type="button">Beef</button>
@@ -76,29 +76,17 @@
           </div>
         </div>
         <!-- DifficultyLevel -->
-        <div class="row">
-          <div class="input-field col s12" id="DifficultyLevel">
-            <label for="DifficultyLevel">Difficulty Level</label>
-            <input
-              name="DifficultyLevel"
-              type="radio"
-              class="validate"
-              required
-            />Beginner
-            <input
-              name="DifficultyLevel"
-              type="radio"
-              class="validate"
-              required
-            />Cook
-            <input
-              name="DifficultyLevel"
-              type="radio"
-              class="validate"
-              required
-            />Pro Chef
-          </div>
+         <div class="dropdown">
+            <label for="Category">Difficulty</label>
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownDiff" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose one</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" name="DifficultyLevel" type="button">Easy</button>
+                <button class="dropdown-item" name="DifficultyLevel" type="button">Tricky</button>
+                <button class="dropdown-item" name="DifficultyLevel" type="button">Hard</button>
+            </div>
         </div>
+       
         <!-- Serves -->
         <div class="row">
           <div class="input-field col s12">

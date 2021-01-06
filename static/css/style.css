@@ -6,9 +6,30 @@ body {
   font-family: 'Eczar' !;
   background-color: rgb(48, 230, 230);
   background-image: "{{ url_for('static', filename='./img/food.jpg') }}";
-  width: 100%;
+  width: auto;
 }
 
+.logo {
+    width: 200px;
+    height: 200px;
+    position: relative; 
+    border-radius: 10em;    
+}
+
+.bgimg-1 {
+    background-image: url("/static/img/foodbg.jpg");
+    position: relative;
+    width: auto;
+    
+}
+
+.bgimg-2{
+    background-image: url("/static/img/food.jpg");
+  background-attachment: relative;
+  background-position: center; 
+  background-size: contain;
+  padding: 50px;
+}
 
 h1,
 h2,
@@ -75,4 +96,9 @@ h6 {
     padding: 100px;
     margin: 100px;
     border-radius: 2em;
+}
+
+.footer {
+    width: auto;
+
 }
