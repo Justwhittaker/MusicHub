@@ -51,6 +51,28 @@ h6 {
 }
 
 .text_input {
-    border-radius: 1em;
+    border-radius: 10px;
     background: linear-gradient(21deg, #10abff, #cee9f1);
+    text-align: center;
+}
+
+.num_input {
+    border-radius: 10px;
+    background: linear-gradient(21deg, #10abff, #cee9f1);
+    text-align: center;
+    max-width:50px;
+}
+
+.login_box {
+    width: 50%;
+    border: 30px;
+    border-width: 3px;
+    border-style: solid;
+    text-align: center;
+    font-family:'SpicyRice';
+    font-size: x-large;
+    background: linear-gradient(21deg, #60c7ff, #cefcfd);
+    padding: 100px;
+    margin: 100px;
+    border-radius: 2em;
 }

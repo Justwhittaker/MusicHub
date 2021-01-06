@@ -293,6 +293,7 @@ I received inspiration and technical knowledge for this project from the followi
 1. Bootstrap <br>
 https://mdbootstrap.com/docs/standard/forms/input-fields/<br>
 https://getbootstrap.com/docs/4.3/components/card/<br>
+https://getbootstrap.com/docs/4.3/components/dropdowns/<br>
 https://www.w3schools.com/bootstrap/bootstrap_ref_css_images.asp
 
 2. MongoDB <br>

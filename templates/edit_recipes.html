@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {% extends 'base.html' %} {% block content %}
- <!--Create Form and basis for the uploading of files 
+  <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
   <h1 class="center-align">Edit your Recipes Here!!</h1>
 
@@ -9,7 +9,7 @@
     <form
       class="col s12 m8 offset-m2"
       method="PUT"
-     action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
+      action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
     >
       <div class="recipe_box card-panel">
         <!-- Recipe Name -->
@@ -22,7 +22,7 @@
               type="text"
               minlength="5"
               maxlength="30"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="RecipeName"
             />
@@ -39,9 +39,8 @@
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
-              class="text_input validate"
+              class="num_input validate"
               required
-              placeholder="PrepTime"
             />
           </div>
         </div>
@@ -56,9 +55,8 @@
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="CookingTime"
             />
           </div>
         </div>
@@ -95,9 +93,8 @@
               name="Serves"
               type="number"
               maxlength="1"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Serves"
             />
           </div>
         </div>
@@ -111,12 +108,12 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="Ingredient no.1"
             />
           </div>
-           <div class="input-field col s12">
+          <div class="input-field col s12">
             <label for="Qty1">Add Qty</label>
             <input
               id="Qty1"
@@ -124,12 +121,12 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Add Qty"
+              placeholder="Qty"
             />
           </div>
-          </div>
+        </div>
         <div class="row">
           <div class="input-field col s12">
             <label for="Ingredient2">Add Ingredient</label>
@@ -139,12 +136,12 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="Ingredient no.2"
             />
           </div>
-           <div class="input-field col s12">
+          <div class="input-field col s12">
             <label for="Qty2">Add Qty</label>
             <input
               id="Qty2"
@@ -152,9 +149,9 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Add Qty"
+              placeholder="Qty"
             />
           </div>
         </div>
@@ -167,12 +164,12 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="Ingredient no.3"
             />
           </div>
-           <div class="input-field col s12">
+          <div class="input-field col s12">
             <label for="Qty3">Add Qty</label>
             <input
               id="Qty3"
@@ -180,9 +177,9 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Add Qty"
+              placeholder="Qty"
             />
           </div>
         </div>
@@ -200,7 +197,7 @@
               type="text"
               minlength="5"
               maxlength="50"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="Instruction no.1"
             />
@@ -215,7 +212,7 @@
               type="text"
               minlength="5"
               maxlength="50"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="Instruction no.2"
             />
@@ -230,7 +227,7 @@
               type="text"
               minlength="5"
               maxlength="50"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="Instruction no.3"
             />
@@ -240,11 +237,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Upload <i class="fas fa-plus"></i>
-                    </button>
-                </div>
+
         <div class="container">
           <div class="row">
             <label>Upload Image</label>
@@ -257,13 +250,20 @@
                     name="image"
                     id="image"
                   />
-                  <label class="custom-file-label" for="image"
+                  <label class="text_input custom-file-label" for="image"
                     >Select image...</label
                   >
+                  <div class="row">
+                    <button type="submit" class="text_input">
+                      Upload <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <button type="submit" class="btn btn-primary">Edit Submit</button>
+              <div>
+                <button type="submit" class="text_input btn btn-primary">
+                  Edit Submit
+                </button>
               </div>
             </form>
           </div>
@@ -271,7 +271,6 @@
       </div>
     </form>
   </div>
-    
- 
+
   {% endblock %}
 </html>

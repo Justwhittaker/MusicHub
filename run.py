@@ -128,22 +128,6 @@ app.config["IMAGES"] = "/workspace/PRO3-RecipeCloud/static/img/uploads"
 app.config["ALLOWED_IMAGE"] = ["PNG", "JPG", "JPEG"]
 
 
-def allow_image(filename):
-
-    # We only want files with a . in the filename
-    if not "." in filename:
-        return False
-
-    # Split the extension from the filename
-    ext = filename.rsplit(".", 1)[1]
-
-    # Check if the extension is in ALLOWED_IMAGE_EXTENSIONS
-    if ext.upper() in app.config["ALLOWED_IMAGE"]:
-        return True
-    else:
-        return False
-
-
 @app.route("/input", methods=["GET", "POST"])
 def input():
     # POST recipe to recipes DB
@@ -168,23 +152,23 @@ def input():
 
 @app.route("/edit_recipes/<recipes_id>", methods=["GET", "PUT"])
 def edit_recipes(recipes_id):
+    # Update recipe to recipes DB
     if request.method == "PUT":
-        upload = {
-            "timestamp": datetime.datetime.now(),
-            "RecipeName": request.form.get("RecipeName"),
-            "PrepTime": request.form.get("PrepTime"),
-            "CookingTime": request.form.get("CookingTime"),
-            "DifficultyLevel": request.form.get("DifficultyLevel"),
-            "Serves": request.form.get("Serves"),
-            "Ingredient": request.form.getlist("Ingredient"),
-            "Add_ingredient": request.form.getlist("Ingredient"),
-            "Qty": request.form.get("Qty"),
-            "Instruction": request.form.getlist("Instruction"),
-            "created_by": session["user"],
-        }
-        mongo.db.tasks.update({"_id": ObjectId(recipes_id)}, upload)
+        upload = {'$set'
+                  "timestamp": datetime.datetime.now(),
+                  "RecipeName": request.form.get("RecipeName"),
+                  "PrepTime": request.form.get("PrepTime"),
+                  "CookingTime": request.form.get("CookingTime"),
+                  "DifficultyLevel": request.form.get("DifficultyLevel"),
+                  "Serves": request.form.get("Serves"),
+                  "Ingredient": request.form.getlist("Ingredient"),
+                  "Add_ingredient": request.form.getlist("Ingredient"),
+                  "Qty": request.form.get("Qty"),
+                  "Instruction": request.form.getlist("Instruction"),
+                  "created_by": session["user"],
+                  }
+        mongo.db.tasks.update_one({"_id": ObjectId(recipes_id)}, upload)
         flash("Task Successfully Updated")
-    # POST recipe to recipes DB
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     return render_template("edit_recipes.html", recipes=recipes)
 
@@ -196,6 +180,24 @@ def delete_recipes(recipes_id):
     recipes = mongo.db.recipes.find().sort("RecipeName", 1)
     flash("Recipe Successfully deleted!")
     return render_template("listings.html", recipes=recipes)
+
+
+
+def allow_image(filename):
+
+    # We only want files with a . in the filename
+    if not "." in filename:
+        return False
+
+    # Split the extension from the filename
+    ext = filename.rsplit(".", 1)[1]
+
+    # Check if the extension is in ALLOWED_IMAGE_EXTENSIONS
+    if ext.upper() in app.config["ALLOWED_IMAGE"]:
+        return True
+    else:
+        return False
+
 
    # if request.method == "POST":
 
