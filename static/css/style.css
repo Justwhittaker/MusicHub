@@ -5,7 +5,7 @@ body {
   font-family: "Eczar" !;
   background-color: #5ac5ff;
   background-image: "{{ url_for('static', filename='./img/food.jpg') }}";
-  width: auto;
+  width: 100%;
 }
 
 .logo {
@@ -46,6 +46,7 @@ h6 {
 .recipe_card {
   width: 100%;
   margin: 30px;
+  margin-top: 70px;
   border: 30px;
   border-width: 3px;
   border-style: solid;
@@ -59,18 +60,28 @@ h6 {
   border-radius: 10px;
 }
 
+.card_img {
+    max-width: 15em;
+    max-height: 15em;
+    border-radius: 10px;
+    background-size: cover;
+}
+
 .recipe_box {
-  width: 100%;
+  width: 80%;
   border: 30px;
   border-width: 3px;
   border-style: solid;
-  text-align: center;
-  display: relative;
+  text-align: left;
+  display: block;
+  -moz-box-align: center;
   font-family: "SpicyRice";
   font-size: x-large;
-  background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+  background-size: cover;
+  background-image: url("/static/img/bg.jpg");
   padding: 50px;
-  border-radius: 2em;
+  border-radius: 10px;
+  margin: 50px;
 }
 
 .input {
@@ -147,8 +158,7 @@ h6 {
 }
 
 .footer {
-  margin: 0px;
-  padding: 5%;
+  padding: 5px;
   min-width: 100%;
   max-width: 100%;
   background: #ffffff;

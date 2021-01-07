@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   {% extends 'base.html' %} {% block content %}
- <!--Create Form and basis for the uploading of files 
+  <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
-  <h1 class="center-align">Add your Recipes Here!!</h1>
 
-  <div id="inputForm"class="recipe_box row">
+  <div id="inputForm" class="row">
     <form
       class="col s12 m8 offset-m2"
       method="POST"
       action="{{ url_for('input') }}"
     >
-      <div class="card-panel">
+      <div class="recipe_box card-panel">
+        <h1 class="center-align">Add your Recipes Here!!</h1>
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
@@ -22,26 +22,48 @@
               type="text"
               minlength="5"
               maxlength="30"
-              class="validate"
+              class="text_input validate"
               required
               placeholder="RecipeName"
             />
           </div>
         </div>
-          <!-- Categories -->
+        <!-- Categories -->
         <div class="dropdown">
-            <label for="Category">Category</label>
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" 
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose one</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" name="category" type="button">Beef</button>
-                <button class="dropdown-item" name="category" type="button">Poultry</button>
-                <button class="dropdown-item" name="category" type="button">Fish</button>
-                <button class="dropdown-item" name="category" type="button">Pork</button>
-                <button class="dropdown-item" name="category" type="button">Vegatarian</button>
-                <button class="dropdown-item" name="category" type="button">Sauces</button>
-                <button class="dropdown-item" name="category" type="button">Dessert</button>
-            </div>
+          <label for="Category">Category</label>
+          <button
+            class="btn btn-info dropdown-toggle"
+            type="button"
+            id="dropdownCat"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Choose one
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" name="category" type="button">
+              Beef
+            </button>
+            <button class="dropdown-item" name="category" type="button">
+              Poultry
+            </button>
+            <button class="dropdown-item" name="category" type="button">
+              Fish
+            </button>
+            <button class="dropdown-item" name="category" type="button">
+              Pork
+            </button>
+            <button class="dropdown-item" name="category" type="button">
+              Vegatarian
+            </button>
+            <button class="dropdown-item" name="category" type="button">
+              Sauces
+            </button>
+            <button class="dropdown-item" name="category" type="button">
+              Dessert
+            </button>
+          </div>
         </div>
         <!-- Prep Time -->
         <div class="row">
@@ -54,9 +76,8 @@
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="PrepTime"
             />
           </div>
         </div>
@@ -71,43 +92,37 @@
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="CookingTime"
             />
           </div>
         </div>
         <!-- DifficultyLevel -->
-        <div class="row">
-          <div class="input-field col s12" id="DifficultyLevel">
-            <label for="DifficultyLevel">Difficulty Level</label>
-             <!-- match the following on button and post beginner in DB instead of "ON" -->
-            <input
-              id="beginner"
-              name="DifficultyLevel"
-              id="DifficultyLevel"
-              type="radio"
-              class="validate"
-              required
-            />Beginner
-           <!-- match the following on button and post cook in DB instead of "ON" -->
-            <input
-              name="DifficultyLevel"
-              id="cook"
-              type="radio"
-              class="validate"
-              required
-            />Cook
-             <!-- match the following on button and post prochef in DB instead of "ON" -->
-            <input
-              id="pro_chef"
-              name="DifficultyLevel"
-              type="radio"
-              class="validate"
-              required
-            />Pro Chef
+        <div class="dropdown">
+          <label for="Category">Difficulty</label>
+          <button
+            class="btn btn-info dropdown-toggle"
+            type="button"
+            id="dropdownDiff"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Choose one
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" name="DifficultyLevel" type="button">
+              Easy
+            </button>
+            <button class="dropdown-item" name="DifficultyLevel" type="button">
+              Tricky
+            </button>
+            <button class="dropdown-item" name="DifficultyLevel" type="button">
+              Hard
+            </button>
           </div>
         </div>
+
         <!-- Serves -->
         <div class="row">
           <div class="input-field col s12">
@@ -117,9 +132,8 @@
               name="Serves"
               type="number"
               maxlength="1"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Serves"
             />
           </div>
         </div>
@@ -131,48 +145,23 @@
               name="Ingredient"
               type="text"
               minlength="2"
-              maxlength="45"
-              class="Ingredient validate"
+              maxlength="30"
+              class="text_input validate"
               required
               placeholder="Ingredient no.1"
             />
           </div>
-           <div class="input-field col s12">
-            <label for="Qty">Add Qty</label>
-            <input
-              name="Qty"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="validate"
-              required
-              placeholder="Add Qty"
-            />
-          </div>
-          </div>
-        <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
-            <input
-              name="Ingredient"
-              type="text"
-              minlength="2"
-              maxlength="45"
-              class="Ingredient validate"
-              required
-              placeholder="Ingredient no.2"
-            />
-          </div>
-           <div class="input-field col s12">
             <label for="Qty">Add Qty</label>
             <input
-              name="Qty"
+              id="Qty1"
+              name="Qty1"
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Add Qty"
+              placeholder="Qty"
             />
           </div>
         </div>
@@ -180,17 +169,43 @@
           <div class="input-field col s12">
             <label for="Ingredient">Add Ingredient</label>
             <input
-              
               name="Ingredient"
               type="text"
               minlength="2"
-              maxlength="45"
-              class="Ingredient validate"
+              maxlength="30"
+              class="text_input validate"
+              required
+              placeholder="Ingredient no.2"
+            />
+          </div>
+          <div class="input-field col s12">
+            <label for="Qty2">Add Qty</label>
+            <input
+              id="Qty2"
+              name="Qty2"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="num_input validate"
+              required
+              placeholder="Qty"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Ingredient">Add Ingredient</label>
+            <input
+              name="Ingredient"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="text_input validate"
               required
               placeholder="Ingredient no.3"
             />
           </div>
-           <div class="input-field col s12">
+          <div class="input-field col s12">
             <label for="Qty3">Add Qty</label>
             <input
               id="Qty3"
@@ -198,26 +213,20 @@
               type="text"
               minlength="2"
               maxlength="30"
-              class="validate"
+              class="num_input validate"
               required
-              placeholder="Add Qty"
+              placeholder="Qty"
             />
           </div>
         </div>
         <!-- add Ingredients field-->
         <div>
-          <button for="Add_ingredient">+ Ingredient field</button>
           <input
-              name="Add_ingredient"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="validate"
-              required
-              placeholder="Add ingredient"
-            />
-          </div>
-          
+            type="button"
+            id="myButton"
+            name="answer"
+            value="+ Ingredient field "
+          />
         </div>
         <!-- Instruction -->
         <div class="row">
@@ -227,8 +236,8 @@
               name="Instruction"
               type="text"
               minlength="5"
-              maxlength="120"
-              class="validate"
+              maxlength="50"
+              class="text_input validate"
               required
               placeholder="Instruction no.1"
             />
@@ -241,8 +250,8 @@
               name="Instruction"
               type="text"
               minlength="5"
-              maxlength="120"
-              class="validate"
+              maxlength="50"
+              class="text_input validate"
               required
               placeholder="Instruction no.2"
             />
@@ -255,72 +264,62 @@
               name="Instruction"
               type="text"
               minlength="5"
-              maxlength="120"
-              class="validate"
+              maxlength="50"
+              class="text_input validate"
               required
               placeholder="Instruction no.3"
             />
             <!-- add Ingredients field-->
             <div>
-              <button class="instruction_field">+ Instruction field</button>
+              <button>+ Instruction field</button>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="upload_pic">Upload Image URL</label>
+                <input
+                  id="upload_pic"
+                  name="upload_pic"
+                  type="text"
+                  minlength="5"
+                  maxlength="150"
+                  class="text_input validate"
+                  required
+                  placeholder="Add a link to your image here"
+                />
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="text_input btn btn-primary">
+                Submit
+              </button>
             </div>
           </div>
         </div>
-        <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Upload <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-        <div class="container">
-          <div class="row">
-            <label>Upload Image</label>
-            <form action="/input" method="POST" enctype="multipart/form-data">
-              <div class="form-group">
-                <div class="custom-file">
-                  <input
-                    type="file"
-                    class="custom-file-input"
-                    name="image"
-                    id="image"
-                  />
-                  <label class="custom-file-label" for="image"
-                    >Select image...</label
-                  >
-                </div>
-              </div>
-              <div>
-                <button type="submit" class="btn btn-primary">Upload</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </form>
- 
-    
-
-    <!-- Upload video files--> 
-    <div class="container">
-      <div class="row">
-        <h2>Upload Video</h2>
-        <form action="/input" method="POST" enctype="multipart/form-data">
-          <div class="form-group">
-            <div class="custom-file">
-              <input
-                type="file"
-                class="custom-file-input"
-                name="video"
-                id="video"
-              />
-              <label class="custom-file-label" for="image"
-                >Select Video...</label
-              >
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Upload</button>
-        </form>
       </div>
+    </form>
+  </div>
+
+  <!-- Upload video files
+  <div class="container">
+    <div class="row">
+      <h2>Upload Video</h2>
+      <form action="/input" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              name="video"
+              id="video"
+            />
+            <label class="custom-file-label" for="image">Select Video...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
     </div>
-  
+  </div> -->
+
   {% endblock %}
 </html>

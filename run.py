@@ -160,6 +160,7 @@ def input():
             "Add_ingredient": request.form.getlist("Ingredient"),
             "Qty": request.form.get("Qty"),
             "Instruction": request.form.getlist("Instruction"),
+            "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(upload)

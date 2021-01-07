@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   {% extends "base.html" %} {% block content %}
-  <div class="row">
-    <div>
-      <div>
-        {% for recipes in recipes %}
-        <img src="..." class="card-img-top" alt="..." />
+  <div class="container">
+    <div class="row">
+      {% for recipes in recipes %}
+      <div class="col-sm-6 col-md-4 col-lg-4">
         <div class="card-body recipe_card">
+          <img src="{{ recipes.upload_pic}}" class="card_img card-img-top" alt="Card image cap" />
+
           <h5 class="card-title">{{ recipes.RecipeName }}</h5>
-            <h5 class="card-title">{{ recipes._id }}</h5>
+          <h5 class="card-title">{{ recipes.created_by }}</h5>
 
           <p class="card-text">
-            Prep Time &nbsp;&nbsp;{{ recipes.PrepTime }} &nbsp;&nbsp; 
-            Cooking Time&nbsp;&nbsp;{{recipes.CookingTime }}<br />
-            Difficulty &nbsp;&nbsp;{{ recipes.DifficultyLevel }} &nbsp;&nbsp; 
+            Prep Time &nbsp;&nbsp;{{ recipes.PrepTime }} &nbsp;&nbsp; Cooking
+            Time&nbsp;&nbsp;{{recipes.CookingTime }}<br />
+            Difficulty &nbsp;&nbsp;{{ recipes.DifficultyLevel }} &nbsp;&nbsp;
             Serves &nbsp;&nbsp;{{recipes.Serves }}<br />
             Ingredients <br />
-            - {{recipes.Ingredient1 }} &nbsp;&nbsp; 
-             &nbsp;&nbsp;{{recipes.Qty1 }}<br />
-            - {{recipes.Ingredient2 }} &nbsp;&nbsp; 
-             &nbsp;&nbsp;{{recipes.Qty2 }}<br />
-            - {{recipes.Ingredient3 }} &nbsp;&nbsp; 
-             &nbsp;&nbsp;{{recipes.Qty3 }}<br />
+            - {{recipes.Ingredient1 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty1
+            }}<br />
+            - {{recipes.Ingredient2 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty2
+            }}<br />
+            - {{recipes.Ingredient3 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty3
+            }}<br />
             Instructions <br />
-            &nbsp;- {{recipes.Instruction1 }} <br /> 
-            &nbsp;- {{recipes.Instruction2 }} <br /> 
-            &nbsp;- {{recipes.Instruction3 }} <br /> 
+            &nbsp;- {{recipes.Instruction }} <br />
+            &nbsp;- {{recipes.Instruction2 }} <br />
+            &nbsp;- {{recipes.Instruction3 }} <br />
             <br />
           </p>
-         
-          <a href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}" class="btn btn-warning">Edit</a>
-           <a href="{{ url_for('delete_recipes',recipes_id=recipes._id) }}" class="btn btn-danger">Delete</a>
+
+          <a
+            href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}"
+            class="btn btn-warning"
+            >Edit</a
+          >
+          <a
+            href="{{ url_for('delete_recipes',recipes_id=recipes._id) }}"
+            class="btn btn-danger"
+            >Delete</a
+          >
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
 
-  {% endblock %}
+  {% endfor %} {% endblock %}
 </html>
