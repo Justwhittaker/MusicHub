@@ -221,7 +221,7 @@
           <input
             type="button"
             id="myButton"
-            name="answer"
+            name="Ingredient"
             value="+ Ingredient field "
           />
         </div>
@@ -266,10 +266,16 @@
               required
               placeholder="Instruction no.3"
             />
-            <!-- add Ingredients field-->
+            <!-- add Instruction field-->
             <div>
-              <button>+ Instruction field</button>
+              <input
+                type="button"
+                id="myButton2"
+                name="Instruction"
+                value="+ Instruction field "
+              />
             </div>
+            <!-- Image -->
             <div class="row">
               <div class="input-field col s12">
                 <label for="upload_pic">Upload Image URL</label>
@@ -295,5 +301,5 @@
       </div>
     </form>
   </div>
-{% endblock %}
+  {% endblock %}
 </html>

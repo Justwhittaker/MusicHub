@@ -156,6 +156,7 @@ def listings():
                            recipes=recipe_page, pagination=pagination)
 
 
+# Input is the Create id for the DB
 @app.route("/input", methods=["GET", "POST"])
 def input():
     # POST recipe to recipes DB
@@ -179,6 +180,7 @@ def input():
     return render_template("input.html")
 
 
+# Edit Recipes for id's in DB
 @app.route("/edit_recipes/<recipes_id>", methods=["GET", "PUT"])
 def edit_recipes(recipes_id):
     # Update recipe to recipes DB
@@ -202,7 +204,7 @@ def edit_recipes(recipes_id):
     return render_template("edit_recipes.html", recipes=recipes)
 
 
-# Delete Recipes
+# Delete Recipes in DB
 @app.route("/delete_recipes/<recipes_id>", methods=["GET"])
 def delete_recipes(recipes_id):
     # Delete recipe to recipes DB

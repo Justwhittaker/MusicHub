@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- linking CSS , font awesome and bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
@@ -22,7 +23,7 @@
       href="{{ url_for('static', filename='/css/style.css') }}"
       type="text/css"
     />
-
+<!-- linking Jquery and js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
@@ -34,7 +35,9 @@
 
     <title>Recipe Cloud</title>
   </head>
-
+<!-- nav bar 
+displaying pre-login access and post-login access
+collaspable for mobile -->
   <nav
     class="navbar navbar-expand-lg navbar-light bg-light"
     style="font: 1.5em SpicyRice;"
@@ -65,6 +68,7 @@
             <a class="nav-link" href="{{ url_for('about') }}">About</a>
           </li>
           {% if session.user %}
+          <!-- in session user -->
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('listings') }}"
               >Recipe Lists</a
@@ -77,6 +81,7 @@
             <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
           </li>
           {% else %}
+          <!-- out of session user -->
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('register') }}">Register</a>
           </li>
