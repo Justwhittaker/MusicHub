@@ -1,32 +1,30 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Eczar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
 
 body {
-  font-family: 'Eczar' !;
-  background-color:#5ac5ff;
+  font-family: "Eczar" !;
+  background-color: #5ac5ff;
   background-image: "{{ url_for('static', filename='./img/food.jpg') }}";
   width: auto;
 }
 
 .logo {
-    width: 200px;
-    height: 200px;
-    position: relative; 
-    border-radius: 10em;    
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 10em;
 }
 
 .bgimg-1 {
-    background-image: url("/static/img/foodbg.jpg");
-    position: relative;
-    width: auto;
-    
+  background-image: url("/static/img/foodbg.jpg");
+  position: relative;
+  width: auto;
 }
 
-.bgimg-2{
-    background-image: url("/static/img/bg3.png");
+.bgimg-2 {
+  background-image: url("/static/img/bg3.png");
   background-attachment: relative;
-  background-position: center; 
+  background-position: center;
   background-size: cover;
   padding: 50px;
   background-clip: padding-box;
@@ -38,127 +36,127 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Eczar';
+  font-family: "Eczar";
 }
 
 #recipe_cloud {
-    width: 100%;
-    
+  width: 100%;
 }
 
 .recipe_card {
-      width: 100%;
-      margin: 30px;
-    border: 30px;
-    border-width: 3px;
-    border-style: solid;
-    text-align: left;
-    display: relative;
-    background-position: center; 
-    background-size: cover;
-    font-family:'SpicyRice';
-    background-image: url("/static/img/bg2flip.png");
-    padding: 20px;
-    border-radius: 10px;
+  width: 100%;
+  margin: 30px;
+  border: 30px;
+  border-width: 3px;
+  border-style: solid;
+  text-align: left;
+  display: relative;
+  background-position: center;
+  background-size: cover;
+  font-family: "SpicyRice";
+  background-image: url("/static/img/bg2flip.png");
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .recipe_box {
-    width: 100%;
-    border: 30px;
-    border-width: 3px;
-    border-style: solid;
-    text-align: center;
-    display: relative;
-    font-family:'SpicyRice';
-    font-size: x-large;
-    background: linear-gradient(21deg,#5ac5ff, #c1d2ff);
-    padding: 50px;
-    border-radius: 2em;
-
+  width: 100%;
+  border: 30px;
+  border-width: 3px;
+  border-style: solid;
+  text-align: center;
+  display: relative;
+  font-family: "SpicyRice";
+  font-size: x-large;
+  background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+  padding: 50px;
+  border-radius: 2em;
 }
 
-.input{
-  display:block;
+.input {
+  display: block;
 }
 
 .text_input {
-    border-radius: 10px;
-    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
-    text-align: center;
-    box-align: center;
-    margin: 10px;
+  border-radius: 10px;
+  background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+  text-align: center;
+  box-align: center;
+  margin: 10px;
 }
 
 .log_but {
-     border-radius: 10px;
-    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
-    text-align: center;
-    float: right;
-    margin: 10px;
+  border-radius: 10px;
+  background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+  text-align: center;
+  float: right;
+  margin: 10px;
 }
 
 .num_input {
-    border-radius: 10px;
-    background: linear-gradient(21deg,#5ac5ff, #c1d2ff);
-    text-align: center;
-    max-width:50px;
+  border-radius: 10px;
+  background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+  text-align: center;
+  max-width: 50px;
 }
 
 .login_box {
-    width: 50%;
-    border: 30px;
-    border-width: 3px;
-    border-style: solid;
-    text-align: center;
-    font-family:'SpicyRice';
-    font-size: x-large;
-    background-image: url("/static/img/bg3.png");
-    padding: 100px;
-    margin: 100px;
-    border-radius: 2em;
+  width: 50%;
+  border: 30px;
+  border-width: 3px;
+  border-style: solid;
+  text-align: center;
+  font-family: "SpicyRice";
+  font-size: x-large;
+  background-image: url("/static/img/bg3.png");
+  padding: 100px;
+  margin: 100px;
+  border-radius: 2em;
 }
 
 .private_pol {
-    width: 100%;
-    border: 30px;
-    position: center;
-    border-width: 3px;
-    border-style: solid;
-    text-align: left;
-    display: inline-block;
-    font-family:'SpicyRice';
-    font-size: x-large;
-    background: linear-gradient(21deg,#82cef7, #d6e1ff);
-    padding: 50px;
-    border-radius: 2em;
+  width: 100%;
+  border: 30px;
+  position: center;
+  border-width: 3px;
+  border-style: solid;
+  text-align: left;
+  display: inline-block;
+  font-family: "SpicyRice";
+  font-size: x-large;
+  background: linear-gradient(21deg, #82cef7, #d6e1ff);
+  padding: 50px;
+  border-radius: 2em;
 }
 
 .faq {
-    background-image: url("/static/img/bg2flip.png");
-    width: 100%;
-    border: 30px;
-    position: center;
-    border-width: 3px;
-    border-style: solid;
-    text-align: left;
-    display: inline-block;
-    font-family:'SpicyRice';
-    font-size: x-large;
-    padding: 50px;
-    border-radius: 2em;
+  background-image: url("/static/img/bg2flip.png");
+  background-size: cover;
+  width: 100%;
+  border: 30px;
+  position: center;
+  border-width: 3px;
+  border-style: solid;
+  text-align: left;
+  display: inline-block;
+  font-family: "SpicyRice";
+  font-size: x-large;
+  padding: 50px;
+  border-radius: 2em;
+  margin: 10px;
 }
 
 .footer {
-        margin:0px;
-        padding:5%;
-        min-width:100%;
-        max-width:100%;
-        background:#ffffff;
-        height:auto;
-        text-align: center;
+  margin: 0px;
+  padding: 5%;
+  min-width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  height: auto;
+  text-align: center;
 }
 
 #copyright {
-    background-color: rgba(63, 143, 228, 0.966);
-    padding: 5%;
+  background-color: rgba(63, 143, 228, 0.966);
+  padding: 5%;
 }
