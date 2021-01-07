@@ -24,11 +24,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home page - Search bar and all recipes shorthand discription
 @app.route('/')
 def index():
+    # recipes on the page to show 3
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
     recipes = mongo.db.recipes.find().sort("timestamp", -1)
+    # pagination for users to flip through different recipes
     pagination = Pagination(page=page, total=recipes.count(),
                             per_page=per_page,
                             search=False, record_name='recipes',
@@ -38,12 +41,14 @@ def index():
                            recipes=recipe_page, pagination=pagination)
 
 
-@app.route("/get_recipes")
+# Read individual recipe ingredients
+@app.route("/get_recipes", methods=["GET"])
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("index.html", recipes=recipes)
+    return render_template("get_recipes.html", recipes=recipes)
 
 
+# search query
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -51,6 +56,7 @@ def search():
     return render_template("index.html", recipes=recipes)
 
 
+# User registration
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -61,7 +67,7 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-
+        # Register user info
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
@@ -75,6 +81,7 @@ def register():
     return render_template("register.html")
 
 
+# User Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -113,6 +120,7 @@ def profile(username):
         return redirect(url_for("login"))
 
 
+# User Logout
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -121,15 +129,16 @@ def logout():
     return redirect(url_for("index"))
 
 
+# About - introduction and quick explaination for CRUD ops
 @app.route('/about')
 def about():
     # about section with how to index and FAQ
     return render_template("about.html")
 
 
+# Privacy policy
 @app.route('/privacy')
 def privacy():
-    # about section with how to index and FAQ
     return render_template("privacy_policy.html")
 
 
@@ -145,10 +154,6 @@ def listings():
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
     return render_template("listings.html",
                            recipes=recipe_page, pagination=pagination)
-
-
-app.config["IMAGES"] = "/workspace/PRO3-RecipeCloud/static/img/uploads"
-app.config["ALLOWED_IMAGE"] = ["PNG", "JPG", "JPEG"]
 
 
 @app.route("/input", methods=["GET", "POST"])
@@ -197,6 +202,7 @@ def edit_recipes(recipes_id):
     return render_template("edit_recipes.html", recipes=recipes)
 
 
+# Delete Recipes
 @app.route("/delete_recipes/<recipes_id>", methods=["GET"])
 def delete_recipes(recipes_id):
     # Delete recipe to recipes DB

@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% extends "base.html" %} {% block content %}
-  <div class="row">
-    <div>
-      <div>
-        {% for recipes in recipes %}
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body recipe_card">
-          <h5 class="card-title">{{ recipes.RecipeName }}</h5>
-          <h5 class="card-title">{{ recipes._id }}</h5>
+          {% extends "base.html" %} {% block content %}
 
-          <p class="card-text">
-            Prep Time &nbsp;&nbsp;{{ recipes.PrepTime }} &nbsp;&nbsp; Cooking
-            Time&nbsp;&nbsp;{{recipes.CookingTime }}<br />
-            Difficulty &nbsp;&nbsp;{{ recipes.DifficultyLevel }} &nbsp;&nbsp;
-            Serves &nbsp;&nbsp;{{recipes.Serves }}<br />
-            Ingredients <br />
-            - {{recipes.Ingredient1 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty1
-            }}<br />
-            - {{recipes.Ingredient2 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty2
-            }}<br />
-            - {{recipes.Ingredient3 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty3
-            }}<br />
+          <!-- Background image -->
+  <div
+    id="recipe_cloud"
+    class="p-5 text-center bg-image"
+    style="height: 400px;"
+    src="{{ url_for('static', filename='./img/food.jpg') }}"
+  >
+    <div class="bgimg-2" style="background-color: rgba(70, 99, 226, 0.774);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <!-- Background image -->
+          <img
+            src="{{ url_for('static', filename='./img/logoCloud.png') }}"
+            class="logo"
+          />
+          <h1 class="mb-3">Profile</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Examples of Recipes on the site-->
+  <div class="container">
+    <div class="row">
+      {% for recipes in recipes %}
+
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="recipe_card">
+          <img
+            src="{{ recipes.upload_pic}}"
+            class="card_img card-img-top"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ recipes.RecipeName }}</h5>
+            <p class="card-text">
+              Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp; Cooking Time{{
+              recipes.CookingTime }}<br />
+              Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp; Serves {{
+              recipes.Serves }}
+               Ingredients <br />
+            <ul>
+                {% for Ingredient in recipes.Ingredient %}
+                <li>{{Ingredient}}</li>
+                {% endfor %}
+            </ul>
             Instructions <br />
-            &nbsp;- {{recipes.Instruction1 }} <br />
-            &nbsp;- {{recipes.Instruction2 }} <br />
-            &nbsp;- {{recipes.Instruction3 }} <br />
+            <ul>
+                {% for Instruction in recipes.Instruction %}
+                <li>{{Instruction}}</li>
+                {% endfor %}
+            </ul>
             <br />
           </p>
-
-          <a
+ <a
             href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}"
             class="btn btn-warning"
             >Edit</a
@@ -39,11 +65,12 @@
             class="btn btn-danger"
             >Delete</a
           >
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 
-  {% endblock %}
+ {% endblock %}
 </html>
