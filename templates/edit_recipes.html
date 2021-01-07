@@ -3,7 +3,6 @@
   {% extends 'base.html' %} {% block content %}
   <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
-  
 
   <div class="row">
     <form
@@ -12,7 +11,7 @@
       action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
     >
       <div class="recipe_box card-panel">
-          <h1 class="center-align">Edit your Recipes Here!!</h1>
+        <h1 class="center-align">Edit your Recipes Here!!</h1>
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
@@ -141,10 +140,9 @@
         <!-- Ingredients -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient1">Add Ingredient</label>
+            <label for="Ingredient">Add Ingredient</label>
             <input
-              id="Ingredient1"
-              name="Ingredient1"
+              name="Ingredient"
               type="text"
               minlength="2"
               maxlength="30"
@@ -154,7 +152,7 @@
             />
           </div>
           <div class="input-field col s12">
-            <label for="Qty1">Add Qty</label>
+            <label for="Qty">Add Qty</label>
             <input
               id="Qty1"
               name="Qty1"
@@ -169,10 +167,9 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient2">Add Ingredient</label>
+            <label for="Ingredient">Add Ingredient</label>
             <input
-              id="Ingredient2"
-              name="Ingredient2"
+              name="Ingredient"
               type="text"
               minlength="2"
               maxlength="30"
@@ -197,9 +194,8 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient3">Add Ingredient</label>
+            <label for="Ingredient">Add Ingredient</label>
             <input
-              id="Ingredient3"
               name="Ingredient"
               type="text"
               minlength="2"
@@ -235,10 +231,9 @@
         <!-- Instruction -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction1">Add Instructions</label>
+            <label for="Instruction">Add Instructions</label>
             <input
-              id="Instruction1"
-              name="Instruction1"
+              name="Instruction"
               type="text"
               minlength="5"
               maxlength="50"
@@ -250,10 +245,9 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction2">Add Instructions</label>
+            <label for="Instruction">Add Instructions</label>
             <input
-              id="Instruction2"
-              name="Instruction2"
+              name="Instruction"
               type="text"
               minlength="5"
               maxlength="50"
@@ -265,10 +259,9 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction3">Add Instructions</label>
+            <label for="Instruction">Add Instructions</label>
             <input
-              id="Instruction3"
-              name="Instruction3"
+              name="Instruction"
               type="text"
               minlength="5"
               maxlength="50"
@@ -280,37 +273,26 @@
             <div>
               <button>+ Instruction field</button>
             </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <label>Upload Image</label>
-            <form action="/input" method="POST" enctype="multipart/form-data">
-              <div class="form-group">
-                <div class="custom-file">
-                  <input
-                    type="file"
-                    class="custom-file-input"
-                    name="image"
-                    id="image"
-                  />
-                  <label class="text_input custom-file-label" for="image"
-                    >Select image...</label
-                  >
-                  <div class="row">
-                    <button type="submit" class="text_input">
-                      Upload <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="upload_pic">Upload Image URL</label>
+                <input
+                  id="upload_pic"
+                  name="upload_pic"
+                  type="text"
+                  minlength="5"
+                  maxlength="150"
+                  class="text_input validate"
+                  required
+                  placeholder="Add a link to your image here"
+                />
               </div>
-              <div>
-                <button type="submit" class="text_input btn btn-primary">
-                  Edit Submit
-                </button>
-              </div>
-            </form>
+            </div>
+            <div>
+              <button type="submit" class="text_input btn btn-primary">
+                Edit Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>

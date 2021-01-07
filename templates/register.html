@@ -1,54 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'base.html' %}
-{% block content %}
-<h1 class="center-align">Register</h1>
-<div id="registerForm"> 
+  {% extends 'base.html' %} {% block content %}
+  <h1 class="center-align">Register</h1>
+  <div id="registerForm">
     <div class="login_box row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
-                <h1 class="center-align">Register Now to add your recipes</h1>
-                <!-- username -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class=" text_input validate" required placeholder="Username">
-					</div>
-                </div>
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="email" name="email" type="email" minlength="5"
-                            maxlength="35" class=" text_input validate" required placeholder="yourEmail@server.com">
-					</div>
-                </div>
-                <!-- password -->
-                <div class="row">
-                    <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-                        <input id="password" name="password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class=" text_input validate" required placeholder="Password">
-                    </div>
-                </div>
-                <!-- register -->
-                <div class="row">
-                    <button type="submit" class="text_input">
-                        Register <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
+      <form
+        class="col s12 m8 offset-m2"
+        method="POST"
+        action="{{ url_for('register') }}"
+      >
+        <div class="card-panel">
+          <h1 class="center-align">Register Now to add your recipes</h1>
+          <!-- username -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i
+                class="fas fa-user-plus prefix light-blue-text text-darken-4"
+              ></i>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                minlength="5"
+                maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$"
+                class="text_input validate"
+                required
+                placeholder="Username"
+              />
             </div>
-            <div class="row">
-        <div class="col 12">
-            <p class="center-align">
-                Already Registered? <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Login Here</a>
-            </p>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i
+                class="fas fa-user-plus prefix light-blue-text text-darken-4"
+              ></i>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                minlength="5"
+                maxlength="35"
+                class="text_input validate"
+                required
+                placeholder="yourEmail@server.com"
+              />
+            </div>
+          </div>
+          <!-- password -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i
+                class="fas fa-user-lock prefix light-blue-text text-darken-4"
+              ></i>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                minlength="5"
+                maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$"
+                class="text_input validate"
+                required
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <!-- register -->
+          <div class="row">
+            <button type="submit" class="text_input">
+              Register <i class="fas fa-sign-in-alt"></i>
+            </button>
+          </div>
         </div>
+        <div class="row">
+          <div class="col 12">
+            <p class="center-align">
+              Already Registered?
+              <a
+                href="{{ url_for('login') }}"
+                class="light-blue-text text-darken-4"
+                >Login Here</a
+              >
+            </p>
+          </div>
+        </div>
+      </form>
     </div>
-        </form>
-    </div>
-</div>
-    
-    {% endblock %}
+  </div>
 
+  {% endblock %}
 </html>

@@ -6,7 +6,11 @@
       {% for recipes in recipes %}
       <div class="col-sm-6 col-md-4 col-lg-4">
         <div class="card-body recipe_card">
-          <img src="{{ recipes.upload_pic}}" class="card_img card-img-top" alt="Card image cap" />
+          <img
+            src="{{ recipes.upload_pic}}"
+            class="card_img card-img-top"
+            alt="Card image cap"
+          />
 
           <h5 class="card-title">{{ recipes.RecipeName }}</h5>
           <h5 class="card-title">{{ recipes.created_by }}</h5>

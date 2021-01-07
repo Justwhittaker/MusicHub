@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-{% extends "base.html" %} {% block content %}
+  {% extends "base.html" %} {% block content %}
   <div class="row">
     <div>
       <div>
@@ -9,29 +8,37 @@
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body recipe_card">
           <h5 class="card-title">{{ recipes.RecipeName }}</h5>
-            <h5 class="card-title">{{ recipes._id }}</h5>
+          <h5 class="card-title">{{ recipes._id }}</h5>
 
           <p class="card-text">
-            Prep Time &nbsp;&nbsp;{{ recipes.PrepTime }} &nbsp;&nbsp; 
-            Cooking Time&nbsp;&nbsp;{{recipes.CookingTime }}<br />
-            Difficulty &nbsp;&nbsp;{{ recipes.DifficultyLevel }} &nbsp;&nbsp; 
+            Prep Time &nbsp;&nbsp;{{ recipes.PrepTime }} &nbsp;&nbsp; Cooking
+            Time&nbsp;&nbsp;{{recipes.CookingTime }}<br />
+            Difficulty &nbsp;&nbsp;{{ recipes.DifficultyLevel }} &nbsp;&nbsp;
             Serves &nbsp;&nbsp;{{recipes.Serves }}<br />
             Ingredients <br />
-            - {{recipes.Ingredient1 }} &nbsp;&nbsp; 
-             &nbsp;&nbsp;{{recipes.Qty1 }}<br />
-            - {{recipes.Ingredient2 }} &nbsp;&nbsp; 
-             &nbsp;&nbsp;{{recipes.Qty2 }}<br />
-            - {{recipes.Ingredient3 }} &nbsp;&nbsp; 
-             &nbsp;&nbsp;{{recipes.Qty3 }}<br />
+            - {{recipes.Ingredient1 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty1
+            }}<br />
+            - {{recipes.Ingredient2 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty2
+            }}<br />
+            - {{recipes.Ingredient3 }} &nbsp;&nbsp; &nbsp;&nbsp;{{recipes.Qty3
+            }}<br />
             Instructions <br />
-            &nbsp;- {{recipes.Instruction1 }} <br /> 
-            &nbsp;- {{recipes.Instruction2 }} <br /> 
-            &nbsp;- {{recipes.Instruction3 }} <br /> 
+            &nbsp;- {{recipes.Instruction1 }} <br />
+            &nbsp;- {{recipes.Instruction2 }} <br />
+            &nbsp;- {{recipes.Instruction3 }} <br />
             <br />
           </p>
-         
-          <a href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}" class="btn btn-warning">Edit</a>
-           <a href="{{ url_for('delete_recipes',recipes_id=recipes._id) }}" class="btn btn-danger">Delete</a>
+
+          <a
+            href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}"
+            class="btn btn-warning"
+            >Edit</a
+          >
+          <a
+            href="{{ url_for('delete_recipes',recipes_id=recipes._id) }}"
+            class="btn btn-danger"
+            >Delete</a
+          >
         </div>
       </div>
     </div>
