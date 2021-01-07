@@ -1,11 +1,12 @@
 import os
 import datetime
+import favicon
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from tabulate import tabulate
-from flask_paginate import Pagination, get_page_args, get_page_parameter
+from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -162,7 +163,7 @@ def input():
             "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(upload)
-        flash("Recipe Successfully added!")
+        flash("Recipe Successfully added!" )
     return render_template("input.html")
 
 

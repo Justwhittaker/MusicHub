@@ -303,6 +303,7 @@ https://www.w3schools.com/python/python_mongodb_query.asp<br>
 https://docs.mongodb.com/manual/reference/bson-types/<br>
 https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d#9c71<br>
 https://www.w3schools.com/python/gloss_python_date.asp<br>
+https://www.codementor.io/@arpitbhayani/fast-and-efficient-pagination-in-mongodb-9095flbqr<br>
 
 
 3. Python research <br>
