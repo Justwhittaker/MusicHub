@@ -328,6 +328,7 @@ https://policymaker.io/privacy-policy-ready/ <br>
 * My mentor **Ignatius Ukwuoma** for his patience and kindness
 * **AudreyLL88** for her very inspiring ReadME
 * **Code Institute Slack community** for the technical and emotional support
+* **Code Institute Tutors** Cormac, Johann and Milkos were fantastic help
 * **Carl Lubbe**, for all the assistance and help with guidence and UX
 * **Alishia Whittaker**, for the Graphic design and stock images from Canva and your support through all my studies
 

@@ -135,9 +135,16 @@ def privacy():
 
 @app.route('/listings')
 def listings():
-    recipes = mongo.db.recipes.find().sort("RecipeName", 1)
-    return render_template("listings.html", recipes=recipes)
-    return render_template("listings.html")
+    per_page = 3
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    recipes = mongo.db.recipes.find().sort("timestamp", -1)
+    pagination = Pagination(page=page, total=recipes.count(),
+                            per_page=per_page,
+                            search=False, record_name='recipes',
+                            css_framework='bootstrap4', alignment='center')
+    recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+    return render_template("listings.html",
+                           recipes=recipe_page, pagination=pagination)
 
 
 app.config["IMAGES"] = "/workspace/PRO3-RecipeCloud/static/img/uploads"
