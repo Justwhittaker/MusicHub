@@ -61,10 +61,10 @@ h6 {
 }
 
 .card_img {
-    max-width: 15em;
-    max-height: 15em;
-    border-radius: 10px;
-    background-size: cover;
+  max-width: 15em;
+  max-height: 15em;
+  border-radius: 10px;
+  background-size: cover;
 }
 
 .recipe_box {

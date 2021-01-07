@@ -5,7 +5,6 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
-from tabulate import tabulate
 from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.utils import secure_filename
@@ -164,7 +163,7 @@ def input():
             "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(upload)
-        flash("Recipe Successfully added!" )
+        flash("Recipe Successfully added!")
     return render_template("input.html")
 
 
@@ -198,46 +197,6 @@ def delete_recipes(recipes_id):
     recipes = mongo.db.recipes.find().sort("RecipeName", 1)
     flash("Recipe Successfully deleted!")
     return render_template("listings.html", recipes=recipes)
-
-
-def allow_image(filename):
-
-    # We only want files with a . in the filename
-    if not "." in filename:
-        return False
-
-    # Split the extension from the filename
-    ext = filename.rsplit(".", 1)[1]
-
-    # Check if the extension is in ALLOWED_IMAGE_EXTENSIONS
-    if ext.upper() in app.config["ALLOWED_IMAGE"]:
-        return True
-    else:
-        return False
-
-   # if request.method == "POST":
-
-    # if request.files:
-    # image = request.files["image"]
-
-    # if image.filename == "":
-    #   print("Image needs a filename")
-    #  return redirect(request.url)
-
-    # if not allow_image(image.filename):
-    #  print("That file extension is not allowed")
-    #  return redirect(request.url)
-#
-    # else:
-    # filename = secure_filename(image.filename)
-
-    #  image.save(os.path.join(app.config["IMAGES"], filename))
-
-    # print("Saved Image")
-
-    # return redirect(request.url)
-
-   # return render_template("input.html")
 
 
 if __name__ == "__main__":
