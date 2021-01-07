@@ -83,6 +83,16 @@ h6 {
     border-radius: 10px;
     background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
     text-align: center;
+    box-align: center;
+    margin: 10px;
+}
+
+.log_but {
+     border-radius: 10px;
+    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+    text-align: center;
+    float: right;
+    margin: 10px;
 }
 
 .num_input {
@@ -100,7 +110,7 @@ h6 {
     text-align: center;
     font-family:'SpicyRice';
     font-size: x-large;
-    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+    background-image: url("/static/img/bg1.png");
     padding: 100px;
     margin: 100px;
     border-radius: 2em;
