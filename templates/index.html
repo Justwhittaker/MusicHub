@@ -50,17 +50,14 @@
                 <a href="#" class="btn btn-primary">Go to Recipe</a>
             </div>
             </div>
-            {% endfor %}
+           {% endfor %}
         </div>
     </div>
-    <ul class="pagination justify-content-center">
-  <li><a href="{{ url_for('index') }}">1</a></li>
-  <li><a href="{{ url_for('recipes_paginate', page_num=2) }}">2</a></li>
-  <li><a href="{{ url_for('recipes_paginate', page_num=3) }}">3</a></li>
-  <li><a href="{{ url_for('recipes_paginate', page_num=4) }}">4</a></li>
-  <li><a href="{{ url_for('recipes_paginate', page_num=5) }}">5</a></li>
-</ul>
 
+
+    {{ pagination.info }} {{ pagination.links }}
+    
+    
     <div class="row">
         <h2>Find Videos</h2>
     </div>
@@ -84,7 +81,7 @@
         ></iframe>
       </div>
     </div> -->
-
+    
     {% endblock %}
 
 </div></html>

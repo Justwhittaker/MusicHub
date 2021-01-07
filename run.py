@@ -5,7 +5,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from tabulate import tabulate
-from flask_paginate import Pagination, get_page_args
+from flask_paginate import Pagination, get_page_args, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -26,16 +26,16 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    recipes = mongo.db.recipes.find().sort("timestamp", -1).limit(3)
-    page_num = 1
-    return render_template("index.html", recipes=recipes, page_num = page_num)
-
-
-@app.route('/<page_num>')
-def recipes_paginate(page_num):
-    recipes = mongo.db.recipes.find().sort("timestamp", -1).skip(3).limit(3)
-    page_num = 2
-    return render_template('index.html', recipes = recipes, page_num=page_num)
+    per_page = 3
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    recipes = mongo.db.recipes.find().sort("timestamp", -1)
+    pagination = Pagination(page=page, total=recipes.count(),
+                            per_page=per_page,
+                            search=False, record_name='recipes',
+                            css_framework='bootstrap4', alignment='center')
+    recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+    return render_template("index.html",
+                           recipes=recipe_page, pagination=pagination)
 
 
 @app.route("/get_recipes")
