@@ -54,8 +54,10 @@ h6 {
     border-style: solid;
     text-align: left;
     display: relative;
+    background-position: center; 
+    background-size: cover;
     font-family:'SpicyRice';
-    background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
+    background-image: url("/static/img/bg2flip.png");
     padding: 20px;
     border-radius: 10px;
 }
@@ -110,7 +112,7 @@ h6 {
     text-align: center;
     font-family:'SpicyRice';
     font-size: x-large;
-    background-image: url("/static/img/bg1.png");
+    background-image: url("/static/img/bg3.png");
     padding: 100px;
     margin: 100px;
     border-radius: 2em;
@@ -126,7 +128,22 @@ h6 {
     display: inline-block;
     font-family:'SpicyRice';
     font-size: x-large;
-    background: linear-gradient(21deg,#5ac5ff, #c1d2ff);
+    background: linear-gradient(21deg,#82cef7, #d6e1ff);
+    padding: 50px;
+    border-radius: 2em;
+}
+
+.faq {
+    background-image: url("/static/img/bg2flip.png");
+    width: 100%;
+    border: 30px;
+    position: center;
+    border-width: 3px;
+    border-style: solid;
+    text-align: left;
+    display: inline-block;
+    font-family:'SpicyRice';
+    font-size: x-large;
     padding: 50px;
     border-radius: 2em;
 }
