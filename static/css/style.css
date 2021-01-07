@@ -24,7 +24,7 @@ body {
 }
 
 .bgimg-2{
-    background-image: url("/static/img/food.jpg");
+    background-image: url("/static/img/bg3.png");
   background-attachment: relative;
   background-position: center; 
   background-size: cover;
@@ -73,6 +73,10 @@ h6 {
     padding: 50px;
     border-radius: 2em;
 
+}
+
+.input{
+  display:block;
 }
 
 .text_input {
