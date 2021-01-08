@@ -1,22 +1,38 @@
 $(document).ready(function() {
-$('.dropdown-toggle').dropdown();
-});
-
-$(document).ready(function() {
-$('#dropdownCat').dropdown();
-});
-
-$(document).ready(function() {
-  $("#myButton").click(function() {
-    $("#myButton").after('<input type="text" id="textInput" value="">');
+  $("#add-ingredient-button").click(function() {
+    $("#new-ingredients").append(`<div class="row">
+          <div class="input-field col s12">
+            <label for="Ingredient">Edit Ingredient</label>
+            <input
+              name="Ingredient"
+              type="text"
+              minlength="2"
+              maxlength="30"
+              class="text_input validate"
+              required
+              placeholder="Ingredient"
+            />
+          </div>
+        </div>`);
   });
 });
 
 $(document).ready(function() {
-  $("#myButton2").click(function() {
-    $("#myButton2").after('<input type="text" id="textInput" value="">');
+  $("#add-instruction-button").click(function() {
+    $("#new-instructions").append(`<div class="row">
+          <div class="input-field col s12">
+            <label for="Instruction">Add Instructions</label>
+            <input
+              name="Instruction"
+              type="text"
+              minlength="5"
+              maxlength="50"
+              class="text_input validate"
+              required
+              placeholder="Instruction no.1"
+            />
+          </div>
+        </div>`);
   });
 });
-
-$(document).ready(mainMenu);
 

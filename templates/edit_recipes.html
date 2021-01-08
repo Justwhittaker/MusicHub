@@ -4,25 +4,18 @@
   <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
 
-  <div class="row">
-   <form
+  <div id="inputForm" class="row">
+    <form
       class="col s12 m8 offset-m2"
-      method="POST"
-      action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
+      method="PUT"
+      action="{{ url_for('input') }}"
     >
       <div class="recipe_box card-panel">
         <h1 class="center-align">Edit your Recipes Here!!</h1>
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
-            {% for recipes in recipes %} {% if recipes.RecipeName == recipes._id
-            %}
-            <option value="{{ recipes._id }}" selected
-              >{{ recipes.RecipeName }}</option
-            >
-            {% else %}
-            <option value="{{ recipes._id }}">{{ recipes.RecipeName }}</option>
-            {% endif %} {% endfor %}
+            <label for="RecipeName">Recipe Name</label>
             <input
               id="RecipeName"
               name="RecipeName"
@@ -30,51 +23,29 @@
               minlength="5"
               maxlength="30"
               class="text_input validate"
-              value="{{ recipes.RecipeName }}"
+              required
               placeholder="RecipeName"
+              value="{{ recipe.RecipeName }}"
             />
+            <input id="recipe_id" value="{{ recipe._id }}">
           </div>
         </div>
-        
         <!-- Categories -->
-        <div class="dropdown">
-          <label for="Category">Category</label>
-          <button
-            class="btn btn-info dropdown-toggle"
-            type="button"
-            id="dropdownCat"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Choose one
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" name="category" type="button">
-              Beef
-            </button>
-            <button class="dropdown-item" name="category" type="button">
-              Poultry
-            </button>
-            <button class="dropdown-item" name="category" type="button">
-              Fish
-            </button>
-            <button class="dropdown-item" name="category" type="button">
-              Pork
-            </button>
-            <button class="dropdown-item" name="category" type="button">
-              Vegatarian
-            </button>
-            <button class="dropdown-item" name="category" type="button">
-              Sauces
-            </button>
-            <button class="dropdown-item" name="category" type="button">
-              Dessert
-            </button>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Category">Category</label>
+            <select>
+              <option></option>
+              <option>Beef</option>
+              <option>Poultry</option>
+              <option>Fish</option>
+              <option>Pork</option>
+              <option>Vegatarian</option>
+              <option>Sauces</option>
+              <option>Dessert</option>
+            </select>
           </div>
         </div>
-
-        
         <!-- Prep Time -->
         <div class="row">
           <div class="input-field col s12">
@@ -86,13 +57,12 @@
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
-              value="{{ recipes.PrepTime }}"
               class="num_input validate"
+              required
+              value="{{ recipe.PrepTime }}"
             />
           </div>
         </div>
-
-        
         <!-- Cooking Time -->
         <div class="row">
           <div class="input-field col s12">
@@ -104,37 +74,21 @@
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
-              value="{{ recipes.CookingTime }}"
               class="num_input validate"
+              required
             />
           </div>
         </div>
         <!-- DifficultyLevel -->
-        <div class="dropdown">
-          <label for="Category">Difficulty</label>
-          <button
-            class="btn btn-info dropdown-toggle"
-            type="button"
-            id="dropdownDiff"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Choose one
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" name="DifficultyLevel" type="button">
-              Easy
-            </button>
-            <button class="dropdown-item" name="DifficultyLevel" type="button">
-              Tricky
-            </button>
-            <button class="dropdown-item" name="DifficultyLevel" type="button">
-              Hard
-            </button>
-          </div>
+        <div class="row">
+          <label for="Difficulty">Difficulty</label>
+          <select>
+            <option></option>
+            <option>Easy</option>
+            <option>Tricky</option>
+            <option>Hard</option>
+          </select>
         </div>
-
         <!-- Serves -->
         <div class="row">
           <div class="input-field col s12">
@@ -145,105 +99,106 @@
               type="number"
               maxlength="1"
               class="num_input validate"
-              value="{{ recipes.Serves }}"
+              required
             />
           </div>
         </div>
-
-       <!-- Ingredients -->
+        <!-- Ingredients -->
+        {% for Ingredient in recipe.Ingredient %}
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient">Edit Ingredients</label><br />
-            {% for Ingredient in recipes.Ingredient %}
+            <label for="Ingredient">Edit Ingredient</label>
             <input
-              name="ingredient-{{loop.index}}"
+              name="Ingredient"
               type="text"
               minlength="2"
               maxlength="30"
               class="text_input validate"
+              required
+              placeholder="Ingredient"
               value="{{Ingredient}}"
-            />{{Ingredient}} {% endfor %}
+            />
           </div>
 
-          <!-- add QTY field-->
+          <!-- To do- Quanity link to object -->
 
-          <div class="input-field col s12">
-            <label for="Qty">Edit Qty</label>
-            {% for Qty in recipes.Qty %}
+          <!-- <div class="input-field col s12">
+            <label for="Qty">Add Qty</label>
             <input
-              name="Qty-{{loop.index}}"
+              name="Qty"
               type="text"
               minlength="2"
               maxlength="30"
               class="num_input validate"
-              value="{{ recipes.Qty }}"
-            />{{Qty}} {% endfor %}
-          </div>
+              required
+              placeholder="Qty"
+            />
+          </div> -->
         </div>
-
-        <div class="row">
-        </div>
+        {% endfor %}
+        <div id="new-ingredients"></div>
         <!-- add Ingredients field-->
-        <div>
+        <div class="row">
           <input
             type="button"
-            id="myButton"
+            id="add-ingredient-button"
             name="Ingredient"
+            class="text_input validate"
             value="+ Ingredient field "
           />
-          </div>
+        </div>
         <!-- Instruction -->
+        {% for Instruction in recipe.Instruction %}
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction">Edit Instructions</label><br />
-            {% for Instruction in recipes.Instruction %}
+            <label for="Instruction">Add Instructions</label>
             <input
-              name="Instruction-{{loop.index}}"
+              name="Instruction"
               type="text"
-              minlength="2"
-              maxlength="30"
+              minlength="5"
+              maxlength="50"
               class="text_input validate"
+              required
+              placeholder="Instructions"
               value="{{Instruction}}"
-            />{{Instruction}} {% endfor %}
-
-            <!-- add Ingredients field-->
-            <div>
-              <button>+ Instruction field</button>
-            </div>
-            <!-- Image -->
-            <div class="row">
-              <div class="input-field col s12">
-                <label for="upload_pic">Upload New Image URL</label>
-                <input
-                  id="upload_pic"
-                  name="upload_pic"
-                  type="text"
-                  minlength="5"
-                  maxlength="150"
-                  class="text_input validate"
-                  value="{{ recipes.upload_pic }}"
-                  required
-                  placeholder="Paste a link for image here"
-                />
-              </div>
-            </div>
-            <div>
-              <button type="submit" class="fas fa-edit right btn btn-primary">
-                Edit Submit
-              </button>
-            </div>
-            
-            <div>
-              <button href="{{ url_for('index') }}" class="btn btn-warning">
-                Back to Profile
-              </button>
-            </div>
-
+            />
           </div>
+        </div>
+        {% endfor %}
+        <div id="new-instructions"></div>
+        <!-- add Instruction field-->
+        <div class="row">
+          <input
+            type="button"
+            id="add-instruction-button"
+            name="Instruction"
+            class="text_input validate"
+            value="+ Instruction field "
+          />
+        </div>
+        <!-- Image -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="upload_pic">Upload Image URL</label>
+            <input
+              id="upload_pic"
+              name="upload_pic"
+              type="text"
+              minlength="5"
+              maxlength="150"
+              class="text_input validate"
+              required
+              placeholder="Add a link to your image here"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <button type="submit" class="text_input btn btn-primary">
+            Submit
+          </button>
         </div>
       </div>
     </form>
   </div>
-
   {% endblock %}
 </html>

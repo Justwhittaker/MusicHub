@@ -166,7 +166,7 @@ def listings():
 
 
 # Input is the Create id for the DB
-@app.route("/input", methods=["GET", "POST"])
+@app.route("/input", methods=["GET", "POST", "PUT"])
 def input():
     # POST recipe to recipes DB
     if request.method == "POST":
@@ -178,39 +178,40 @@ def input():
             "DifficultyLevel": request.form.get("DifficultyLevel"),
             "Serves": request.form.get("Serves"),
             "Ingredient": request.form.getlist("Ingredient"),
-            "Add_ingredient": request.form.getlist("Ingredient"),
-            "Qty": request.form.get("Qty"),
+            "Qty": request.form.getlist("Qty"),
             "Instruction": request.form.getlist("Instruction"),
             "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(upload)
         flash("Recipe Successfully added!")
-    return render_template("input.html")
-
+    if request.method == "PUT":
+        recipes_id = request.form.get("recipe_id")
+        submit = {'$set': {
+            "timestamp": datetime.datetime.now(),
+            "RecipeName": request.form.get("RecipeName"),
+            "PrepTime": request.form.get("PrepTime"),
+            "CookingTime": request.form.get("CookingTime"),
+            "DifficultyLevel": request.form.get("DifficultyLevel"),
+            "Serves": request.form.get("Serves"),
+            "Ingredient": request.form.getlist("Ingredient"),
+            "Qty": request.form.getlist("Qty"),
+            "Instruction": request.form.getlist("Instruction"),
+            "upload_pic": request.form.get("upload_pic"),
+            "created_by": session["user"],
+        }}
+        mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
+        flash("Recipe Successfully Updated")
+    return redirect(url_for("profile", username=session["user"]))
+    
 
 # Edit Recipes for id's in DB
 @app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST", "PUT"])
 def edit_recipes(recipes_id):
     # Update recipe to recipes DB
-    if request.method == "POST":
-        submit = {'$set': {
-                  "timestamp": datetime.datetime.now(),
-                  "RecipeName": request.form.get("RecipeName"),
-                  "PrepTime": request.form.get("PrepTime"),
-                  "CookingTime": request.form.get("CookingTime"),
-                  "DifficultyLevel": request.form.get("DifficultyLevel"),
-                  "Serves": request.form.get("Serves"),
-                  "Ingredient": request.form.getlist("Ingredient"),
-                  "Qty": request.form.get("Qty"),
-                  "Instruction": request.form.getlist("Instruction"),
-                  "upload_pic": request.form.get("upload_pic"),
-                  "created_by": session["user"],
-                  }}
-        mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
-        flash("Recipe Successfully Updated")
-    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    return render_template("edit_recipes.html", recipes=recipes)
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    return render_template("edit_recipes.html", recipe=recipe)
 
 
 # Delete Recipes in DB
