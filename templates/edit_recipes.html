@@ -5,7 +5,7 @@
     download your recipes and videos upload-->
 
   <div class="row">
-    <form
+   <form
       class="col s12 m8 offset-m2"
       method="POST"
       action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
@@ -15,7 +15,6 @@
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="RecipeName">Recipe Name</label>
             {% for recipes in recipes %} {% if recipes.RecipeName == recipes._id
             %}
             <option value="{{ recipes._id }}" selected
@@ -32,11 +31,11 @@
               maxlength="30"
               class="text_input validate"
               value="{{ recipes.RecipeName }}"
-              required
               placeholder="RecipeName"
             />
           </div>
         </div>
+        
         <!-- Categories -->
         <div class="dropdown">
           <label for="Category">Category</label>
@@ -74,6 +73,8 @@
             </button>
           </div>
         </div>
+
+        
         <!-- Prep Time -->
         <div class="row">
           <div class="input-field col s12">
@@ -87,10 +88,11 @@
               pattern="^[a-zA-Z0-9]{5,15}$"
               value="{{ recipes.PrepTime }}"
               class="num_input validate"
-              required
             />
           </div>
         </div>
+
+        
         <!-- Cooking Time -->
         <div class="row">
           <div class="input-field col s12">
@@ -104,7 +106,6 @@
               pattern="^[a-zA-Z0-9]{5,15}$"
               value="{{ recipes.CookingTime }}"
               class="num_input validate"
-              required
             />
           </div>
         </div>
@@ -145,155 +146,74 @@
               maxlength="1"
               class="num_input validate"
               value="{{ recipes.Serves }}"
-              required
             />
           </div>
         </div>
-        <!-- Ingredients & OTY -->
+
+       <!-- Ingredients -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
+            <label for="Ingredient">Edit Ingredients</label><br />
+            {% for Ingredient in recipes.Ingredient %}
             <input
-              name="Ingredient"
+              name="ingredient-{{loop.index}}"
               type="text"
               minlength="2"
               maxlength="30"
               class="text_input validate"
-              value="{{ recipes.Ingredient }}"
-              required
-              placeholder="Ingredient no.1"
-            />
+              value="{{Ingredient}}"
+            />{{Ingredient}} {% endfor %}
           </div>
+
+          <!-- add QTY field-->
+
           <div class="input-field col s12">
-            <label for="Qty">Add Qty</label>
+            <label for="Qty">Edit Qty</label>
+            {% for Qty in recipes.Qty %}
             <input
-              name="Qty"
+              name="Qty-{{loop.index}}"
               type="text"
               minlength="2"
               maxlength="30"
               class="num_input validate"
               value="{{ recipes.Qty }}"
-              required
-              placeholder="Qty"
-            />
+            />{{Qty}} {% endfor %}
           </div>
         </div>
+
         <div class="row">
-          <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
-            <input
-              name="Ingredient"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="text_input validate"
-              required
-              placeholder="Ingredient no.2"
-            />
-          </div>
-          <div class="input-field col s12">
-            <label for="Qty2">Add Qty</label>
-            <input
-              name="Qty"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="num_input validate"
-              required
-              placeholder="Qty"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
-            <input
-              name="Ingredient"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="text_input validate"
-              required
-              placeholder="Ingredient no.3"
-            />
-          </div>
-          <div class="input-field col s12">
-            <label for="Qty3">Add Qty</label>
-            <input
-              name="Qty"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="num_input validate"
-              required
-              placeholder="Qty"
-            />
-          </div>
         </div>
         <!-- add Ingredients field-->
         <div>
           <input
             type="button"
             id="myButton"
-            name="answer"
+            name="Ingredient"
             value="+ Ingredient field "
           />
-        </div>
+          </div>
         <!-- Instruction -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction">Add Instructions</label>
+            <label for="Instruction">Edit Instructions</label><br />
+            {% for Instruction in recipes.Instruction %}
             <input
-              name="Instruction"
+              name="Instruction-{{loop.index}}"
               type="text"
-              minlength="5"
-              maxlength="50"
+              minlength="2"
+              maxlength="30"
               class="text_input validate"
-              value="{{ recipes.Instruction }}"
-              required
-              placeholder="Instruction no.1"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="Instruction">Add Instructions</label>
-            <input
-              name="Instruction"
-              type="text"
-              minlength="5"
-              maxlength="50"
-              class="text_input validate"
-              required
-              placeholder="Instruction no.2"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="Instruction">Add Instructions</label>
-            <input
-              name="Instruction"
-              type="text"
-              minlength="5"
-              maxlength="50"
-              class="text_input validate"
-              required
-              placeholder="Instruction no.3"
-            />
+              value="{{Instruction}}"
+            />{{Instruction}} {% endfor %}
+
             <!-- add Ingredients field-->
-           <div>
-          <input
-            type="button"
-            id="myButton2"
-            name="answer"
-            value="+ Ingredient field "
-          />
-        </div>
+            <div>
+              <button>+ Instruction field</button>
+            </div>
             <!-- Image -->
             <div class="row">
               <div class="input-field col s12">
-                <label for="upload_pic">Upload Image URL</label>
+                <label for="upload_pic">Upload New Image URL</label>
                 <input
                   id="upload_pic"
                   name="upload_pic"
@@ -308,10 +228,17 @@
               </div>
             </div>
             <div>
-              <button type="submit" class="fas fa-edit right text_input btn btn-primary">
+              <button type="submit" class="fas fa-edit right btn btn-primary">
                 Edit Submit
               </button>
             </div>
+            
+            <div>
+              <button href="{{ url_for('index') }}" class="btn btn-warning">
+                Back to Profile
+              </button>
+            </div>
+
           </div>
         </div>
       </div>

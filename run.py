@@ -202,7 +202,6 @@ def edit_recipes(recipes_id):
                   "DifficultyLevel": request.form.get("DifficultyLevel"),
                   "Serves": request.form.get("Serves"),
                   "Ingredient": request.form.getlist("Ingredient"),
-                  "Add_ingredient": request.form.getlist("Ingredient"),
                   "Qty": request.form.get("Qty"),
                   "Instruction": request.form.getlist("Instruction"),
                   "upload_pic": request.form.get("upload_pic"),
@@ -221,7 +220,15 @@ def delete_recipes(recipes_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipes_id)})
     recipes = mongo.db.recipes.find().sort("RecipeName", 1)
     flash("Recipe Successfully deleted!")
-    return render_template("listings.html", recipes=recipes)
+    per_page = 3
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    recipes = mongo.db.recipes.find().sort("timestamp", -1)
+    pagination = Pagination(page=page, total=recipes.count(),
+                            per_page=per_page,
+                            search=False, record_name='recipes',
+                            css_framework='bootstrap4', alignment='center')
+    recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+    return render_template("index.html", recipes=recipes, pagination=pagination)
 
 
 if __name__ == "__main__":
