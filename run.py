@@ -116,8 +116,17 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
-        return redirect(url_for("login"))
+        per_page = 3
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    recipes = mongo.db.recipes.find({"created_by": session["user"]})
+    pagination = Pagination(page=page, total=recipes.count(),
+                            per_page=per_page,
+                            search=False, record_name='recipes',
+                            css_framework='bootstrap4', alignment='center')
+    recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+    return render_template("profile.html", username=username,
+                           recipes=recipe_page, pagination=pagination)
+    return redirect(url_for("login"))
 
 
 # User Logout

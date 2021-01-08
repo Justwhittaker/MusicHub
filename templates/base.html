@@ -23,8 +23,8 @@
       href="{{ url_for('static', filename='/css/style.css') }}"
       type="text/css"
     />
-    <link rel="icon" type="image/ico" href="./static/img/logoCloud.png"/>
-<!-- linking Jquery and js -->
+    <link rel="icon" type="image/ico" href="./static/img/logoCloud.png" />
+    <!-- linking Jquery and js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
@@ -36,7 +36,7 @@
 
     <title>Recipe Cloud</title>
   </head>
-<!-- nav bar 
+  <!-- nav bar 
 displaying pre-login access and post-login access
 collaspable for mobile -->
   <nav
@@ -71,17 +71,18 @@ collaspable for mobile -->
           {% if session.user %}
           <!-- in session user -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('listings') }}"
-              >Recipe Lists</a
-            >
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{ url_for('input') }}">Add Recipes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
           </li>
-          {% else %}
+          {% if session.user|lower == "admin"|lower %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('listings') }}"
+              >Manage listings</a
+            >
+          </li>
+          {% endif %} {% else %}
           <!-- out of session user -->
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('register') }}">Register</a>

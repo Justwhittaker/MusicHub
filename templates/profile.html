@@ -36,6 +36,7 @@
           />
           <div class="card-body">
             <h5 class="card-title">{{ recipes.RecipeName }}</h5>
+             <h5 class="card-title">{{ recipes.created_by }}</h5>
             <p class="card-text">
               Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp; Cooking Time{{
               recipes.CookingTime }}<br />
@@ -71,6 +72,6 @@
       {% endfor %}
     </div>
   </div>
-
+{{ pagination.info }} {{ pagination.links }}
  {% endblock %}
 </html>
