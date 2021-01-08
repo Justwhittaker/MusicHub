@@ -42,10 +42,10 @@ def index():
 
 
 # Read individual recipe ingredients
-@app.route("/get_recipes/<recipe_id>", methods=["GET"])
-def get_recipes(recipe_id):
+@app.route("/get_recipe/<recipe_id>", methods=["GET"])
+def get_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("get_recipes.html", recipe=recipe)
+    return render_template("get_recipe.html", recipe=recipe)
 
 
 # search query
@@ -165,9 +165,9 @@ def listings():
                            recipe=recipe_page, pagination=pagination)
 
 
-# Input is the Create id for the DB
-@app.route("/input", methods=["GET", "POST", "PUT"])
-def input():
+# add recipe is the Create id for the DB
+@app.route("/add_recipe", methods=["GET", "POST", "PUT"])
+def add_recipe():
     # POST recipe to recipes DB
     if request.method == "POST":
         upload = {
@@ -186,12 +186,12 @@ def input():
         mongo.db.recipes.insert_one(upload)
         flash("Recipe Successfully added!")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("input.html")
+    return render_template("add_recipe.html")
 
 
 # Edit Recipes for id's in DB
-@app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
-def edit_recipes(recipes_id):
+@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
+def edit_recipe(recipes_id):
     # Update recipe to recipes DB
     if request.method == "POST":
         submit = {'$set': {
@@ -211,14 +211,14 @@ def edit_recipes(recipes_id):
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
     recipe_to_edit = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    return render_template("edit_recipes.html", recipe=recipe_to_edit)
+    return render_template("edit_recipe.html", recipe=recipe_to_edit)
 
 
 # Delete Recipes in DB
-@app.route("/delete_recipes/<recipes_id>", methods=["GET"])
-def delete_recipes(recipes_id):
+@app.route("/delete_recipe/<recipes_id>", methods=["GET"])
+def delete_recipe(recipe_id):
     # Delete recipe to recipes DB
-    mongo.db.recipes.delete_one({"_id": ObjectId(recipes_id)})
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     recipes = mongo.db.recipes.find().sort("RecipeName", 1)
     flash("Recipe Successfully deleted!")
     per_page = 3
@@ -229,7 +229,7 @@ def delete_recipes(recipes_id):
                             search=False, record_name='recipes',
                             css_framework='bootstrap4', alignment='center')
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
-    return render_template("index.html", recipes=recipe_page,
+    return render_template("index.html", recipe=recipe_page,
                            pagination=pagination)
 
 
