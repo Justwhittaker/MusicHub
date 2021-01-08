@@ -190,11 +190,11 @@ def input():
 
 
 # Edit Recipes for id's in DB
-@app.route("/edit_recipes/<recipes_id>", methods=["GET", "PUT"])
+@app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST", "PUT"])
 def edit_recipes(recipes_id):
     # Update recipe to recipes DB
-    if request.method == "PUT":
-        upload = {'$set': {
+    if request.method == "POST":
+        submit = {'$set': {
                   "timestamp": datetime.datetime.now(),
                   "RecipeName": request.form.get("RecipeName"),
                   "PrepTime": request.form.get("PrepTime"),
@@ -205,10 +205,11 @@ def edit_recipes(recipes_id):
                   "Add_ingredient": request.form.getlist("Ingredient"),
                   "Qty": request.form.get("Qty"),
                   "Instruction": request.form.getlist("Instruction"),
+                  "upload_pic": request.form.get("upload_pic"),
                   "created_by": session["user"],
                   }}
-        mongo.db.tasks.update_one({"_id": ObjectId(recipes_id)}, upload)
-        flash("Task Successfully Updated")
+        mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
+        flash("Recipe Successfully Updated")
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     return render_template("edit_recipes.html", recipes=recipes)
 

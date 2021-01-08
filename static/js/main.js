@@ -8,4 +8,11 @@ $(document).ready(function() {
   });
 });
 
+
+$(document).ready(function() {
+  $("#myButton2").click(function() {
+    $("#myButton2").after('<input type="text" id="textInput" value="">');
+  });
+});
+
 $(document).ready(mainMenu);

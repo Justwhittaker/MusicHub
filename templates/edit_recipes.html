@@ -7,7 +7,7 @@
   <div class="row">
     <form
       class="col s12 m8 offset-m2"
-      method="PUT"
+      method="POST"
       action="{{ url_for('edit_recipes', recipes_id=recipes._id) }}"
     >
       <div class="recipe_box card-panel">
@@ -282,9 +282,14 @@
               placeholder="Instruction no.3"
             />
             <!-- add Ingredients field-->
-            <div>
-              <button>+ Instruction field</button>
-            </div>
+           <div>
+          <input
+            type="button"
+            id="myButton2"
+            name="answer"
+            value="+ Ingredient field "
+          />
+        </div>
             <!-- Image -->
             <div class="row">
               <div class="input-field col s12">
@@ -303,7 +308,7 @@
               </div>
             </div>
             <div>
-              <button type="submit" class="text_input btn btn-primary">
+              <button type="submit" class="fas fa-edit right text_input btn btn-primary">
                 Edit Submit
               </button>
             </div>
