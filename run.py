@@ -42,10 +42,10 @@ def index():
 
 
 # Read individual recipe ingredients
-@app.route("/get_recipes", methods=["GET"])
-def get_recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("get_recipes.html", recipes=recipes)
+@app.route("/get_recipes/<recipe_id>", methods=["GET"])
+def get_recipes(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("get_recipes.html", recipe=recipe)
 
 
 # search query
@@ -117,15 +117,15 @@ def profile(username):
 
     if session["user"]:
         per_page = 3
-    page = request.args.get(get_page_parameter(), type=int, default=1)
-    recipes = mongo.db.recipes.find({"created_by": session["user"]})
-    pagination = Pagination(page=page, total=recipes.count(),
-                            per_page=per_page,
-                            search=False, record_name='recipes',
-                            css_framework='bootstrap4', alignment='center')
-    recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
-    return render_template("profile.html", username=username,
-                           recipes=recipe_page, pagination=pagination)
+        page = request.args.get(get_page_parameter(), type=int, default=1)
+        recipes = mongo.db.recipes.find({"created_by": session["user"]})
+        pagination = Pagination(page=page, total=recipes.count(),
+                                per_page=per_page,
+                                search=False, record_name='recipes',
+                                css_framework='bootstrap4', alignment='center')
+        recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+        return render_template("profile.html", username=username,
+                               recipes=recipe_page, pagination=pagination)
     return redirect(url_for("login"))
 
 
@@ -155,14 +155,14 @@ def privacy():
 def listings():
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
-    recipes = mongo.db.recipes.find().sort("timestamp", -1)
-    pagination = Pagination(page=page, total=recipes.count(),
+    recipe = mongo.db.recipes.find().sort("timestamp", -1)
+    pagination = Pagination(page=page, total=recipe.count(),
                             per_page=per_page,
                             search=False, record_name='recipes',
                             css_framework='bootstrap4', alignment='center')
-    recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+    recipe_page = recipe.skip((page - 1) * per_page).limit(per_page)
     return render_template("listings.html",
-                           recipes=recipe_page, pagination=pagination)
+                           recipe=recipe_page, pagination=pagination)
 
 
 # Input is the Create id for the DB
@@ -173,7 +173,7 @@ def input():
         upload = {
             "timestamp": datetime.datetime.now(),
             "RecipeName": request.form.get("RecipeName"),
-            "PrepTime": request.form.get("PrepTime"),
+            "PrepTime": int(request.form.get("PrepTime")),
             "CookingTime": request.form.get("CookingTime"),
             "DifficultyLevel": request.form.get("DifficultyLevel"),
             "Serves": request.form.get("Serves"),
@@ -185,8 +185,15 @@ def input():
         }
         mongo.db.recipes.insert_one(upload)
         flash("Recipe Successfully added!")
-    if request.method == "PUT":
-        recipes_id = request.form.get("recipe_id")
+        return redirect(url_for("profile", username=session["user"]))
+    return render_template("input.html")
+
+
+# Edit Recipes for id's in DB
+@app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST"])
+def edit_recipes(recipes_id):
+    # Update recipe to recipes DB
+    if request.method == "POST":
         submit = {'$set': {
             "timestamp": datetime.datetime.now(),
             "RecipeName": request.form.get("RecipeName"),
@@ -202,16 +209,9 @@ def input():
         }}
         mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
         flash("Recipe Successfully Updated")
-    return redirect(url_for("profile", username=session["user"]))
-    
-
-# Edit Recipes for id's in DB
-@app.route("/edit_recipes/<recipes_id>", methods=["GET", "POST", "PUT"])
-def edit_recipes(recipes_id):
-    # Update recipe to recipes DB
-
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    return render_template("edit_recipes.html", recipe=recipe)
+        return redirect(url_for("profile", username=session["user"]))
+    recipe_to_edit = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    return render_template("edit_recipes.html", recipe=recipe_to_edit)
 
 
 # Delete Recipes in DB
@@ -229,7 +229,8 @@ def delete_recipes(recipes_id):
                             search=False, record_name='recipes',
                             css_framework='bootstrap4', alignment='center')
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
-    return render_template("index.html", recipes=recipes, pagination=pagination)
+    return render_template("index.html", recipes=recipe_page,
+                           pagination=pagination)
 
 
 if __name__ == "__main__":

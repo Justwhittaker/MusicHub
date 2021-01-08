@@ -7,8 +7,8 @@
   <div id="inputForm" class="row">
     <form
       class="col s12 m8 offset-m2"
-      method="PUT"
-      action="{{ url_for('input') }}"
+      method="POST"
+      action="{{ url_for('edit_recipes', recipes_id=recipe._id) }}"
     >
       <div class="recipe_box card-panel">
         <h1 class="center-align">Edit your Recipes Here!!</h1>
@@ -76,11 +76,13 @@
               pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
+              value="{{ recipe.CookingTime }}"
             />
           </div>
         </div>
         <!-- DifficultyLevel -->
         <div class="row">
+            <div class="input-field col s12">
           <label for="Difficulty">Difficulty</label>
           <select>
             <option></option>
@@ -88,6 +90,7 @@
             <option>Tricky</option>
             <option>Hard</option>
           </select>
+          </div>
         </div>
         <!-- Serves -->
         <div class="row">
@@ -100,6 +103,7 @@
               maxlength="1"
               class="num_input validate"
               required
+              value="{{ recipe.Serves }}"
             />
           </div>
         </div>

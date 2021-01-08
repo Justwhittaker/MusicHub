@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% extends 'base.html' %} {% block content %}
-  <!--Create Form and basis for the uploading of files 
+{% extends 'base.html' %} {% block content %}
+<!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
 
-  <div id="inputForm" class="row">
-    <form
-      class="col s12 m8 offset-m2"
-      method="POST"
-      action="{{ url_for('input') }}"
-    >
-      <div class="recipe_box card-panel">
-        <h1 class="center-align">Add your Recipes Here!!</h1>
-        <!-- Recipe Name -->
+<div id="inputForm" class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('input') }}">
+        <div class="recipe_box card-panel">
+            <h1 class="center-align">Add your Recipes Here!!</h1>
+           <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
             <label for="RecipeName">Recipe Name</label>
@@ -29,18 +25,20 @@
           </div>
         </div>
         <!-- Categories -->
-         <div class="dropdown">
-          <label for="Category">Category</label>
-          <select>
-            <option></option>  
-            <option>Beef</option>
-            <option>Poultry</option>
-            <option>Fish</option>
-            <option>Pork</option>
-            <option>Vegatarian</option>
-            <option>Sauces</option>
-            <option>Dessert</option>
-          </select>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Category">Category</label>
+            <select>
+              <option></option>
+              <option>Beef</option>
+              <option>Poultry</option>
+              <option>Fish</option>
+              <option>Pork</option>
+              <option>Vegatarian</option>
+              <option>Sauces</option>
+              <option>Dessert</option>
+            </select>
+          </div>
         </div>
         <!-- Prep Time -->
         <div class="row">
@@ -75,31 +73,15 @@
           </div>
         </div>
         <!-- DifficultyLevel -->
-        <div class="dropdown">
-          <label for="Category">Difficulty</label>
-          <button
-            class="btn btn-info dropdown-toggle"
-            type="button"
-            id="dropdownDiff"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Choose one
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" name="DifficultyLevel" type="button">
-              Easy
-            </button>
-            <button class="dropdown-item" name="DifficultyLevel" type="button">
-              Tricky
-            </button>
-            <button class="dropdown-item" name="DifficultyLevel" type="button">
-              Hard
-            </button>
-          </div>
+        <div class="row">
+          <label for="Difficulty">Difficulty</label>
+          <select>
+            <option></option>
+            <option>Easy</option>
+            <option>Tricky</option>
+            <option>Hard</option>
+          </select>
         </div>
-
         <!-- Serves -->
         <div class="row">
           <div class="input-field col s12">
@@ -117,7 +99,7 @@
         <!-- Ingredients -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
+            <label for="Ingredient">Edit Ingredient</label>
             <input
               name="Ingredient"
               type="text"
@@ -125,10 +107,13 @@
               maxlength="30"
               class="text_input validate"
               required
-              placeholder="Ingredient no.1"
+              placeholder="Ingredient"
             />
           </div>
-          <div class="input-field col s12">
+
+          <!-- To do- Quanity link to object -->
+
+          <!-- <div class="input-field col s12">
             <label for="Qty">Add Qty</label>
             <input
               name="Qty"
@@ -139,71 +124,22 @@
               required
               placeholder="Qty"
             />
-          </div>
+          </div> -->
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
-            <input
-              name="Ingredient"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="text_input validate"
-              required
-              placeholder="Ingredient no.2"
-            />
-          </div>
-          <div class="input-field col s12">
-            <label for="Qty">Add Qty</label>
-            <input
-              name="Qty"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="num_input validate"
-              required
-              placeholder="Qty"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="Ingredient">Add Ingredient</label>
-            <input
-              name="Ingredient"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="text_input validate"
-              required
-              placeholder="Ingredient no.3"
-            />
-          </div>
-          <div class="input-field col s12">
-            <label for="Qty">Add Qty</label>
-            <input
-              name="Qty"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="num_input validate"
-              required
-              placeholder="Qty"
-            />
-          </div>
-        </div>
+
+        <div id="new-ingredients"></div>
         <!-- add Ingredients field-->
-        <div>
+        <div class="row">
           <input
             type="button"
-            id="myButton"
+            id="add-ingredient-button"
             name="Ingredient"
             class="text_input validate"
             value="+ Ingredient field "
           />
         </div>
         <!-- Instruction -->
+
         <div class="row">
           <div class="input-field col s12">
             <label for="Instruction">Add Instructions</label>
@@ -214,68 +150,42 @@
               maxlength="50"
               class="text_input validate"
               required
-              placeholder="Instruction no.1"
+              placeholder="Instructions"
+            />
+          </div>
+        </div>
+
+        <div id="new-instructions"></div>
+        <!-- add Instruction field-->
+        <div class="row">
+          <input
+            type="button"
+            id="add-instruction-button"
+            name="Instruction"
+            class="text_input validate"
+            value="+ Instruction field "
+          />
+        </div>
+        <!-- Image -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="upload_pic">Upload Image URL</label>
+            <input
+              id="upload_pic"
+              name="upload_pic"
+              type="text"
+              minlength="5"
+              maxlength="150"
+              class="text_input validate"
+              required
+              placeholder="Add a link to your image here"
             />
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
-            <label for="Instruction">Add Instructions</label>
-            <input
-              name="Instruction"
-              type="text"
-              minlength="5"
-              maxlength="50"
-              class="text_input validate"
-              required
-              placeholder="Instruction no.2"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="Instruction">Add Instructions</label>
-            <input
-              name="Instruction"
-              type="text"
-              minlength="5"
-              maxlength="50"
-              class="text_input validate"
-              required
-              placeholder="Instruction no.3"
-            />
-            <!-- add Instruction field-->
-            <div>
-              <input
-                type="button"
-                id="myButton2"
-                name="Instruction"
-                class="text_input validate"
-                value="+ Instruction field "
-              />
-            </div>
-            <!-- Image -->
-            <div class="row">
-              <div class="input-field col s12">
-                <label for="upload_pic">Upload Image URL</label>
-                <input
-                  id="upload_pic"
-                  name="upload_pic"
-                  type="text"
-                  minlength="5"
-                  maxlength="150"
-                  class="text_input validate"
-                  required
-                  placeholder="Add a link to your image here"
-                />
-              </div>
-            </div>
-            <div>
-              <button type="submit" class="text_input btn btn-primary">
-                Submit
-              </button>
-            </div>
-          </div>
+          <button type="submit" class="text_input btn btn-primary">
+            Submit
+          </button>
         </div>
       </div>
     </form>

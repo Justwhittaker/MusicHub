@@ -25,37 +25,37 @@
   <!--Examples of Recipes on the site-->
   <div class="container">
     <div class="row">
-      {% for recipes in recipes %}
+      {% for recipe in recipes %}
 
       <div class="col-sm-6 col-md-4 col-lg-4">
         <div class="recipe_card">
           <img
-            src="{{ recipes.upload_pic}}"
+            src="{{ recipe.upload_pic}}"
             class="card_img card-img-top"
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title">{{ recipes.RecipeName }}</h5>
+            <h5 class="card-title">{{ recipe.RecipeName }}</h5>
             <p class="card-text">
-              Prep Time {{ recipes.PrepTime }} &nbsp;&nbsp; Cooking Time{{
-              recipes.CookingTime }}<br />
-              Difficulty {{ recipes.DifficultyLevel }} &nbsp;&nbsp; Serves {{
-              recipes.Serves }}
+              Prep Time {{ recipe.PrepTime }} &nbsp;&nbsp; Cooking Time{{
+              recipe.CookingTime }}<br />
+              Difficulty {{ recipe.DifficultyLevel }} &nbsp;&nbsp; Serves {{
+              recipe.Serves }}
                Ingredients <br />
             <ul>
-                {% for Ingredient in recipes.Ingredient %}
+                {% for Ingredient in recipe.Ingredient %}
                 <li>{{Ingredient}}</li>
                 {% endfor %}
             </ul>
             Instructions <br />
             <ul>
-                {% for Instruction in recipes.Instruction %}
+                {% for Instruction in recipe.Instruction %}
                 <li>{{Instruction}}</li>
                 {% endfor %}
             </ul>
             <br />
           </p>
-           <a href="{{ url_for ('get_recipes') }}" class="btn btn-primary">Go to Recipe</a>
+           <a href="{{ url_for ('get_recipes',recipe_id=recipe._id) }}" class="btn btn-primary">Go to Recipe</a>
  <a
             href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}"
             class="btn btn-warning"
