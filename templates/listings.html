@@ -25,7 +25,7 @@
   <!--Examples of Recipes on the site-->
   <div class="container">
     <div class="row">
-      {% for recipe in recipes %}
+      {% for recipe in recipe %}
 
       <div class="col-sm-6 col-md-4 col-lg-4">
         <div class="recipe_card">
@@ -56,14 +56,14 @@
             </ul>
             <br />
           </p>
-           <a href="{{ url_for ('get_recipes',recipe_id=recipe._id) }}" class="btn btn-primary">Go to Recipe</a>
+         <a href="{{ url_for ('get_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Go to Recipe</a>
  <a
-            href="{{ url_for('edit_recipes',recipes_id=recipes._id) }}"
+            href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
             class="btn btn-warning"
             >Edit</a
           >
           <a
-            href="{{ url_for('delete_recipes',recipes_id=recipes._id) }}"
+            href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
             class="btn btn-danger"
             >Delete</a
           >

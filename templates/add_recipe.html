@@ -5,7 +5,7 @@
     download your recipes and videos upload-->
 
 <div id="inputForm" class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('input') }}">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
         <div class="recipe_box card-panel">
             <h1 class="center-align">Add your Recipes Here!!</h1>
            <!-- Recipe Name -->
@@ -32,6 +32,7 @@
               <option>Beef</option>
               <option>Poultry</option>
               <option>Fish</option>
+              <option>Seafood</option>
               <option>Pork</option>
               <option>Vegatarian</option>
               <option>Sauces</option>

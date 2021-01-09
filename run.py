@@ -51,8 +51,8 @@ def get_recipe(recipe_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("index.html", recipes=recipes)
+    recipe = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("index.html", recipe=recipe)
 
 
 # User registration
@@ -189,8 +189,8 @@ def add_recipe():
 
 
 # Edit Recipes for id's in DB
-@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
-def edit_recipe(recipes_id):
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
     # Update recipe to recipes DB
     if request.method == "POST":
         submit = {'$set': {
@@ -206,19 +206,20 @@ def edit_recipe(recipes_id):
             "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }}
-        mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
-    recipe_to_edit = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    return render_template("edit_recipe.html", recipe=recipe_to_edit)
+    recipe_to_edit = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit_recipe.html", recipe_id=recipe_id,
+                           recipe=recipe_to_edit)
 
 
 # Delete Recipes in DB
-@app.route("/delete_recipe/<recipes_id>", methods=["GET"])
+@app.route("/delete_recipe/<recipe_id>", methods=["GET"])
 def delete_recipe(recipe_id):
     # Delete recipe to recipes DB
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    recipes = mongo.db.recipes.find().sort("recipe_name", 1)
+    recipe_id = mongo.db.recipes.find_one()
     flash("Recipe Successfully deleted!")
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
@@ -228,8 +229,8 @@ def delete_recipe(recipe_id):
                             search=False, record_name='recipes',
                             css_framework='bootstrap4', alignment='center')
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
-    return render_template("index.html", recipe=recipe_page,
-                           pagination=pagination)
+    return render_template("profile.html", recipe=recipe_page,
+                           recipe_id=recipe_id, pagination=pagination)
 
 
 if __name__ == "__main__":
