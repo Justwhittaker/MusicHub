@@ -15,17 +15,16 @@
         <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="RecipeName">Recipe Name</label>
+            <label for="recipe_name">Recipe Name</label>
             <input
-              id="RecipeName"
-              name="RecipeName"
+              name="recipe_name"
               type="text"
               minlength="5"
               maxlength="30"
               class="text_input validate"
               required
-              placeholder="RecipeName"
-              value="{{ recipe.RecipeName }}"
+              placeholder="Recipe Name"
+              value="{{ recipe.recipe_name }}"
             />
             <input id="recipe_id" value="{{ recipe._id }}">
           </div>

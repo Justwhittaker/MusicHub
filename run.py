@@ -1,6 +1,5 @@
 import os
 import datetime
-import favicon
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -172,7 +171,7 @@ def add_recipe():
     if request.method == "POST":
         upload = {
             "timestamp": datetime.datetime.now(),
-            "RecipeName": request.form.get("RecipeName"),
+            "recipe_name": request.form.get("recipe_name"),
             "PrepTime": int(request.form.get("PrepTime")),
             "CookingTime": request.form.get("CookingTime"),
             "DifficultyLevel": request.form.get("DifficultyLevel"),
@@ -196,7 +195,7 @@ def edit_recipe(recipes_id):
     if request.method == "POST":
         submit = {'$set': {
             "timestamp": datetime.datetime.now(),
-            "RecipeName": request.form.get("RecipeName"),
+            "recipe_name": request.form.get("recipe_name"),
             "PrepTime": request.form.get("PrepTime"),
             "CookingTime": request.form.get("CookingTime"),
             "DifficultyLevel": request.form.get("DifficultyLevel"),
@@ -219,7 +218,7 @@ def edit_recipe(recipes_id):
 def delete_recipe(recipe_id):
     # Delete recipe to recipes DB
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    recipes = mongo.db.recipes.find().sort("RecipeName", 1)
+    recipes = mongo.db.recipes.find().sort("recipe_name", 1)
     flash("Recipe Successfully deleted!")
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
