@@ -4,7 +4,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
-from flask_paginate import Pagination, get_page_parameter
+from flask_paginate import Pagination, get_page_parameter, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -36,7 +36,7 @@ def index():
                             css_framework='bootstrap4', alignment='center')
     """pagination to skip though 3 id per page """
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
-    return render_template("index.html",
+    return render_template("index.html", 
                            recipes=recipe_page, pagination=pagination)
 
 
@@ -49,14 +49,27 @@ def get_recipe(recipe_id):
 
 
 # search query
-# search query
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipe = mongo.db.recipes.find({"$text": {"$search": query,
-                                              "$caseSensitive": False,
-                                              "$diacriticSensitive": False}})
-    return render_template("search_recipe.html", recipe=recipe)
+    recipe = mongo.db.recipes.find({"$text": {"$search": query}})
+    """ recipes on the page to show 3 """
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    per_page = 3
+    offset = page * per_page
+    paginatedTests = recipe[offset: offset + per_page]
+    """pagination for users to flip through searched recipes"""
+    pagination = Pagination(page=page, total=recipe.count(),
+                            per_page=per_page,
+                            search=False, record_name='recipes',
+                            css_framework='bootstrap4', alignment='center')
+    recipe_page = recipe.skip((page - 1) * per_page).limit(per_page)
+    for x in recipe:
+        print(x)
+
+    return render_template("index.html", recipe=recipe, tests=paginatedTests,
+                           recipes=recipe_page, pagination=pagination)
 
 
 # User registration
