@@ -107,19 +107,19 @@
           </div>
         </div>
         <!-- Ingredients -->
-        {% for Ingredient in recipe.Ingredient %}
+        {% for ingredient in recipe.ingredient %}
         <div class="row">
           <div class="input-field col s12">
-            <label for="Ingredient">Edit Ingredient</label>
+            <label for="ingredient">Edit Ingredient</label>
             <input
-              name="Ingredient"
+              name="ingredient"
               type="text"
               minlength="2"
               maxlength="30"
               class="text_input validate"
               required
-              placeholder="Ingredient"
-              value="{{Ingredient}}"
+              placeholder="ingredient"
+              value="{{ingredient}}"
             />
           </div>
 
@@ -145,25 +145,25 @@
           <input
             type="button"
             id="add-ingredient-button"
-            name="Ingredient"
+            name="ingredient"
             class="text_input validate"
             value="+ Ingredient field "
           />
         </div>
         <!-- Instruction -->
-        {% for Instruction in recipe.Instruction %}
+        {% for instruction in recipe.instruction %}
         <div class="row">
           <div class="input-field col s12">
-            <label for="Instruction">Add Instructions</label>
+            <label for="instruction">Add Instructions</label>
             <input
-              name="Instruction"
+              name="instruction"
               type="text"
               minlength="5"
               maxlength="50"
               class="text_input validate"
               required
-              placeholder="Instructions"
-              value="{{Instruction}}"
+              placeholder="instructions"
+              value="{{instruction}}"
             />
           </div>
         </div>
@@ -174,7 +174,7 @@
           <input
             type="button"
             id="add-instruction-button"
-            name="Instruction"
+            name="instruction"
             class="text_input validate"
             value="+ Instruction field "
           />

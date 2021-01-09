@@ -37,21 +37,21 @@
           <div class="card-body">
             <h5 class="card-title">{{ recipe.recipe_name }}</h5>
             <p class="card-text">
-              Category {{ recipe.category }} &nbsp;&nbsp;
-              Prep Time {{ recipe.prep_time }} &nbsp;&nbsp; 
-              Cooking Time{{ recipe.cooking_time }}<br />
-              Difficulty {{ recipe.difficulty_level }} &nbsp;&nbsp; 
-              Serves {{ recipe.serves }}
+              Category &nbsp;&nbsp; {{ recipe.category }} &nbsp;&nbsp;<br />
+              Prep Time &nbsp;&nbsp; {{ recipe.prep_time }} Minutes &nbsp;&nbsp; <br />
+              Cooking Time &nbsp;&nbsp; {{ recipe.cooking_time }} Minutes<br />
+              Difficulty &nbsp;&nbsp; {{ recipe.difficulty_level }} &nbsp;&nbsp; <br />
+              Serves &nbsp;&nbsp; {{ recipe.serves }} <br />
                Ingredients <br />
             <ul>
-                {% for Ingredient in recipe.Ingredient %}
-                <li>{{Ingredient}}</li>
+                {% for ingredient in recipe.ingredient %}
+                <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
             Instructions <br />
             <ul>
-                {% for Instruction in recipe.Instruction %}
-                <li>{{Instruction}}</li>
+                {% for instruction in recipe.instruction %}
+                <li>{{instruction}}</li>
                 {% endfor %}
             </ul>
             <br />

@@ -177,8 +177,8 @@ def add_recipe():
             "cooking_time": int(request.form.get("cooking_time")),
             "difficulty_level": request.form.get("difficulty_level"),
             "serves": int(request.form.get("serves")),
-            "Ingredient": request.form.getlist("Ingredient"),
-            "Instruction": request.form.getlist("Instruction"),
+            "ingredient": request.form.getlist("ingredient"),
+            "instruction": request.form.getlist("instruction"),
             "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }
@@ -201,8 +201,8 @@ def edit_recipe(recipes_id):
             "cooking_time": int(request.form.get("cooking_time")),
             "difficulty_level": request.form.get("difficulty_level"),
             "serves": int(request.form.get("serves")),
-            "Ingredient": request.form.getlist("Ingredient"),
-            "Instruction": request.form.getlist("Instruction"),
+            "ingredient": request.form.getlist("ingredient"),
+            "instruction": request.form.getlist("instruction"),
             "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }}
