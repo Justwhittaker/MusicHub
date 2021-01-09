@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'base.html' %} {% block content %}
-<!--Create Form and basis for the uploading of files 
+  {% extends 'base.html' %} {% block content %}
+  <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
 
-<div id="inputForm" class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
-        <div class="recipe_box card-panel">
-            <h1 class="center-align">Add your Recipes Here!!</h1>
-           <!-- Recipe Name -->
+  <div id="inputForm" class="row">
+    <form
+      class="col s12 m8 offset-m2"
+      method="POST"
+      action="{{ url_for('add_recipe') }}"
+    >
+      <div class="recipe_box card-panel">
+        <h1 class="center-align">Add your Recipes Here!!</h1>
+        <!-- Recipe Name -->
         <div class="row">
           <div class="input-field col s12">
             <label for="recipe_name">Recipe Name</label>
@@ -27,7 +31,7 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="Category">Category</label>
-            <select>
+            <select name="category" class="text_input" required>
               <option></option>
               <option>Beef</option>
               <option>Poultry</option>
@@ -73,10 +77,7 @@
         <!-- DifficultyLevel -->
         <div class="row">
           <label for="difficulty_level">Difficulty</label>
-          <select
-          name="difficulty_level"
-          class="text_input"
-          required>
+          <select name="difficulty_level" class="text_input" required>
             <option></option>
             <option>Easy</option>
             <option>Tricky</option>
