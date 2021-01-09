@@ -172,6 +172,7 @@ def add_recipe():
         upload = {
             "timestamp": datetime.datetime.now(),
             "recipe_name": request.form.get("recipe_name"),
+            "category": request.form.get("category"),
             "prep_time": int(request.form.get("prep_time")),
             "cooking_time": int(request.form.get("cooking_time")),
             "difficulty_level": request.form.get("difficulty_level"),
@@ -195,6 +196,7 @@ def edit_recipe(recipes_id):
         submit = {'$set': {
             "timestamp": datetime.datetime.now(),
             "recipe_name": request.form.get("recipe_name"),
+            "category": request.form.get("category"),
             "prep_time": int(request.form.get("prep_time")),
             "cooking_time": int(request.form.get("cooking_time")),
             "difficulty_level": request.form.get("difficulty_level"),
