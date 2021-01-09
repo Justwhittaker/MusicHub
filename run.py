@@ -6,7 +6,6 @@ from flask import (
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
-from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -26,15 +25,16 @@ mongo = PyMongo(app)
 # Home page - Search bar and all recipes shorthand discription
 @app.route('/')
 def index():
-    # recipes on the page to show 3
+    """ recipes on the page to show 3 """
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
     recipes = mongo.db.recipes.find().sort("timestamp", -1)
-    # pagination for users to flip through different recipes
+    """pagination for users to flip through different recipes"""
     pagination = Pagination(page=page, total=recipes.count(),
                             per_page=per_page,
                             search=False, record_name='recipes',
                             css_framework='bootstrap4', alignment='center')
+    """pagination to skip though 3 id per page """
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
     return render_template("index.html",
                            recipes=recipe_page, pagination=pagination)
@@ -43,6 +43,7 @@ def index():
 # Read individual recipe ingredients
 @app.route("/get_recipe/<recipe_id>", methods=["GET"])
 def get_recipe(recipe_id):
+    """allow user to retreive the full recipe for usage"""
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("get_recipe.html", recipe=recipe)
 
@@ -51,22 +52,32 @@ def get_recipe(recipe_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipe = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("index.html", recipe=recipe)
+    recipe = mongo.db.recipes.find({"$text": {"$search": query}})
+    """ recipes on the page to show 3 """
+    per_page = 3
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    """pagination for users to flip through different recipes"""
+    pagination = Pagination(page=page, total=recipe.count(0),
+                            per_page=per_page,
+                            search=False, record_name='recipes',
+                            css_framework='bootstrap4', alignment='center')
+    recipe_page = recipe.skip((page - 1) * per_page).limit(per_page)
+    return render_template("index.html", recipe=recipe,
+                           recipes=recipe_page, pagination=pagination)
 
 
 # User registration
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if username already exists in db
+        """ check if username already exists in db"""
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        # Register user info
+        """ Register user info"""
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
@@ -74,7 +85,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+        """ put the new user into 'session' cookie"""
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return render_template("register.html")
@@ -84,24 +95,25 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        """check if username exists in db"""
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
+            """ensure hashed password matches user input"""
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                """redirect to profile if submitted correctly"""
                 return redirect(url_for("profile", username=session["user"]))
             else:
-                # invalid password match
+                """Else invalid password match try again"""
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            """Else if username doesn't exist"""
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -115,14 +127,17 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
+        """ recipes on the page to show 3 """
         per_page = 3
         page = request.args.get(get_page_parameter(), type=int, default=1)
         recipes = mongo.db.recipes.find({"created_by": session["user"]})
+        """pagination for users to flip through different recipes"""
         pagination = Pagination(page=page, total=recipes.count(),
                                 per_page=per_page,
                                 search=False, record_name='recipes',
                                 css_framework='bootstrap4', alignment='center')
         recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+        """redirect to profile if submitted correctly"""
         return render_template("profile.html", username=username,
                                recipes=recipe_page, pagination=pagination)
     return redirect(url_for("login"))
@@ -131,7 +146,7 @@ def profile(username):
 # User Logout
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
+    """Remove user from session cookie"""
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("index"))
@@ -140,21 +155,24 @@ def logout():
 # About - introduction and quick explaination for CRUD ops
 @app.route('/about')
 def about():
-    # about section with how to index and FAQ
+    """about section with how to index and FAQ"""
     return render_template("about.html")
 
 
-# Privacy policy
+# Privacy policy - GDPR instructions and data holding
 @app.route('/privacy')
 def privacy():
     return render_template("privacy_policy.html")
 
 
+# Admin page for editing and deleting power over all users
 @app.route('/listings')
 def listings():
+    """ recipes on the page to show 3 """
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
     recipe = mongo.db.recipes.find().sort("timestamp", -1)
+    """pagination for users to flip through different recipes"""
     pagination = Pagination(page=page, total=recipe.count(),
                             per_page=per_page,
                             search=False, record_name='recipes',
@@ -167,8 +185,9 @@ def listings():
 # add recipe is the Create id for the DB
 @app.route("/add_recipe", methods=["GET", "POST", "PUT"])
 def add_recipe():
-    # POST recipe to recipes DB
+    """POST recipe to recipes DB"""
     if request.method == "POST":
+        """Upload recipe to recipes DB"""
         upload = {
             "timestamp": datetime.datetime.now(),
             "recipe_name": request.form.get("recipe_name"),
@@ -182,8 +201,10 @@ def add_recipe():
             "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }
+        """insert_one recipe creating a new id to recipes DB"""
         mongo.db.recipes.insert_one(upload)
         flash("Recipe Successfully added!")
+        """redirect to profile if submitted correctly"""
         return redirect(url_for("profile", username=session["user"]))
     return render_template("add_recipe.html")
 
@@ -191,8 +212,9 @@ def add_recipe():
 # Edit Recipes for id's in DB
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    # Update recipe to recipes DB
+    """Update recipe to recipes DB"""
     if request.method == "POST":
+        """submit and set the edit for the DB"""
         submit = {'$set': {
             "timestamp": datetime.datetime.now(),
             "recipe_name": request.form.get("recipe_name"),
@@ -206,8 +228,10 @@ def edit_recipe(recipe_id):
             "upload_pic": request.form.get("upload_pic"),
             "created_by": session["user"],
         }}
+        """Update_one recipe along the id to recipes DB"""
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
+        """redirect to profile if submitted correctly"""
         return redirect(url_for("profile", username=session["user"]))
     recipe_to_edit = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe_id=recipe_id,
@@ -217,18 +241,21 @@ def edit_recipe(recipe_id):
 # Delete Recipes in DB
 @app.route("/delete_recipe/<recipe_id>", methods=["GET"])
 def delete_recipe(recipe_id):
-    # Delete recipe to recipes DB
+    """Delete recipe to recipes DB"""
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     recipe_id = mongo.db.recipes.find_one()
     flash("Recipe Successfully deleted!")
+    """ recipes on the page to show 3 """
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
     recipes = mongo.db.recipes.find().sort("timestamp", -1)
+    """pagination for users to flip through different recipes"""
     pagination = Pagination(page=page, total=recipes.count(),
                             per_page=per_page,
                             search=False, record_name='recipes',
                             css_framework='bootstrap4', alignment='center')
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
+    """redirect to profile if submitted correctly"""
     return render_template("profile.html", recipe=recipe_page,
                            recipe_id=recipe_id, pagination=pagination)
 

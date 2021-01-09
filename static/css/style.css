@@ -16,17 +16,18 @@ body {
 }
 /* background image styling*/
 .bgimg-1 {
-  background-image: url("/static/img/bg1.png");
+  background-image: url("/static/img/bg6.png");
+  background-size: cover;
   position: relative;
   width: 100%;
 }
 /* hero image styling*/
 .bgimg-2 {
-  background-image: url("/static/img/bg3.png");
+  background-image: url("/static/img/bg4.png");
   background-attachment: relative;
   background-position: center;
   background-size: cover;
-  padding: 80px;
+  padding: 50px;
   background-clip: padding-box;
 }
 /* heading styling*/
@@ -65,6 +66,7 @@ h6 {
   padding: 20px;
   border-radius: 10px;
 }
+
 /* recipe image styling*/
 .card_img {
   max-width: 15em;
@@ -84,7 +86,7 @@ h6 {
   font-family: "SpicyRice";
   font-size: x-large;
   background-size: cover;
-  background-image: url("/static/img/bg.jpg");
+  background-image: url("/static/img/bg5flip.png");
   padding: 50px;
   border-radius: 10px;
   margin: 50px;

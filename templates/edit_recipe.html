@@ -26,7 +26,7 @@
               placeholder="Recipe Name"
               value="{{ recipe.recipe_name }}"
             />
-            <input id="recipe_id" value="{{ recipe._id }}" />
+
           </div>
         </div>
         <!-- Categories -->
@@ -34,12 +34,11 @@
           <div class="input-field col s12">
             <label for="category">Category</label>
             <select name="category" class="text_input" required>
-              <option></option>
               <option>Beef</option>
               <option>Poultry</option>
               <option>Fish</option>
               <option>Pork</option>
-              <option>Vegatarian</option>
+              <option>Vegetarian</option>
               <option>Sauces</option>
               <option>Dessert</option>
             </select>
@@ -181,7 +180,6 @@
           <div class="input-field col s12">
             <label for="upload_pic">Upload Image URL</label>
             <input
-              id="upload_pic"
               name="upload_pic"
               type="text"
               minlength="5"
@@ -189,6 +187,7 @@
               class="text_input validate"
               required
               placeholder="Add a link to your image here"
+              value="{{upload_pic}}"
             />
           </div>
         </div>
