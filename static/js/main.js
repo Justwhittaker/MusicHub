@@ -7,7 +7,7 @@ $(document).ready(function() {
               name="ingredient"
               type="text"
               minlength="2"
-              maxlength="30"
+              maxlength="500"
               class="text_input validate"
               required
               placeholder="Add Ingredient"
@@ -25,8 +25,8 @@ $(document).ready(function() {
             <input
               name="instruction"
               type="text"
-              minlength="5"
-              maxlength="50"
+              minlength="2"
+              maxlength="500"
               class="text_input validate"
               required
               placeholder="Add Instruction"
