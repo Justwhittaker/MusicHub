@@ -48,17 +48,16 @@
         <!-- Prep Time -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="PrepTime">Prep Time</label>
+            <label for="prep_time">Prep Time</label>
             <input
-              id="PrepTime"
-              name="PrepTime"
+              name="prep_time"
               type="number"
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
-              value="{{ recipe.PrepTime }}"
+              value="{{ recipe.prep_time }}"
             />
           </div>
         </div>
