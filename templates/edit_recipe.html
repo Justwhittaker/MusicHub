@@ -64,25 +64,27 @@
         <!-- Cooking Time -->
         <div class="row">
           <div class="input-field col s12">
-            <label for="CookingTime">Cooking Time</label>
+            <label for="cooking_time">Cooking Time</label>
             <input
-              id="CookingTime"
-              name="CookingTime"
+              name="cooking_time"
               type="number"
               minlength="1"
               maxlength="5"
               pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
-              value="{{ recipe.CookingTime }}"
+              value="{{ recipe.cooking_time }}"
             />
           </div>
         </div>
         <!-- DifficultyLevel -->
         <div class="row">
             <div class="input-field col s12">
-          <label for="Difficulty">Difficulty</label>
-          <select>
+          <label for="difficulty_level">Difficulty</label>
+          <select 
+          name="difficulty_level"
+          class="text_input"
+          required>
             <option></option>
             <option>Easy</option>
             <option>Tricky</option>

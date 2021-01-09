@@ -64,8 +64,8 @@
             <h5 class="card-title">{{ recipe.recipe_name }}</h5>
             <p class="card-text">
               Prep Time {{ recipe.prep_time }} &nbsp;&nbsp; Cooking Time{{
-              recipe.CookingTime }}<br />
-              Difficulty {{ recipe.DifficultyLevel }} &nbsp;&nbsp; Serves {{
+              recipe.cooking_time }}<br />
+              Difficulty {{ recipe.difficulty_level }} &nbsp;&nbsp; Serves {{
               recipe.Serves }}
             </p>
             <a href="{{ url_for ('get_recipe',recipe_id=recipe._id) }}" class="btn btn-primary">Go to Recipe</a>
