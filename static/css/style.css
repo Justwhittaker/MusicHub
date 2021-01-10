@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
 /* body border styling*/
 body {
-  font-family: "Eczar" !;
-  background-color: #5ac5ff;
-  background-image: "{{ url_for('static', filename='./img/food.jpg') }}";
-  width: 100%;
+  font-family: "Eczar" !important;
+  background-color: #5ac5ff !important;
+  background-image: "{{ url_for('static', filename='./img/food.jpg') }}" !important;
+  width: 100% !important;
 }
 /* logo styling*/
 .logo {

@@ -49,10 +49,10 @@ def get_recipe(recipe_id):
 
 
 # search query
-# search query
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
+    print(query)
     recipe = mongo.db.recipes.find({"$text": {"$search": query,
                                               "$caseSensitive": False,
                                               "$diacriticSensitive": False}})
