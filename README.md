@@ -200,6 +200,9 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
 
+![landingPage](static/img/home_page_response.png)
+![landingPage](static/img/home_page_response2.png)
+
 **Landing Page**
 
 ![landingPage](static/img/home_page.png)
