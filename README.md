@@ -198,7 +198,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation** 
 
-* I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
+    * I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
 
 ![landingPage](static/img/home_page_response.png)
 ![landingPage](static/img/home_page_response2.png)
@@ -210,10 +210,10 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation** 
 
-* I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.
-* The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.
-* As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily
-* User does not have to register if they just want to veiw recipes all recipes are free.
+    * I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.
+    * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.
+    * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily
+    * User does not have to register if they just want to veiw recipes all recipes are free.
 
 **Add register**
 
@@ -221,9 +221,9 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation**
 
-* To start adding your own recipes you would need to register.
-* Once registered you would have to log in
-* User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"
+    * To start adding your own recipes you would need to register.
+    * Once registered you would have to log in
+    * User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"
 
 **Profile for normal users**
 
@@ -232,11 +232,11 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation**
 
-* This is where the real fun begins, as a user you can <br>
-    1. Thier **own profile** where their recipes come up first. <br>
-    2. **Easily Add and Edit their own recipes** to the website. <br>
-    3. **Have the possibility** to **upload pictures** <br>
-    4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
+    * This is where the real fun begins, as a user you can <br>
+        1. Thier **own profile** where their recipes come up first. <br>
+        2. **Easily Add and Edit their own recipes** to the website. <br>
+        3. **Have the possibility** to **upload pictures** <br>
+        4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
 
 **Profile for Admin**
 
@@ -244,11 +244,11 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation**
 
-* This is where the Admin can see the listings page<br>
-    1. Admin also has thier **own profile** where their recipes come up first. <br>
-    2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
-    3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
-    4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
+    * This is where the Admin can see the listings page<br>
+        1. Admin also has thier **own profile** where their recipes come up first. <br>
+        2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
+        3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
+        4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
 
 **Add recipes & Edit Recipes**
 
@@ -257,22 +257,22 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation**
 
-* Both the add_recipe and the edit_recipe, have the same framework and based on the same template. <br>
-* edit_recipe does however pulls all the values from the DB so that User is aware what recipe they are editing <br>
+    * Both the add_recipe and the edit_recipe, have the same framework and based on the same template. <br>
+    * edit_recipe does however pulls all the values from the DB so that User is aware what recipe they are editing <br>
 
-* This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
-    1. Recipe name <br>
-    2. Category <br>
-    3. Prep time <br>
-    4. Cooking Time <br>
-    5. Difficulty <br>
-    6. Serves <br>
-    7. Ingredients <br>
-    8. Add ingredient fields (add more then one or extra fields) <br>
-    9. Instructions <br>
-    10. Add Instructions fields (add more then one or extra fields)<br>
+    * This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
+        1. Recipe name <br>
+        2. Category <br>
+        3. Prep time <br>
+        4. Cooking Time <br>
+        5. Difficulty <br>
+        6. Serves <br>
+        7. Ingredients <br>
+        8. Add ingredient fields (add more then one or extra fields) <br>
+        9. Instructions <br>
+        10. Add Instructions fields (add more then one or extra fields)<br>
 
-* Also I have added a button for the user tochange mind and go back to profile. <br>
+    * Also I have added a button for the user tochange mind and go back to profile. <br>
 
 <a name="issues"></a>
 ## Issues ##
@@ -302,9 +302,9 @@ I was having an issue with the search elements once I had refactored the code fo
 
 ![Indexes](static/img/search_issues.png)
 
-After many attempts I decided to rather add a seperate html dedicated to search results instead trying to forced the system to display the index page. <br>
-Once fixed the search was not bearing any results, very confused as no errors were appearing. Thus I assumed the issue must lie with the query <br>
-And yes, I had forgotten to refactor the orginal indexes in MongoDB, how the user is able to search mulitple questions, name, category, ingredient and even any instruction. <br>
+* After many attempts I decided to rather add a seperate html dedicated to search results instead trying to forced the system to display the index page. <br>
+* Once fixed the search was not bearing any results, very confused as no errors were appearing. Thus I assumed the issue must lie with the query. <br>
+* And yes, I had forgotten to refactor the orginal indexes in MongoDB, how the user is able to search mulitple questions, name, category, ingredient and even any instruction. <br>
 
 ![Search](static/img/search_fixes.png)
 ![DB](static/img/index_refactor.png)
