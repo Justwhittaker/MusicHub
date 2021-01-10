@@ -60,8 +60,9 @@ h6 {
 /* recipe border styling*/
 .recipe_card {
   width: 100%;
-  margin: 30px;
+  margin: 50px;
   margin-top: 70px;
+  margin-right: 10px;
   border: 30px;
   border-width: 3px;
   border-style: solid;
@@ -97,7 +98,7 @@ h6 {
   background-image: url("/static/img/bg5flip.png");
   padding: 50px;
   border-radius: 10px;
-  margin: 50px;
+  margin: 100px;
 }
 
 .input {
@@ -111,13 +112,13 @@ h6 {
   box-align: center;
   margin: 10px;
 }
-
+/* Login button*/
 .log_but {
   border-radius: 10px;
   background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
   text-align: center;
   float: right;
-  margin: 10px;
+  margin: 5px;
 }
 /* number box border styling*/
 .num_input {
@@ -136,7 +137,7 @@ h6 {
   font-family: "SpicyRice";
   font-size: x-large;
   background-image: url("/static/img/bg3.png");
-  padding: 100px;
+  padding: 50px;
   margin: 100px;
   border-radius: 2em;
 }
