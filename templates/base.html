@@ -13,7 +13,7 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       type="text/css"
     />
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <link
       href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
       rel="stylesheet"
@@ -33,37 +33,27 @@
       crossorigin="anonymous"
     ></script>
     <script src="/static/js/main.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
     <title>Recipe Cloud</title>
   </head>
   <!-- nav bar 
 displaying pre-login access and post-login access
 collaspable for mobile -->
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-light"
-    style="font: 1.5em SpicyRice;"
-  >
-    <!-- Container wrapper core code from https://mdbootstrap.com/docs/standard/navigation/navbar/#-->
-    <div class="container-fluid">
-      <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        id=""
-        type="button"
-        data-target="#navbarRightAlignExample"
-        aria-controls="navbarRightAlignExample"
-        aria-expanded="false"
-        data-mdb-toggle="collapse"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-        <!-- Left links -->
-        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+  <nav class="navbar navbar-expand-md navbar-light bg-light"
+    style="font: 1.5em SpicyRice;">
+    <img
+            src="{{ url_for('static', filename='./img/logoCloud.png') }}"
+            class="nav_logo"
+          />
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+       <li class="nav-item">
             <a class="nav-link" href="{{ url_for('index') }}">Home</a>
           </li>
           <li class="nav-item">
@@ -102,12 +92,8 @@ collaspable for mobile -->
           </li>
           {% endif %}
         </ul>
-        <!-- Left links -->
-      </div>
-      <!-- Collapsible wrapper -->
-    </div>
-    <!-- Container wrapper -->
-  </nav>
+  </div>  
+</nav>
 
   <body>
     <section>

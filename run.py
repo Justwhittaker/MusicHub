@@ -1,5 +1,6 @@
 import os
 import datetime
+import pylint.lint
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -7,6 +8,7 @@ from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from pylint import epylint as lint
 
 
 if os.path.exists("env.py"):
@@ -253,6 +255,9 @@ def delete_recipe(recipe_id):
     return render_template("profile.html", username=session["user"],
                            recipe=recipe_page, recipe_id=recipe_id,
                            pagination=pagination)
+
+
+(pylint_stdout, pylint_stderr) = lint.py_run('module_name.py', return_std=True)
 
 
 if __name__ == "__main__":

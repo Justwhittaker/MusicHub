@@ -185,8 +185,11 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 ## Testing ##
 ---
 
-* I tested the python code with Python Debugger - https://realpython.com/python-debugging-pdb/
-* Also used this Automated Testing to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
+* I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
+* Also used this **Automated Testing** to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
+![test_flask](static/img/test_flask.png)
+* I used **Pylint** to lint my code by Linting my python code - http://pylint.pycqa.org/en/latest/
+![test_Pylint](static/img/pylint.png)
 * I tested the responsiveness of the website by using the [**Google Chrome Developer Tool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Ipad Pro 12", Ipad Mini, Google Chrome, Safari, Mozilla Firefox and Samsung A70.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
