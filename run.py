@@ -249,8 +249,10 @@ def delete_recipe(recipe_id):
                             css_framework='bootstrap4', alignment='center')
     recipe_page = recipes.skip((page - 1) * per_page).limit(per_page)
     """redirect to profile if submitted correctly"""
-    return render_template("profile.html", recipe=recipe_page,
-                           recipe_id=recipe_id, pagination=pagination)
+    return redirect(url_for("profile", username=session["user"]))
+    return render_template("profile.html", username=session["user"],
+                           recipe=recipe_page, recipe_id=recipe_id,
+                           pagination=pagination)
 
 
 if __name__ == "__main__":
