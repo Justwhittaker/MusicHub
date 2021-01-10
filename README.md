@@ -202,8 +202,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Landing Page**
 
-![landingPage](assets/img/home_page.png)
-![landingPage](assets/img/home_page_footer.png)
+![landingPage](static/img/home_page.png)
+![landingPage](static/img/home_page_footer.png)
 
 * **Implementation** 
 
@@ -214,7 +214,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Add register**
 
-![Recipes](assets/img/register.png) 
+![Recipes](static/img/register.png) 
 
 * **Implementation**
 
@@ -224,8 +224,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Profile for normal users**
 
-![Profile](assets/img/profile.png) 
-![Profile](assets/img/profile_display.png) 
+![Profile](static/img/profile.png) 
+![Profile](static/img/profile_display.png) 
 
 * **Implementation**
 
@@ -237,7 +237,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Profile for Admin**
 
-![Profile](assets/img/profile_admin.png) 
+![Profile](static/img/profile_admin.png) 
 
 * **Implementation**
 
@@ -249,8 +249,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Add recipes & Edit Recipes**
 
-![Recipes](assets/img/add_recipes.png) 
-![Recipes](assets/img/add_recipes.png) 
+![Add Recipes](static/img/add_recipes.png) 
+![Edit Recipes](static/img/edit_recipes.png) 
 
 * **Implementation**
 
@@ -282,18 +282,18 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Issues**
 
-I did not understand what was going on as my form was good and allowing me to add into the fields, however when I submitted it was not sending it to the <br>
+I did not understand what was going on as my form was good and allowing me to add into the fields,<br> however when I submitted it was not sending it to the
 database and saving it in the collections?
 
 ![RecipeForm](static/img/upload_recipe.png)
 
-To understand the error I went thorugh the code again and fixed it by creating "action" in the form to allow the method to "POST", later refactoring "input" to "add_recipes" for simplified reading<br>
-Then I refactored the code for one value such as ingredient & instruction, this name creates an array. This solved the issue for multiple variables to be added into the Database and when called listing all items in the array, and not seperating the values out as individual strings. <br>
- I also refactored the uppercase to lowercase, plurals and used_ to_seperate the variables wording rather. I refactored the numerical data into Intergers by using the int() option in python. <br>
- I also added timestamps and created_by to reference when the user is logged on, timestamps to allow the users to see the latest recipe added and created_by for users to veiw all their own recipes in their profile. <br>
+* To understand the error I went thorugh the code again and fixed it by creating "action" in the form to allow the method to "POST", later refactoring "input" to "add_recipes" for simplified reading<br>
+* Then I refactored the code for one value such as ingredient & instruction, this name creates an array. This solved the issue for multiple variables to be added into the Database and when called listing all items in the array, and not seperating the values out as individual strings. <br>
+* I also refactored the uppercase to lowercase, plurals and used_ to_seperate the variables wording rather. I refactored the numerical data into Intergers by using the int() option in python. <br>
+* I also added timestamps and created_by to reference when the user is logged on, timestamps to allow the users to see the latest recipe added and created_by for users to veiw all their own recipes in their profile. <br>
 
 ![RecipeForm](static/img/upload_fix.png)
-![RecipeForm](static/img/solveinput.png)
+![RecipeForm](static/img/solve_input.png)
 
 I was having an issue with the search elements once I had refactored the code for add_recipe and edit_recipe. Pagination being a big error, as I had added pagination to the index page.
 
