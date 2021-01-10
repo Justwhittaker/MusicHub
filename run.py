@@ -1,6 +1,5 @@
 import os
 import datetime
-import pylint.lint
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)

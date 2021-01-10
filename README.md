@@ -186,6 +186,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 ---
 
 * I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
+![pdb](static/img/pdb_debugger.png)
 * Also used this **Automated Testing** to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
 ![test_flask](static/img/test_flask.png)
 * I used **Pylint** to lint my code by Linting my python code - http://pylint.pycqa.org/en/latest/
