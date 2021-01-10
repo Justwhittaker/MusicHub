@@ -362,7 +362,8 @@ I received inspiration and technical knowledge for this project from the followi
 https://mdbootstrap.com/docs/standard/forms/input-fields/<br>
 https://getbootstrap.com/docs/4.3/components/card/<br>
 https://getbootstrap.com/docs/4.3/components/dropdowns/<br>
-https://www.w3schools.com/bootstrap/bootstrap_ref_css_images.asp
+https://www.w3schools.com/bootstrap/bootstrap_ref_css_images.asp <br>
+https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 
 2. MongoDB <br>
 https://cloud.mongodb.com/ <br>

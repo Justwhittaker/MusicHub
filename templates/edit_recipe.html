@@ -26,7 +26,6 @@
               placeholder="Recipe Name"
               value="{{ recipe.recipe_name }}"
             />
-
           </div>
         </div>
         <!-- Categories -->
@@ -197,7 +196,7 @@
           </button>
         </div>
         <div>
-            <a
+          <a
             href="{{ url_for('profile', username=session['user']) }}"
             class="btn btn-warning"
             >Go Back to Profile</a
