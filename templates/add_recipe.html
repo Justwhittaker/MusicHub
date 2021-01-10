@@ -1,83 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'base.html' %} {% block content %}
-<!--Create Form and basis for the uploading of files 
+  {% extends 'base.html' %} {% block content %}
+  <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
 
-<div id="inputForm" class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
-        <div class="recipe_box card-panel">
-            <h1 class="center-align">Add your Recipes Here!!</h1>
-            <!-- Recipe Name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="recipe_name">Recipe Name</label>
-                    <input name="recipe_name" type="text" minlength="5" maxlength="30" class="text_input validate"
-                        required placeholder="Recipe Name" />
-                </div>
-            </div>
-            <!-- Categories -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="Category">Category</label>
-                    <select name="category" class="text_input" required>
-                        <option>Beef</option>
-                        <option>Poultry</option>
-                        <option>Fish</option>
-                        <option>Seafood</option>
-                        <option>Pork</option>
-                        <option>Vegetarian</option>
-                        <option>Sauces</option>
-                        <option>Dessert</option>
-                    </select>
-                </div>
-            </div>
-            <!-- Prep Time -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="prep_time">Prep Time</label>
-                    <input name="prep_time" type="number" minlength="1" maxlength="5" pattern="^[a-zA-Z0-9]{5,15}$"
-                        class="num_input validate" required />
-                </div>
-            </div>
-            <!-- Cooking Time -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="cooking_time">Cooking Time</label>
-                    <input name="cooking_time" type="number" minlength="1" maxlength="5" pattern="^[a-zA-Z0-9]{5,15}$"
-                        class="num_input validate" required />
-                </div>
-            </div>
-            <!-- DifficultyLevel -->
-            <div class="row">
-                <div class="input-field col s12">
-                <label for="difficulty_level">Difficulty</label>
-                <select name="difficulty_level" class="text_input" required>
-                    <option></option>
-                    <option>Easy</option>
-                    <option>Tricky</option>
-                    <option>Hard</option>
-                </select>
-                </div>
-            </div>
+  <div id="inputForm" class="row">
+    <form
+      class="col s12 m8 offset-m2"
+      method="POST"
+      action="{{ url_for('add_recipe') }}"
+    >
+      <div class="recipe_box card-panel">
+        <h1 class="center-align">Add your Recipes Here!!</h1>
+        <!-- Recipe Name -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="recipe_name">Recipe Name</label>
+            <input
+              name="recipe_name"
+              type="text"
+              minlength="5"
+              maxlength="30"
+              class="text_input validate"
+              required
+              placeholder="Recipe Name"
+            />
+          </div>
+        </div>
+        <!-- Categories -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="Category">Category</label>
+            <select name="category" class="text_input" required>
+              <option>Beef</option>
+              <option>Poultry</option>
+              <option>Fish</option>
+              <option>Seafood</option>
+              <option>Pork</option>
+              <option>Vegetarian</option>
+              <option>Sauces</option>
+              <option>Dessert</option>
+            </select>
+          </div>
+        </div>
+        <!-- Prep Time -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="prep_time">Prep Time</label>
+            <input
+              name="prep_time"
+              type="number"
+              minlength="1"
+              maxlength="5"
+              pattern="^[a-zA-Z0-9]{5,15}$"
+              class="num_input validate"
+              required
+            />
+          </div>
+        </div>
+        <!-- Cooking Time -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="cooking_time">Cooking Time</label>
+            <input
+              name="cooking_time"
+              type="number"
+              minlength="1"
+              maxlength="5"
+              pattern="^[a-zA-Z0-9]{5,15}$"
+              class="num_input validate"
+              required
+            />
+          </div>
+        </div>
+        <!-- DifficultyLevel -->
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="difficulty_level">Difficulty</label>
+            <select name="difficulty_level" class="text_input" required>
+              <option></option>
+              <option>Easy</option>
+              <option>Tricky</option>
+              <option>Hard</option>
+            </select>
+          </div>
+        </div>
         <!-- Serves -->
         <div class="row">
-            <div class="input-field col s12">
-                <label for="serves">Serves</label>
-                <input name="serves" type="number" maxlength="1" class="num_input validate" required />
-            </div>
+          <div class="input-field col s12">
+            <label for="serves">Serves</label>
+            <input
+              name="serves"
+              type="number"
+              maxlength="1"
+              class="num_input validate"
+              required
+            />
+          </div>
         </div>
         <!-- Ingredients -->
         <div class="row">
-            <div class="input-field col s12">
-                <label for="ingredient">Edit Ingredient</label>
-                <input name="ingredient" type="text" minlength="2" maxlength="500" class="text_input validate" required
-                    placeholder="Ingredient" />
-            </div>
+          <div class="input-field col s12">
+            <label for="ingredient">Edit Ingredient</label>
+            <input
+              name="ingredient"
+              type="text"
+              minlength="2"
+              maxlength="500"
+              class="text_input validate"
+              required
+              placeholder="Ingredient"
+            />
+          </div>
 
-            <!-- To do- Quanity link to object -->
+          <!-- To do- Quanity link to object -->
 
-            <!-- <div class="input-field col s12">
+          <!-- <div class="input-field col s12">
             <label for="Qty">Add Qty</label>
             <input
               name="Qty"
@@ -94,41 +132,72 @@
         <div id="new-ingredients"></div>
         <!-- add Ingredients field-->
         <div class="row">
-            <input type="button" id="add-ingredient-button" name="ingredient" class="text_input validate"
-                value="+ Ingredient field " />
+          <input
+            type="button"
+            id="add-ingredient-button"
+            name="ingredient"
+            class="text_input validate"
+            value="+ Ingredient field "
+          />
         </div>
         <!-- Instruction -->
 
         <div class="row">
-            <div class="input-field col s12">
-                <label for="instruction">Add Instructions</label>
-                <input name="instruction" type="text" minlength="2" maxlength="500" class="text_input validate" required
-                    placeholder="Instructions" />
-            </div>
+          <div class="input-field col s12">
+            <label for="instruction">Add Instructions</label>
+            <input
+              name="instruction"
+              type="text"
+              minlength="2"
+              maxlength="500"
+              class="text_input validate"
+              required
+              placeholder="Instructions"
+            />
+          </div>
         </div>
 
         <div id="new-instructions"></div>
         <!-- add Instruction field-->
         <div class="row">
-            <input type="button" id="add-instruction-button" name="instruction" class="text_input validate"
-                value="+ Instruction field " />
+          <input
+            type="button"
+            id="add-instruction-button"
+            name="instruction"
+            class="text_input validate"
+            value="+ Instruction field "
+          />
         </div>
         <!-- Image -->
         <div class="row">
-            <div class="input-field col s12">
-                <label for="upload_pic">Upload Image URL</label>
-                <input id="upload_pic" name="upload_pic" type="text" minlength="5" maxlength="150"
-                    class="text_input validate" required placeholder="Add a link to your image here" />
-            </div>
+          <div class="input-field col s12">
+            <label for="upload_pic">Upload Image URL</label>
+            <input
+              id="upload_pic"
+              name="upload_pic"
+              type="text"
+              minlength="5"
+              maxlength="150"
+              class="text_input validate"
+              required
+              placeholder="Add a link to your image here"
+            />
+          </div>
         </div>
         <div class="row">
-            <button type="submit" class="text_input btn btn-primary">
-                Submit
-            </button>
+          <button type="submit" class="text_input btn btn-primary">
+            Submit
+          </button>
         </div>
-</div>
-</form>
-</div>
-{% endblock %}
-
+        <div>
+          <a
+            href="{{ url_for('profile', username=session['user']) }}"
+            class="btn btn-warning"
+            >Go Back to Profile</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+  {% endblock %}
 </html>

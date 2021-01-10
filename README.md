@@ -65,7 +65,7 @@ quick fixes even grandmas can leave their family recipes down for everyone to en
 * The **user** wants to **have the possibility** of **favorites** where their best recipes are **saved for later**.
 * The **user** wants to **know** if **their recipe has been submitted**.
 * The **user** wants to **easily add their own recipe** to the website.
-* The **user** wants to **have the possibility** to **upload pictures or videos**.
+* The **user** wants to **have the possibility** to **upload pictures**.
 * The **user** wants to get a maximum of advantage of the **recipe cloud**.
 
 <a name="requirements"></a>
@@ -144,8 +144,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 * **large title** for attractiveness and engagement.
 * **Suggested recipes** on landing page as an introduction.
 * **User login/logout** so that users can keep a tally of their own recipes added and videos uploaded.
-* **Favorites** for user to quickly reference recipes they enjoyed or still want to Experiment with.
 * **Input Recipes** to the website.
+* **Edit Recipes** to the website.
 * **Search Recipes** on the Website.
 * **Instructions** so that the user can grasp the concept immedaitely.
 * **Immedaite** recipes with Easy and simple instructions to make the recipe.
@@ -156,9 +156,9 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 <a name="implemented"></a>
 ### Future implemented features ###
 
-* **Feature 1** - Rating system for others to be able to rate the recipe success.
-* **Feature 2** - Comment box and messages notifications for users to interact with each other.
-* **Feature 3** - 
+* **Feature 1** - **Rating system** for others to be able to rate the recipe success.
+* **Feature 2** - **Comment box** and **messages notifications** below the recipes for users to interact with each other.
+* **Feature 3** - **Favorites** for user to quickly reference recipes they enjoyed or still want to Experiment with.
 
 <a name="technologies"></a>
 ## Technologies used ##
@@ -185,6 +185,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 ## Testing ##
 ---
 
+* I tested the python code with Python Debugger - https://realpython.com/python-debugging-pdb/
+* Also used this Automated Testing to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
 * I tested the responsiveness of the website by using the [**Google Chrome Developer Tool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Ipad Pro 12", Ipad Mini, Google Chrome, Safari, Mozilla Firefox and Samsung A70.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
@@ -200,31 +202,74 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **Landing Page**
 
-![landingPage](assets/img/#)
+![landingPage](assets/img/home_page.png)
+![landingPage](assets/img/home_page_footer.png)
 
 * **Implementation** 
 
+* I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.
+* The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.
+* As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily
+* User does not have to register if they just want to veiw recipes all recipes are free.
 
-**Add recipes**
+**Add register**
 
-![Recipes](assets/img/#) 
-
-* **Implementation**
-
-
-**Profile**
-
-![Profile](assets/img/#) 
+![Recipes](assets/img/register.png) 
 
 * **Implementation**
 
+* To start adding your own recipes you would need to register.
+* Once registered you would have to log in
+* User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"
 
-**Recipes links**
+**Profile for normal users**
 
-![Recipe links](assets/img/#) 
+![Profile](assets/img/profile.png) 
+![Profile](assets/img/profile_display.png) 
 
 * **Implementation**
 
+* This is where the real fun begins, as a user you can <br>
+    1. Thier **own profile** where their recipes come up first. <br>
+    2. **Easily Add and Edit their own recipes** to the website. <br>
+    3. **Have the possibility** to **upload pictures** <br>
+    4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
+
+**Profile for Admin**
+
+![Profile](assets/img/profile_admin.png) 
+
+* **Implementation**
+
+* This is where the Admin can see the listings page<br>
+    1. Admin also has thier **own profile** where their recipes come up first. <br>
+    2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
+    3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
+    4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
+
+**Add recipes & Edit Recipes**
+
+![Recipes](assets/img/add_recipes.png) 
+![Recipes](assets/img/add_recipes.png) 
+
+* **Implementation**
+
+* Both the add_recipe and the edit_recipe, have the same framework and based on the same template. <br>
+* edit_recipe does however pulls all the values from the DB so that User is aware what recipe they are editing <br>
+
+* This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
+    1. Recipe name <br>
+    2. Category <br>
+    3. Prep time <br>
+    4. Cooking Time <br>
+    5. Difficulty <br>
+    6. Serves <br>
+    7. Ingredients <br>
+    8. Add ingredient fields (add more then one or extra fields) <br>
+    9. Instructions <br>
+    10. Add Instructions fields (add more then one or extra fields)<br>
+
+* Also I have added a button for the user tochange mind and go back to profile. <br>
 
 <a name="issues"></a>
 ## Issues ##
@@ -232,18 +277,34 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 **During development**
 
-* I had a major issue with my MongoDB file whilst setting up the database because of this issue: 
+* I had a major issue with my MongoDB file whilst setting up the database because of this issue: <br>
+    1. Application Error - heroku logs --tail- which I corrected.
 
 **Issues**
 
 I did not understand what was going on as my form was good and allowing me to add into the fields, however when I submitted it was not sending it to the <br>
 database and saving it in the collections?
 
-![RecipeForm](static/img/UploadRecipe.png)
+![RecipeForm](static/img/upload_recipe.png)
 
-To understand the error I went thorugh the code again and fixed it by ********
+To understand the error I went thorugh the code again and fixed it by creating "action" in the form to allow the method to "POST", later refactoring "input" to "add_recipes" for simplified reading<br>
+Then I refactored the code for one value such as ingredient & instruction, this name creates an array. This solved the issue for multiple variables to be added into the Database and when called listing all items in the array, and not seperating the values out as individual strings. <br>
+ I also refactored the uppercase to lowercase, plurals and used_ to_seperate the variables wording rather. I refactored the numerical data into Intergers by using the int() option in python. <br>
+ I also added timestamps and created_by to reference when the user is logged on, timestamps to allow the users to see the latest recipe added and created_by for users to veiw all their own recipes in their profile. <br>
 
-![RecipeForm](static/img/#)
+![RecipeForm](static/img/upload_fix.png)
+![RecipeForm](static/img/solveinput.png)
+
+I was having an issue with the search elements once I had refactored the code for add_recipe and edit_recipe. Pagination being a big error, as I had added pagination to the index page.
+
+![Indexes](static/img/search_issues.png)
+
+After many attempts I decided to rather add a seperate html dedicated to search results instead trying to forced the system to display the index page. <br>
+Once fixed the search was not bearing any results, very confused as no errors were appearing. Thus I assumed the issue must lie with the query <br>
+And yes, I had forgotten to refactor the orginal indexes in MongoDB, how the user is able to search mulitple questions, name, category, ingredient and even any instruction. <br>
+
+![Search](static/img/search_fixes.png)
+![DB](static/img/index_refactor.png)
 
 I also has few errors passing through my GitPod, basic house cleaning fixed most of the issues very quickly
 
@@ -253,9 +314,10 @@ I also has few errors passing through my GitPod, basic house cleaning fixed most
 
 After I put my project up for peer-review, it was brought to my attention that the website needed ***********
 
-After my mentor call and my peer-code-review I realized that I needed to add some ********************
+After my mentor call and my peer-code-review I realized that I needed to add some comments via Docstring for understanding of my code. <br>
+and used this website to assist me Docstring conventions - https://www.python.org/dev/peps/pep-0257/ <br>
 
-![RecipeForm](static/img/#)
+![Docstring](static/img/docstring.png)
 
 ## Deployment ##
 ---
@@ -310,6 +372,7 @@ https://www.codementor.io/@arpitbhayani/fast-and-efficient-pagination-in-mongodb
 3. Python research <br>
     1. CodeInstitute Python Funadementals <br>
     2. https://randomkeygen.com/ <br>
+    3. Docstring conventions - https://www.python.org/dev/peps/pep-0257/ <br>
 
 4. Better Git Commit terms <br>
 http://karma-runner.github.io/5.0/dev/git-commit-msg.html
@@ -329,7 +392,7 @@ https://policymaker.io/privacy-policy-ready/ <br>
 * My mentor **Ignatius Ukwuoma** for his patience and kindness
 * **AudreyLL88** for her very inspiring ReadME
 * **Code Institute Slack community** for the technical and emotional support
-* **Code Institute Tutors** Cormac, Johann and Milkos were fantastic help
+* **Code Institute Tutors** Cormac, Tim, Sam, Johann and Milkos were fantastic help
 * **Carl Lubbe**, for all the assistance and help with guidence and UX
 * **Alishia Whittaker**, for the Graphic design and stock images from Canva and your support through all my studies
 
