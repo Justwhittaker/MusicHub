@@ -32,21 +32,21 @@
 
 The are many places on the internet to find recipes but their are not many that allow you to add your own recipes to swap and share 
 
-The **goal** for this project is to to recreate a neighbourhood profile where friends,<br> neighbours and relatives can swap and share their favourite recipes, simply and easily.
-A safe space to find inspiration with the items already in theor fridge.
+The **goal** for this project is to to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily.<br>
+A safe space to find inspiration with the items already in their fridge.
 
 <a name="user-goals"></a>
 ### User Goals ###
 
 For the UX on this project I wanted to create a simple and user friendly site. My target audience is young and mature adults. <br>
-The site also allows for Profeesional Chefs to share some of thier awards winning recipes but also for the student to swap their <br>
+The site also allows for Profeesional Chefs to share some of thier awards winning recipes but also for the student to swap their 
 quick fixes even grandmas can leave their family recipes down for everyone to enjoy!!
 
 * **Testing his/her/their Cooking abilites** with **quick searches** within the **Category** they are looking for.
 * **Being excited** to find new recipes and **share** their own.
 * Get a **inspiration** for cooking out of the box.
 * **Keep adding more and more recipes** to the website **again & again**.
-* **List their own Recipes** and **favourite** recipes to go to **time and again**
+* **List their own Recipes** and **favourite** recipes to go to **time & again**
 
 <a name="user-stories"></a>
 ### User Stories ### 
@@ -86,14 +86,14 @@ quick fixes even grandmas can leave their family recipes down for everyone to en
 ### Fonts ###
 
 * The **landing page** is using the classic website **Google Fonts** **#** for the H1 and H3. 
-* I paired it with the **Google Fonts** **#** for readability.
-* I kept the **#** font for **better user experience**
+* I paired it with the **Google Fonts** **Eczar & SpicyRice** for readability.
+* I kept the **SpicyRice** font for **better user experience**
 
 <a name="icons"></a>
 
 ### Icons and Images ###
 
-* The **Favicon** used on the website are provided by [**ICOconvert**](https://icoconvert.com/)
+* The **Favicon** used on the website are provided by [**Canva**](https://canva.com/) and called by using url_for.
 * The **image** used for the **landing page** is a created **image** from the image bank [**Canva**](https://canva.com/). 
 * Extra **background images** (https://google.com/) with a simple research with the keyword **cooking and baking**.
 
@@ -118,7 +118,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 * Herewith the **wireframe** and I pushed a few changes for better readability and engagement:
 * I added **a jumbotron hero image** on the landing page.
 * I added **a full-screen background image** on all the other pages.
-* I used a **form** to allow for the user to add recipes.
+* I used a **form** to allow for the user to add & edit recipes.
 * I added an easy link to **upload** videos.
 
 ### Landing Page ###
@@ -159,6 +159,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 * **Feature 1** - **Rating system** for others to be able to rate the recipe success.
 * **Feature 2** - **Comment box** and **messages notifications** below the recipes for users to interact with each other.
 * **Feature 3** - **Favorites** for user to quickly reference recipes they enjoyed or still want to Experiment with.
+* **Feature 4** - **Input Videos** to the website.
 
 <a name="technologies"></a>
 ## Technologies used ##
