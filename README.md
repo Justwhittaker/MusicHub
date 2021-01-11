@@ -187,7 +187,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 ---
 
 *I used **pep8online.com** to test my Python code validator with no issues - http://pep8online.com/checkresult
-![pdb](static/img/pep8_test.png)
+![pep8](static/img/pep8_test.png)
 * I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
 ![pdb](static/img/pdb_debugger.png)
 * Also used this **Automated Testing** to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
@@ -201,6 +201,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 ![test_Html](static/img/errors_val_w3.png)
 ![test_CSS](static/img/errors_val_w3_css.png)
 * I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
+* I passed my deployed app through **Lighthouse** with the follwoing results
+![lighthouse](static/img/lighthouse.png)
 * All pages passed the HTML,CSS and Python validator final test with no major issues.
 
 **Responsiveness**
