@@ -186,7 +186,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 ## Testing ##
 ---
 
-*I used **pep8online.com** to test my Python code with no issues - http://pep8online.com/checkresult
+*I used **pep8online.com** to test my Python code validator with no issues - http://pep8online.com/checkresult
 ![pdb](static/img/pep8_test.png)
 * I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
 ![pdb](static/img/pdb_debugger.png)
@@ -219,10 +219,11 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation** 
 
-    * I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.
-    * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.
-    * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily
-    * User does not have to register if they just want to veiw recipes all recipes are free.
+    * I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.<br>
+    * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.<br>
+    * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily<br>
+    * User does not have to register if they just want to veiw recipes all recipes are free.<br>
+    * Landing page was responsive and working as expected<br>
 
 **Add register**
 
@@ -230,9 +231,10 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * **Implementation**
 
-    * To start adding your own recipes you would need to register.
-    * Once registered you would have to log in
-    * User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"
+    * To start adding your own recipes you would need to register.<br>
+    * Once registered you would have to log in<br>
+    * User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"<br>
+    * Register and Log-in page was responsive and working as expected<br>
 
 **Profile for normal users**
 
@@ -246,6 +248,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
         2. **Easily Add and Edit their own recipes** to the website. <br>
         3. **Have the possibility** to **upload pictures** <br>
         4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
+    * Profile page was responsive and working as expected<br>
 
 **Profile for Admin**
 
@@ -258,6 +261,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
         2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
         3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
         4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
+    * Admin page was responsive and working as expected<br>
 
 **Add recipes & Edit Recipes**
 
@@ -282,6 +286,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
         10. Add Instructions fields (add more then one or extra fields)<br>
 
     * Also I have added a button for the user tochange mind and go back to profile. <br>
+    * add_recipe and the edit_recipe pages was responsive and working as expected<br>
 
 <a name="issues"></a>
 ## Issues ##
@@ -321,9 +326,6 @@ I also has few errors passing through my GitPod, basic house cleaning fixed most
 
 ![Html](static/img/indexErrors.png)
 ![PY](static/img/runpyErrors.png)
-
-
-After I put my project up for peer-review, it was brought to my attention that the website needed ***********
 
 After my mentor call and my peer-code-review I realized that I needed to add some comments via Docstring for understanding of my code. <br>
 and used this website to assist me Docstring conventions - https://www.python.org/dev/peps/pep-0257/ <br>
