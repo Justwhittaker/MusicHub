@@ -196,6 +196,8 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Ipad Pro 12", Ipad Mini, Google Chrome, Safari, Mozilla Firefox and Samsung A70.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
 * I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/).
+![test_Html](static/img/errors_val_w3.png)
+![test_CSS](static/img/errors_val_w3_css.png)
 * I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
 * All pages passed the HTML,CSS and Python validator final test with no major issues.
 
@@ -286,7 +288,6 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 **During development**
 
 * I had a major issue with my MongoDB file whilst setting up the database because of this issue: <br>
-    1. Application Error - heroku logs --tail- which I corrected.
 
 **Issues**
 

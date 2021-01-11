@@ -32,7 +32,6 @@ body {
 /* hero image styling*/
 .bgimg-2 {
   background-image: url("/static/img/bg4.png");
-  background-attachment: relative;
   background-position: center;
   background-size: cover;
   padding: 50px;
@@ -53,7 +52,6 @@ h6 {
 }
 /* flash messages styling*/
 .flashes {
-  position: center;
   font-family: "Eczar";
   font-size: large;
 }
@@ -67,7 +65,6 @@ h6 {
   border-width: 3px;
   border-style: solid;
   text-align: left;
-  display: relative;
   background-position: center;
   background-size: cover;
   font-family: "SpicyRice";
@@ -109,7 +106,6 @@ h6 {
   border-radius: 10px;
   background: linear-gradient(21deg, #5ac5ff, #c1d2ff);
   text-align: center;
-  box-align: center;
   margin: 10px;
 }
 /* Login button*/
@@ -145,7 +141,6 @@ h6 {
 .private_pol {
   width: 100%;
   border: 30px;
-  position: center;
   border-width: 3px;
   border-style: solid;
   text-align: left;
@@ -162,7 +157,6 @@ h6 {
   background-size: cover;
   width: 100%;
   border: 30px;
-  position: center;
   border-width: 3px;
   border-style: solid;
   text-align: left;
