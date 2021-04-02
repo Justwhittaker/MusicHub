@@ -1,0 +1,196 @@
+---
+# Recipe Cloud Testing #
+---
+## Contents ##
+---
+
+* [Testing](#Testing)
+    * [Validation Testing](#ValidationTesting)
+    * [Unit Testing](#UnitTesting)
+    * [Cross Browser/Cross Device Verification](#CrossBrowser)
+    * [Python Tests](#PythonTests)
+    * [Troubleshooting](#Troubleshooting)
+    * [Outstanding Defects](#OutstandingDefects)
+
+---
+
+<a name="Testing"></a>
+## Testing ##
+---
+
+---
+
+<a name="ValidationTesting"></a>
+### Validation Testing ###
+---
+
+*I used **pep8online.com** to test my Python code validator with no issues - http://pep8online.com/checkresult
+![pep8](static/img/pep8_test.png)
+* I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
+![pdb](static/img/pdb_debugger.png)
+* Also used this **Automated Testing** to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
+![test_flask](static/img/test_flask.png)
+* I used **Pylint** to lint my code by Linting my python code - http://pylint.pycqa.org/en/latest/
+![test_Pylint](static/img/pylint.png)
+* I tested the responsiveness of the website by using the [**Google Chrome Developer Tool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
+![AmIresponsive](static/img/amIresponsive.png)
+* I also tested my website on **different browsers and real devices** : **Iphone 6s, Ipad Pro 12", Ipad Mini, Google Chrome, Safari, Mozilla Firefox and Samsung A70.**
+* I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
+* I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/) then fixed the issues needed to be fixed.
+![test_Html](static/img/errors_val_w3.png)
+![test_CSS](static/img/errors_val_w3_css.png)
+* I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
+* I passed my deployed app through **Lighthouse** with the follwoing results
+![lighthouse](static/img/lighthouse.png)
+* All pages passed the HTML,CSS and Python validator final test with no major issues.
+
+* [**CSS Validator**](https://jigsaw.w3.org/css-validator/) - Note, any error associated with root: Imported style sheets are not checked in direct input and file upload modes were ignored.
+* [**HTML Validator**](https://jigsaw.w3.org/css-validator/) - ran all files through the validator and also used gitpod's IDE to identify mismatched tags.
+* [**JavaScript Validator**](https://beautifytools.com/javascript-validator.php) Note any errors for let, variables set in other .js files, and constants were ignored. 
+* [**GitPod IDE**](https://gitpod.io/) - Gitpod has inline validation for many file types. Python, CSS, HTML, files were continuously tested for validity when using this IDE.
+
+
+---
+
+<a name="UnitTesting"></a>
+### Unit Testing ###
+---
+
+As core functionality and features were delivered I attempted to create python tests to ensure functionality was not lost. I got behind after a point, but made up ground at the end to get some coverage of all models, forms and views.
+
+Testing user stories
+
+* The **user** wants an **attractive website** with a **non-distracting** background.
+* The **user** wants to see **clear instructions** on how to add recipes to the website.
+* The **user** wants there to be a **search box** so that the user can quickly identify **recipes**.
+* The **user** wants to be able to **search** categories or ingredients.
+* The **user** wants to be **challenged** in his/her/their **skills**.
+* The **user** wants to know the **difficulty** of the recipe before **deciding**.
+* The **user** wants to start **finding recipes immedaitely**. 
+* The **user** wants to see the **latest recipes** added.
+* The **user** wants a **conveint sized recipes box** to be able to read the recipe clearfully.
+* The **user** wants to know the **recipe** details such as **ingredients, method and cooking instructions**
+* The **user** wants to **have the possibility** of thier **own profile** where their recipes come up first.
+* The **user** wants to **have the possibility** of **favorites** where their best recipes are **saved for later**.
+* The **user** wants to **know** if **their recipe has been submitted**.
+* The **user** wants to **easily add their own recipe** to the website.
+* The **user** wants to **have the possibility** to **upload pictures**.
+* The **user** wants to get a maximum of advantage of the **recipe cloud**.
+
+**Client user**
+* The **Clients user** wants an **attractive website** with a **non-distracting** background.
+    * Expected to be responsive on the landing page and user drawn into the deals 
+        * As you drop onto the site it draws me into the deals as they pop up from the clean background
+        * The site acted as expected
+
+* The **Clients user** wants to see **clear instructions** on how to drill down into further information on deals within the website.
+    * Expected to have clear visuals and can click onto the image to load 
+        * The deals are responsive and clearly shows the ability to click on the link to veiw further information
+        * The site acted as expected
+
+* The **Clients user** wants there to be a **search box** so that the user can quickly identify **deals**.
+    * Expected to have clear visuals and can quickly narrow down into the different deals by field 
+        * Search bar is responsive and quickly searches and filters out any irrelevant deals.
+        * The site acted as expected
+
+* The **Clients user** wants to start **finding deals immediately**. 
+    * Expected user drawn into the deals immediately
+        * As you drop onto the site it draws me into the deals as they pop up from the clean background
+        * The site acted as expected
+
+* The **Clients user** wants to see the **latest deals** added.
+    * Expected user drawn into the deals immediately with the latest deals appearing
+        * As you drop onto the site it draws me into the deals as they pop up from the clean background
+        * The site acted as expected
+
+* The **Clients user** wants a **convenient sized deal box** to be able to read the Deal clearfully.
+    * Expected to that deal box doesnt break through veiws on different devices 
+        * checked and formulated a checklist view below under CrossBrowser verification, some areas needed fixing on the CSS but manage to do this easily with the help of the spreadsheet
+        * The site acted as expected
+
+* The **Clients user** wants to know the **Deals** details such as **T&C's, price, and end time** for the promotion.
+    * Expected to have clear pathways to find all the details on the page including extra info about us and contact and FAQs 
+        * As you drop onto the site all the info is clearly listed in the footer and the nav bar, likewise the deal detail page gives you additional info the admin user has added
+        * The site acted as expected
+
+* The **Clients user** wants to get a maximum of advantage of **Recipe cloud**.
+    * Expected to be able to view all the deals on the site 
+        * All deals are visible on the landing page
+        * The site acted as expected
+
+**Admin user**
+
+* The **Admin user** wants to **have the possibility** of their **own profile** where their deals come up first.
+    * Expected to be able to veiw all own profiles in the profile veiw 
+        * All deals appear in the Profile page along with the ability to quickly guide yourself into the CRUD functionality or veiw in detail and return back to the Profile.
+        * The site acted as expected
+
+* The **Admin user** wants to **know** if **their Deals has been submitted**.
+    * Expected to show messages of success, errors, caution and cancellations 
+        * all messages are working correctly and display at the correct time 
+        * The site acted as expected
+
+* The **Admin user** wants to know the **deals** details such as **name of restaurant, address, telephone number, website**
+    * Expected to be be able to load, edit and delete CRUD functionality for their business info
+        * add and edit business info has the functionality to ensure that adding, editing and deleting info is simple and easy
+        * The site acted as expected
+
+* The **Admin user** wants to **easily add, edit and delete their own Deals** on the website.
+    * Expected to be be able to load, edit and delete CRUD functionality for their deals
+        * add and edit deal has the functionality to ensure that adding, editing and deleting deals is simple and easy
+        * The site acted as expected
+
+* The **Admin user** wants to **have the possibility** to **upload pictures**.
+    * Expected to be be able to load good size photos 
+        * add and edit deal has the functionality to ensure photo upload
+        * The site acted as expected
+
+---
+
+<a name="CrossBrowser"></a>
+### Cross Browser/Cross Device Verification ###
+---
+
+To verify that the application is functional and looks pleasant across various operating systems and device sizes
+These tests are light on the functionality with more attention being paid to the layout and console logs:
+
+Operating systems and screen sizes is as follows:
+
+![Testing](static/media/readme_media/responsiveTest.jpg)
+
+I would say after creating this form I have been able to fix 99% of the responsiveness and turned alot of the No's into a Yes!
+
+---
+
+<a name="PythonTests"></a>
+### Python Tests ###
+---
+
+#### COVERAGE REPORTS ####
+
+**home**
+![coverage](static/media/readme_media/coverage-home.jpg)
+**client_profiles**
+![coverage](static/media/readme_media/coverage-client_profiles.jpg)
+**contact_us**
+![coverage](static/media/readme_media/coverage-contact_us.jpg)
+**memberships**
+![coverage](static/media/readme_media/coverage-memberships.jpg)
+
+---
+
+<a name="Troubleshooting"></a>
+## Troubleshooting ##
+---
+
+As I had a few learning curves by using Python there were a lot of errors I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project. See the separate [ERRORS.md](ERRORS.md) file for the details.
+
+---
+
+<a name="Outstanding Defects"></a>
+### Outstanding Defects ###
+---
+
+Takes a while to get to the next page when uploading files - I should add in a file processing status bar so user's know what is going on. The static state of the selected submit button is some visual indicator but I should prevent user input during this wait.
+
+No system timeout - User's login seems to last forever, should auto log users out after half an hour to keep accounts secure
