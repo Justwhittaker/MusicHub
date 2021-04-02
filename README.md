@@ -59,10 +59,10 @@ A safe space to find inspiration with the items already in their fridge.
 ---
 
 For the UX on this project I wanted to create a simple and user friendly site. My target audience is young and mature adults. <br>
-The site also allows for Profeesional Chefs to share some of thier awards winning recipes but also for the student to swap their 
+The site also allows for Professional  Chefs to share some of their awards winning recipes but also for the student to swap their 
 quick fixes even grandmas can leave their family recipes down for everyone to enjoy!!
 
-* **Testing his/her/their Cooking abilites** with **quick searches** within the **Category** they are looking for.
+* **Testing his/her/their Cooking abilities** with **quick searches** within the **Category** they are looking for.
 * **Being excited** to find new recipes and **share** their own.
 * Get a **inspiration** for cooking out of the box.
 * **Keep adding more and more recipes** to the website **again & again**.
@@ -78,7 +78,7 @@ The site also allows for restaurant customers to find good and decent Recipes in
 * Search Recipes.
 * Detailed profile for up and coming chefs on top of the simple registration.
 * Dedicated page for uploading new Recipes
-* Full page Deal view including the Name of the Recipe, Cooking details with Ingredients and Instructions
+* Full page Recipe view including the Name of the Recipe, Cooking details with Ingredients and Instructions
 * Legal framework is also included, with links to privacy policies and FAQs, as well as corporate info in the about us section of the website.
 
 #### Registered Users ####
@@ -97,7 +97,7 @@ The site also allows for restaurant customers to find good and decent Recipes in
     * Easily **recover my password** in case I forget it.
     * filter and sort Recipes.
 
-* Marketing the site itself and utilising advertising opportunities within the site is out of scope, therefore the links to social media sites are merely links for users to go to thier own profiles to share their recipes.
+* Marketing the site itself and utilising advertising opportunities within the site is out of scope, therefore the links to social media sites are merely links for users to go to their own profiles to share their recipes.
 
 ---
 <a name="user-stories"></a>
@@ -110,11 +110,11 @@ The site also allows for restaurant customers to find good and decent Recipes in
 * The **user** wants to be able to **search** categories or ingredients.
 * The **user** wants to be **challenged** in his/her/their **skills**.
 * The **user** wants to know the **difficulty** of the recipe before **deciding**.
-* The **user** wants to start **finding recipes immedaitely**. 
+* The **user** wants to start **finding recipes immediately**. 
 * The **user** wants to see the **latest recipes** added.
-* The **user** wants a **conveint sized recipes box** to be able to read the recipe clearfully.
+* The **user** wants a **convenient sized recipes box** to be able to read the recipe clearfully.
 * The **user** wants to know the **recipe** details such as **ingredients, method and cooking instructions**
-* The **user** wants to **have the possibility** of thier **own profile** where their recipes come up first.
+* The **user** wants to **have the possibility** of their **own profile** where their recipes come up first.
 * The **user** wants to **have the possibility** of **favorites** where their best recipes are **saved for later**.
 * The **user** wants to **know** if **their recipe has been submitted**.
 * The **user** wants to **easily add their own recipe** to the website.
@@ -156,7 +156,7 @@ The site also allows for restaurant customers to find good and decent Recipes in
 <a name="colors"></a>
 ### Colors ###
 
-* The **color scheme** used for the website is a sleek **recipe website palette** composed of a combination of **black and whites** for the **title** and a **classic light teal** for calming affect for the **logo** on the **a sky blue with neon type writing** .
+* The **color scheme** used for the website is a sleek **recipe website palette** composed of a combination of **black and whites** for the **title** and a **classic light teal** for calming effect for the **logo** on the **a sky blue with neon type writing** .
 
 ---
 ---
@@ -172,20 +172,20 @@ The site also allows for restaurant customers to find good and decent Recipes in
 <a name="home_page"></a>
 #### Home page ####
 
-There are two types of users and I wanted to give a clear path to start using the site with Call To Action for both groups. Potential deal shoppers are directed to the Search & browsing, while potential restuaranteurs are shown an eye-catchy banner with a popping CTA button.
+There are two types of users and I wanted to give a clear path to start using the site with Call To Action for both groups. Potential Recipe users are directed to the Search & browsing, while potential chefs are shown to an easy register CTA.
 
 <a name="browsing"></a>
 #### Browsing ####
 
-Many similar sites (competitors) are trying to showcase a wide range of services and options, therefore losing focus and probably losing potential subscriptions and users by not inviting them to further explore the site. My clear goal here is to lead users to check out more Recipes for dining and eating out.
+My clear goal here is to lead users to check out more Recipes for dining and educational purposes
 
 <a name="detailed_view"></a>
 #### Detailed view ####
 
-Clicking on any of the Recipes on the home page brings the user to the deal details page, displaying all the available information about each deal. 
+Clicking on any of the Recipes on the home page brings the user to the Recipe details page, displaying all the available information about each Recipe. 
 
 #### Potential contributors ####
-Potential contributors have a flow of action to fully utilize the page and achieve their goals. They have a strictly limited access to the part of the database that concerns their artwork and therefore can perform CRUD operations.
+Potential contributors have a flow of action to fully utilize the page and achieve their goals. They have a strictly limited access to the part of the database that concerns their Recipe and therefore can perform CRUD operations.
 
 * Create new entry: upload image and provide details
 * Read (Display) entries - the detailed view with personal information
@@ -205,14 +205,12 @@ I put quite some emphasis into designing the database structure and schema. I wa
 The steps and outcome was as follows (note that the final structure differs at several points, because I had to adjust on multiple occasions):
 
 Identifying Entities:
-* User
-* Restaurant User
-* Deal
-* Deal Image
-* Deal Description
-* Prices
-* Contact Details to make bookings such as Address, Phone Number and Websites
-* Subscriptions
+* Username
+* Recipe Name
+* Categories
+* Recipe Image
+* Recipe Description
+* Timestamp
 
 Identifying Relationships
 * Recipe_ID = Categories = User = Timestamps
@@ -305,7 +303,7 @@ Footer
 ![Search Bar](static/img/readme_img/searchbar.jpg)
 
 #### Recipe Detail page: ####
-![RecipePage](static/img/readme_img/dealdet.jpg)
+![RecipePage](static/img/readme_img/recipedet.jpg)
 
 #### Sign up page: ####
 ![signup](static/img/readme_img/register.png)
@@ -333,7 +331,7 @@ Recipe details view when logged in
 ![ProfilePage](static/img/readme_img/profile_display.png)
 
 #### Add a Recipe page: ####
-![addDeal](static/img/readme_img/add_recipes.png)
+![addRecipe](static/img/readme_img/add_recipes.png)
 
 #### Edit a Recipe page: ####
 ![editRecipes](static/img/readme_img/edit_recipes.png)
@@ -365,20 +363,20 @@ Recipe details view when logged in
 
 * **Responsiveness** on all screen sizes.
 * **large title** for attractiveness and engagement.
-* **Suggested recipes** on landing page as an introduction.
+* **Suggested recipes** on the landing page as an introduction.
 * **User login/logout** so that users can keep a tally of their own recipes added and videos uploaded.
 * **Input Recipes** to the website.
 * **Edit Recipes** to the website.
 * **Search Recipes** on the Website.
-* **Instructions** so that the user can grasp the concept immedaitely.
-* **Immedaite** recipes with Easy and simple instructions to make the recipe.
+* **Instructions** so that the user can grasp the concept immediately.
+* **Immediate** recipes with Easy and simple instructions to make the recipe.
 * **Download success** notation when recipe has successfully saved to the database
-* **upload picture** with the recipe to give people a sense of what can be acheived with their recipe.
+* **upload picture** with the recipe to give people a sense of what can be achieved  with their recipe.
 * **upload video** allows users to upload videos of themselves creating a recipe.
 
 * **Responsiveness** on all screen sizes.
 * **large title** for attractiveness and engagement.
-* **Suggested Recipes** on landing page as an introduction.
+* **Suggested Recipes** on the landing page as an introduction.
 * **User login/logout** so that users can keep a tally of their own Recipes added and videos uploaded.
 * **Input Recipes** to the website.
 * **Edit Recipes** to the website.
@@ -394,7 +392,7 @@ Recipe details view when logged in
 
 * **Feature 1** - **Rating system** for others to be able to rate the recipe success.
 * **Feature 2** - **Comment box** and **messages notifications** below the recipes for users to interact with each other.
-* **Feature 3** - **Favorites** for user to quickly reference recipes they enjoyed or still want to Experiment with.
+* **Feature 3** - **Favorites** for users to quickly reference recipes they enjoyed or still want to Experiment with.
 * **Feature 4** - **Input Videos** to the website.
 
 
@@ -430,7 +428,6 @@ Recipe details view when logged in
 * [Balsamiq](https://balsamiq.com/)
 * [dbdiagram](https://dbdiagram.io/)
 * [Heroku](https://www.heroku.com/)
-* [django-extensions 3.1.1](https://pypi.org/project/django-extensions/)
 * [Canva](https://canva.com)
 * [pip3](https://pip.pypa.io/en/stable/installing/)
 
@@ -439,7 +436,7 @@ Recipe details view when logged in
 * dnspython - Project description. dnspython is a DNS toolkit for Python. It supports almost all record types. It can be used for queries, zone transfers, and dynamic updates
 * favicon - also known as a · shortcut icon, · website icon, · tab icon, · URL icon, or · bookmark icon, is a file containing
 * Flask - Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries
-* flask-paginate - is a simple paginate extension for flask which is reference to will_paginate, and use bootstrap as css framework.
+* flask-paginate - is a simple pagination extension for flask which is reference to will_paginate, and uses bootstrap as css framework.
 * Flask-pymongo - The Flask-PyMongo extension provides a low-level API
 * heroku - a free based server to host test projects and educational sites, live hosting also available at Additional costs
 * pymongo - PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python
@@ -453,11 +450,11 @@ Recipe details view when logged in
 
 ### Defensive Programming ###
 
-Sites with ownership rules and roles opens a site up to hacking especially if your users are savvy and notice url parameters correlate to database object manipulation. Django is pretty good, allowing you to hook in login required for views associated with CRUD options, and form validation is top notch if you define it yourself.
+Sites with ownership rules and roles opens a site up to hacking especially if your users are savvy and notice url parameters correlate to database object manipulation. Python is pretty good, allowing you to hook in login required for views associated with CRUD options, and form validation is top notch if you define it yourself.
 
 **Additional Security Checks**
 
-1. Users cannot Delete or Update other's submissions. The Deal Delete and Deal Update views check for Entry Id's to prevent logged in users from guessing the ID of a peer's login
+1. Users cannot Delete or Update other's submissions. The Recipe Delete and Recipe Update views check for Entry Id's to prevent logged in users from guessing the ID of a peer's login
 2. Users cannot Update or Delete others' Recipes. 
 3. Users cannot Update profiles for other users. The Profile Update view checks the user's id against the logged in user's id before allowing updates.
 4. Users cannot Update User Information for other users. The User Update view checks the user's id against the logged in user's id before allowing updates.
@@ -503,7 +500,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
     * I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.<br>
     * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.<br>
     * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily<br>
-    * User does not have to register if they just want to veiw recipes all recipes are free.<br>
+    * User does not have to register if they just want to view recipes all recipes are free.<br>
     * Landing page was responsive and working as expected<br>
 
 **Add register**
@@ -514,7 +511,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 
     * To start adding your own recipes you would need to register.<br>
     * Once registered you would have to log in<br>
-    * User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"<br>
+    * User is informed if registration is successful if flash message appears "user successfully added" else flashes "user name already used"<br>
     * Register and Log-in page was responsive and working as expected<br>
 
 **Profile for normal users**
@@ -525,7 +522,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 * **Implementation**
 
     * This is where the real fun begins, as a user you can <br>
-        1. Thier **own profile** where their recipes come up first. <br>
+        1. Their **own profile** where their recipes come up first. <br>
         2. **Easily Add and Edit their own recipes** to the website. <br>
         3. **Have the possibility** to **upload pictures** <br>
         4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
@@ -538,7 +535,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 * **Implementation**
 
     * This is where the Admin can see the listings page<br>
-        1. Admin also has thier **own profile** where their recipes come up first. <br>
+        1. Admin also has their **own profile** where their recipes come up first. <br>
         2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
         3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
         4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
@@ -566,7 +563,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
         9. Instructions <br>
         10. Add Instructions fields (add more then one or extra fields)<br>
 
-    * Also I have added a button for the user tochange mind and go back to profile. <br>
+    * Also I have added a button for the user to change their mind and go back to profile. <br>
     * add_recipe and the edit_recipe pages was responsive and working as expected<br>
 
 
@@ -583,7 +580,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 
     * I wanted to keep it clean and neat with the landing page displaying the newest and latest Recipes.<br>
     * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.<br>
-    * User does not have to register if they just want to View Recipes all Recipes are free to View.<br>
+    * Users do not have to register if they just want to View Recipes. All Recipes are free to View.<br>
     * Landing page was responsive and working as expected<br>
 
 **Add register**
@@ -615,18 +612,18 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
         1. Admin also has their **own profile** where their Recipes come up first. <br>
         2. From Listings Admin can **Easily Add and Edit all Recipes** on the website. <br>
         3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
-        4. **Easily Delete any Recipes** if the deal does not prescribe to the user agreement and is no longer allowed on the website. <br>
+        4. **Easily Delete any Recipes** if the Recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
 
 
 **Add Recipes & Edit Recipes**
 
-![Add Deals](static/media/readme_media/add_response.jpg) 
-![Edit Deals](static/media/readme_media/edit_response.jpg) 
+![Add Recipe](static/media/readme_media/add_response.jpg) 
+![Edit Recipe](static/media/readme_media/edit_response.jpg) 
 
 * **Implementation**
 
     * Both the add_Recipes and the edit_Recipes, have the same framework and based on the same template. <br>
-    * edit_Recipes does however pulls all the values from the DB so that User is aware what deal they are editing <br>
+    * edit_Recipes does however pulls all the values from the DB so that User is aware what Recipe they are editing <br>
 
     * This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
         1. Restaurant name
@@ -650,7 +647,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 ---
 ---
 
-As I had a few learning curves by using Django frameworks there were a lot of errors I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project. See the separate [ERRORS.md](ERRORS.md) file for the details.
+As I had a few learning curves by using Python frameworks there were a lot of errors I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project. See the separate [ERRORS.md](ERRORS.md) file for the details.
 
 ---
 ---
@@ -738,9 +735,9 @@ To run this application in a cloud environment to allow visibility to external u
 
     * If you restart your machine to activate your environment variables, do not forget to reactivate your virtual environment with the command used at step 4.
 
-7. Create the superuser for the postgres database so you can have access to the django admin, follow the steps necessary to set up the username, email and password by running the following management command in your terminal:
+7. Create the superuser for the postgres database so you can have access to the python admin, follow the steps necessary to set up the username, email and password by running the following management command in your terminal:
 
-    * python manage.py createsuperuser
+    * python run.py createsuperuser
 
 8. Preload products and tags. To match starter projects and user profile tags to the original concept, run the following commands from your IDE's terminal:
 
