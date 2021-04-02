@@ -305,25 +305,31 @@ Footer
 ![Search Bar](static/img/readme_img/searchbar.jpg)
 
 #### Recipe Detail page: ####
-![RecipePage](static/media/readme_media/deal_detail.jpg)
+![RecipePage](static/img/readme_img/dealdet.jpg)
 
 #### Sign up page: ####
 ![signup](static/img/readme_img/register.png)
 
 #### Log In page: ####
-![login](media/readme/login.jpg)
+![login](static/img/readme_img/login.jpg)
 
-#### NavBar Dropdown: ####
+#### NavBar ####
 * Before Login or Sign Up
-![NavBar](media/readme/dropdownNav.jpg)
-* Client Logged in successfully
-![NavBar](media/readme/dropdownNav2.jpg)
-* IF SuperUser 
-![NavBar](media/readme/dropdownNavSuper.jpg)
 
-#### Profile page: ####
+![NavBar](static/img/readme_img/loggedout.jpg)
+
+#### Profile page & NavBar: ####
+
+* IF SuperUser Navbar displays Manage Listings
+
 ![ProfilePage](static/img/readme_img/profile_admin.png)
+
+* IF Client Logged in successfully Navbar displays CRUD functionality
+
 ![ProfilePage](static/img/readme_img/profile.png)
+
+Recipe details view when logged in
+
 ![ProfilePage](static/img/readme_img/profile_display.png)
 
 #### Add a Recipe page: ####
@@ -333,16 +339,16 @@ Footer
 ![editRecipes](static/img/readme_img/edit_recipes.png)
 
 #### Delete message: ####
-![delete](media/readme/delete.jpg)
+![delete](static/img/readme_img/delete.jpg)
 
 #### About Us page: ####
-![about](media/readme/about.jpg)
+![about](static/img/readme_img/about.jpg)
 
 #### Privacy Policy page: ####
-![privatepol](media/readme/privatepol.jpg)
+![privatepol](static/img/readme_img/priv_pol.jpg)
 
 #### Terms & Conditions page: ####
-![T&C's](media/readme/tandc.jpg)
+![T&C's](static/img/readme_img/T&Cs.jpg)
 
 #### IamResponsive: ####
 ![Responsiveness](static/img/readme_img/amIresponsive.png)
@@ -429,27 +435,20 @@ Footer
 * [pip3](https://pip.pypa.io/en/stable/installing/)
 
 **Framework & Extensions**
-
-* dj-database-url - allows use of environment variable for database connections
+* beautifulsoup4 - Beautiful Soup is a Python library for pulling data out of HTML and XML files. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree
+* dnspython - Project description. dnspython is a DNS toolkit for Python. It supports almost all record types. It can be used for queries, zone transfers, and dynamic updates
+* favicon - also known as a · shortcut icon, · website icon, · tab icon, · URL icon, or · bookmark icon, is a file containing
+* Flask - Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries
+* flask-paginate - is a simple paginate extension for flask which is reference to will_paginate, and use bootstrap as css framework.
+* Flask-pymongo - The Flask-PyMongo extension provides a low-level API
+* heroku - a free based server to host test projects and educational sites, live hosting also available at Additional costs
+* pymongo - PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python
+* python-dateutil - The dateutil module provides powerful extensions to the standard datetime module 
+* tabulate - Tabulate is an open-source python package/module which is used to print tabular data in nicely formatted tables
+* Werkzeug - Flask wraps Werkzeug, using it to handle the details of WSGI while providing more structure and patterns for defining powerful applications.
 * bootstrap 4 - a mobile friendly CSS framework based on a responsive grid system. Provides out of the box UI components such as navigation menu bar, carousels, and cards.
-* django-bootstrap4 - Bootstrap 4 integration for Django
-* django-crispy-forms - Allows style and HTML control of Django template form displays
-* django-forms-bootstrap - allows further customization of bootstrap forms within Django framework
-* stripe - A python library to talk to Stripe's API
-* boto3- allows Python to talk to AWS SDK so you can store data in S3 buckets
 * coverage - measures and analyzes code coverage of python code
-* django-storages - a collection of custom storage backends with django to work with * boto3 and AWS S3.
-* django-multiselectfield - allows checkbox display of multi selects for django
-* graphviz -used to create graphics from Python
-* django-extensions - collection of management commands for django, used for validating templates, and graphics for models
-* gunicorn - Python WSGI HTTP Server for UNIX so you can host your application
-* pillow -Python Imaging Library to help store imagery into a database
-* psycopg2 - PostgreSQL database adapter for the Python
 
-**APIs**
-
-* AWS S3 Bucket - allows seamless uploading of user files to cloud storage using application credentials
-* stripe - payment platform to validate and accept credit card payments securely
 
 
 ### Defensive Programming ###
@@ -484,6 +483,92 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 
 <a name="Responsiveness"></a>
 ### Responsiveness ###
+
+**Responsiveness**
+
+* **Implementation** 
+
+    * I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
+
+![landingPage](static/img/home_page_response.png)
+![landingPage](static/img/home_page_response2.png)
+
+**Landing Page**
+
+![landingPage](static/img/home_page.png)
+![landingPage](static/img/home_page_footer.png)
+
+* **Implementation** 
+
+    * I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.<br>
+    * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.<br>
+    * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily<br>
+    * User does not have to register if they just want to veiw recipes all recipes are free.<br>
+    * Landing page was responsive and working as expected<br>
+
+**Add register**
+
+![Recipes](static/img/register.png) 
+
+* **Implementation**
+
+    * To start adding your own recipes you would need to register.<br>
+    * Once registered you would have to log in<br>
+    * User is informed if registeration is successful if flash message appears "user successfully added" else flashes "user name already used"<br>
+    * Register and Log-in page was responsive and working as expected<br>
+
+**Profile for normal users**
+
+![Profile](static/img/profile.png) 
+![Profile](static/img/profile_display.png) 
+
+* **Implementation**
+
+    * This is where the real fun begins, as a user you can <br>
+        1. Thier **own profile** where their recipes come up first. <br>
+        2. **Easily Add and Edit their own recipes** to the website. <br>
+        3. **Have the possibility** to **upload pictures** <br>
+        4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
+    * Profile page was responsive and working as expected<br>
+
+**Profile for Admin**
+
+![Profile](static/img/profile_admin.png) 
+
+* **Implementation**
+
+    * This is where the Admin can see the listings page<br>
+        1. Admin also has thier **own profile** where their recipes come up first. <br>
+        2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
+        3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
+        4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
+    * Admin page was responsive and working as expected<br>
+
+**Add recipes & Edit Recipes**
+
+![Add Recipes](static/img/add_recipes.png) 
+![Edit Recipes](static/img/edit_recipes.png) 
+
+* **Implementation**
+
+    * Both the add_recipe and the edit_recipe, have the same framework and based on the same template. <br>
+    * edit_recipe does however pulls all the values from the DB so that User is aware what recipe they are editing <br>
+
+    * This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
+        1. Recipe name <br>
+        2. Category <br>
+        3. Prep time <br>
+        4. Cooking Time <br>
+        5. Difficulty <br>
+        6. Serves <br>
+        7. Ingredients <br>
+        8. Add ingredient fields (add more then one or extra fields) <br>
+        9. Instructions <br>
+        10. Add Instructions fields (add more then one or extra fields)<br>
+
+    * Also I have added a button for the user tochange mind and go back to profile. <br>
+    * add_recipe and the edit_recipe pages was responsive and working as expected<br>
+
 
 * **Implementation** 
 
@@ -583,10 +668,7 @@ If any of the following are unfamiliar, please click on their associated links a
 * PIP - coordinates python installation packages
 * python 3 - Python is a programming language that lets you work more quickly and integrate your systems more effectively.
 * git - version control system for code source
-* a gmail account with less secure app access turned on use this link after you are signed into the gmail account - allows system to send email notifications such as password reset and user registration links
-* a stripe account - used to securely collect payments, testing API's level is fine unless you want collect payments for real
-* AWS-S3 (Amazon Web Services - Simple Storage Storage Account) - web based cloud storage service for online backup of website assets
-* S3 Bucket - a cloud storage resource which is similar to file folders on a computer's hard drive
+
 
 ## Local ##
 
@@ -632,15 +714,7 @@ $ git clone https://github.com/Justwhittaker/PRO3-RecipeCloud.git - master
     * SECRET_KEY -is a Python secret key, a long random string of bytes. For example, copy the output of this to your config:
     * python -c 'import os; print(os.urandom(16))'
 
-10. Create the superuser so you can have access to the django admin, follow the steps necessary to set up the username, email and password by running the following management command in your terminal:
-
-    * python manage.py createsuperuser
-
-11. Preload products. To match starter projects and user profile tags to the original concept, run the following commands from your IDE's terminal:
-
-    * python manage.py loaddata db.json
-
-12. Start your server by running the following management command in your terminal:
+10. Start your server by running the following management command in your terminal:
 
     * python run.py
 
@@ -696,6 +770,16 @@ To run this application in a cloud environment to allow visibility to external u
 15. If you have errors, look at the logs for your application, most common errors are forgetting to add the hostname and disabling collectstatic.
 
 16. Once your application is running, you may want to update the Deployment method from Manual to Automatic.
+
+* **The website is now live on https://recipe-cloud-pro.herokuapp.com/**.
+
+### Cloning ### 
+
+No issues:
+
+* Why do we is it important to be able to clone successfully first **Collaboration** with team members if you are working in a scrum and secondly **Assist** other developers to use my main project to grow their own version.
+* In my repository **JustWhittaker/PRO3-RecipeCloud**, click on the **"Code** green button, **copy in clipboard the HTTPS link**, open your **IDE** and look through my files.
+* The link : **https://github.com/JustWhittaker/PRO3-RecipeCloud.git**
 
 ---
 ---
