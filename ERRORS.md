@@ -1,16 +1,16 @@
 ---
-# Mealdeals Errors #
+# Recipe Cloud Errors #
 ---
 * [Build Errors](#BuildErrors)
 * [Carousel Errors](#CarouselErrors)
-* [Deal Detail Errors](#DealDetailErrors)
+* [Recipe Detail Errors](#RecipeDetailErrors)
 * [Products Errors](#ProductsErrors)
 * [Query Issues](#QueryIssues)
 
 ---
 **During development**
 ---
-As I had afew learning curves by using Django frameworks there was alot of errros I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project.
+As I had afew learning curves by using Python frameworks there was alot of errros I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project.
 
 * I had a major issue with my Admin Sqlite DB file whilst setting up the database because of this issue: <br>
 
@@ -35,7 +35,7 @@ As I had afew learning curves by using Django frameworks there was alot of errro
 ### Carousel Errors ###
 ---
 
-* I first attempted to create a for loop and used the basics of bootstrap to formulate, however as you can imagine this duplicated all the deals and the all the dealsinstead of one by one
+* I first attempted to create a for loop and used the basics of bootstrap to formulate, however as you can imagine this duplicated all the Recipe and the all the Recipe instead of one by one
 * Then I tried to slice off 3 to see if that would work this was the closest I got in making it work unfortunately I had to abandon the idea for the time being due to time constraints.
 * I have been thinking of solving this error by using pagination and carousel together.
 
@@ -44,20 +44,15 @@ As I had afew learning curves by using Django frameworks there was alot of errro
 ![Carousel Errors](static/media/errors/carouselerror2.jpg)
 
 ---
-<a name="DealDetailErrors"></a>
-### Deal Detail Errors ###
+<a name="RecipeDetailErrors"></a>
+### Recipe Detail Errors ###
 ---
 
-* Unable to ensure that the deal.id was pulling the specific id needed by the user to veiw in a larger format
-* Solved by adding the {{ deals }} function to the beginning of the div where my first call, as well as ensuring that I used a plural variable deals and not deal.
+* Unable to ensure that the Recipe.id was pulling the specific id needed by the user to veiw in a larger format
+* Solved by adding the {{ Recipe }} function to the beginning of the div where my first call, as well as ensuring that I used a plural variable Recipe and not Recipe.
 
-![Deal Detail Errors](static/media/errors/dealdetailerror1.jpg)
-![Deal Detail Errors](static/media/errors/dealdetailerror2.jpg)
-![Deal Detail Errors](static/media/errors/dealdetailerror3.jpg)
-![Deal Detail Errors](static/media/errors/dealdetailerror4.jpg)
-![Deal Detail Errors](static/media/errors/dealdetailerror1print.jpg)
-SOLVE
-![Deal Detail Errors](static/media/errors/dealdetailerror2solve.jpg)
+![RecipeDetail Errors](static/media/errors/Recipedetailerror1.jpg)
+
 
 ---
 <a name="ProductsErrors"></a>

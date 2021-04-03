@@ -29,7 +29,10 @@ def index():
     per_page = 3
     page = request.args.get(get_page_parameter(), type=int, default=1)
     recipes = mongo.db.recipes.find().sort("timestamp", -1)
-    """pagination for users to flip through different recipes - assistance provided by Cormac_Tutor at CI"""
+    """
+    pagination for users to flip through different recipes -
+    assistance provided by Cormac_Tutor at CI
+    """
     pagination = Pagination(page=page, total=recipes.count(),
                             per_page=per_page,
                             search=False, record_name='recipes',
