@@ -32,7 +32,7 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="category">Category</label>
-            <select name="category" class="text_input" required>
+            <select name="category" class="text_input" value="{{ recipe.category }}" required>
               <option>Beef</option>
               <option>Poultry</option>
               <option>Fish</option>
@@ -79,7 +79,7 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="difficulty_level">Difficulty</label>
-            <select name="difficulty_level" class="text_input" required>
+            <select name="difficulty_level" class="text_input" value="{{ recipe.difficulty_level }}" required>
               <option></option>
               <option>Easy</option>
               <option>Tricky</option>
@@ -186,7 +186,7 @@
               class="text_input validate"
               required
               placeholder="Add a link to your image here"
-              value="{{upload_pic}}"
+              value="{{ recipe.upload_pic }}"
             />
           </div>
         </div>
