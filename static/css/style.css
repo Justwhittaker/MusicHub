@@ -58,19 +58,21 @@ h6 {
 /* recipe border styling*/
 .recipe_card {
   width: 100%;
-  margin: 50px;
-  margin-top: 150px;
-  margin-right: 55px;
   border: 30px;
-  border-width: 3px;
+  height: 600px;
+  border-width: 1px;
+  margin-top: 10em;
   border-style: solid;
   text-align: left;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 55px;
   background-position: center;
   background-size: cover;
   font-family: "SpicyRice";
   background-image: url("/static/img/bg2flip.png");
   padding: 20px;
-  border-radius: 10px;
 }
 
 /* recipe image styling*/
