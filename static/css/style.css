@@ -152,17 +152,25 @@ width: 100%;
 }
 /* login border styling*/
 .login_box {
-  width: 70%;
-  border: 30px;
-  border-width: 3px;
-  border-style: solid;
-  text-align: center;
+  text-align: left;
+  display: block;
   font-family: "SpicyRice";
-  font-size: x-large;
-  background-image: url("/static/img/bg3.png");
-  padding: 50px;
-  margin: 100px;
-  border-radius: 2em;
+  font-size: large;
+  background-image: url("/static/img/bg5flip.png");
+  width: 90%;
+  border: 30px;
+  height: 100%;
+  border-width: 1px;
+    margin-bottom: 16em;
+  margin-top: 2em;
+  border-style: solid;
+  text-align: left;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 20px;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
 }
 /* private policy styling*/
 .private_pol {
