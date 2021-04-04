@@ -123,7 +123,7 @@ Testing user stories
         * All Recipes appear in the Profile page along with the ability to quickly guide yourself into the CRUD functionality or veiw in detail and return back to the Profile.
         * The site acted as expected
 
-* The **Logged in user** wants to **know** if **their Recipe has been submitted**.
+* The **Logged in user** wants to **know** if **their Recipe has been submitted**
     * Expected to show messages of success and errors 
         * all messages are working correctly and display at the correct time 
         * The site acted as expected
