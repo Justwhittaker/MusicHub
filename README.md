@@ -872,15 +872,27 @@ http://karma-runner.github.io/5.0/dev/git-commit-msg.html
 * http://ami.responsivedesign.is/#
 
 7. Media sources for sample Recipes <br>
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+* TRE Restaurants - Burger pic https://www.eatout.co.za
+* TRE Restaurants - Goats Cheese Salad https://b.zmtcdn.com/data/pictures
+* Chicken Alfredo - https://images.immediate.co.uk
+* Roast Chicken - https://supervalu.ie/
+* Tomato Jam - https://cdn.cdkitchen.com/recipes/images
+* Roast Potatoes - https://images.immediate.co.uk
+* Bechamel Sauce - https://cdn.apartmenttherapy.info/image/upload
+* Prawn Phad Thai - https://www.kitchensanctuary.com
+* Drizzle bundt cake - https://img.jamieoliver.com/jamieoliver/recipe-database
+* Rolled cassata - https://img.jamieoliver.com/jamieoliver/recipe-database
+* Roast beef sirloin - https://supervalu.ie/
+* steak & ale pie - https://food-images.files.bbci.co.uk
+* Pork & apple stew - https://images.immediate.co.uk
+* Curried Cauliflower Soup - https://cookieandkate.com/
+* Béarnaise sauce - https://ichef.bbci.co.uk
+* Chicken noodle soup - https://images.immediate.co.uk
 
+8. Media sources for the background, hero image and recipe card
+* Recipe card - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeKGP2fVDniVRErRozT8HaDpS9E2bxJyBJQ&usqp=CAU
+* Hero Image - https://previews.123rf.com/images/romastudio/romastudio1603/romastudio160300280/54088843-healthy-food-background-studio-photo-of-different-fruits-on-white-wooden-table-high-resolution-produ.jpg
+* Background - Canva.com
 
 **Many thanks to:**
 
