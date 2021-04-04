@@ -487,90 +487,6 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 
     * I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
 
-![landingPage](static/img/home_page_response.png)
-![landingPage](static/img/home_page_response2.png)
-
-**Landing Page**
-
-![landingPage](static/img/home_page.png)
-![landingPage](static/img/home_page_footer.png)
-
-* **Implementation** 
-
-    * I wanted to keep it clean and neat with the landing page displaying the newest and latest recipes.<br>
-    * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.<br>
-    * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily<br>
-    * User does not have to register if they just want to view recipes all recipes are free.<br>
-    * Landing page was responsive and working as expected<br>
-
-**Add register**
-
-![Recipes](static/img/register.png) 
-
-* **Implementation**
-
-    * To start adding your own recipes you would need to register.<br>
-    * Once registered you would have to log in<br>
-    * User is informed if registration is successful if flash message appears "user successfully added" else flashes "user name already used"<br>
-    * Register and Log-in page was responsive and working as expected<br>
-
-**Profile for normal users**
-
-![Profile](static/img/profile.png) 
-![Profile](static/img/profile_display.png) 
-
-* **Implementation**
-
-    * This is where the real fun begins, as a user you can <br>
-        1. Their **own profile** where their recipes come up first. <br>
-        2. **Easily Add and Edit their own recipes** to the website. <br>
-        3. **Have the possibility** to **upload pictures** <br>
-        4. **Easily Delete their own recipes** if they no longer want to be on the website. <br>
-    * Profile page was responsive and working as expected<br>
-
-**Profile for Admin**
-
-![Profile](static/img/profile_admin.png) 
-
-* **Implementation**
-
-    * This is where the Admin can see the listings page<br>
-        1. Admin also has their **own profile** where their recipes come up first. <br>
-        2. From Listings Admin can **Easily Add and Edit all recipes** on the website. <br>
-        3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
-        4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
-    * Admin page was responsive and working as expected<br>
-
-**Add recipes & Edit Recipes**
-
-![Add Recipes](static/img/add_recipes.png) 
-![Edit Recipes](static/img/edit_recipes.png) 
-
-* **Implementation**
-
-    * Both the add_recipe and the edit_recipe, have the same framework and based on the same template. <br>
-    * edit_recipe does however pulls all the values from the DB so that User is aware what recipe they are editing <br>
-
-    * This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
-        1. Recipe name <br>
-        2. Category <br>
-        3. Prep time <br>
-        4. Cooking Time <br>
-        5. Difficulty <br>
-        6. Serves <br>
-        7. Ingredients <br>
-        8. Add ingredient fields (add more then one or extra fields) <br>
-        9. Instructions <br>
-        10. Add Instructions fields (add more then one or extra fields)<br>
-
-    * Also I have added a button for the user to change their mind and go back to profile. <br>
-    * add_recipe and the edit_recipe pages was responsive and working as expected<br>
-
-
-* **Implementation** 
-
-    * I used **Bootstrap** as well as **flexbox and custom CSS media queries** to ensure that the website didn't break on all screen sizes.
-
 **Landing Page**
 
 ![landingPage](/static/img/readme_img/response1.jpg)
@@ -582,10 +498,12 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
     * The UI has been created in HTML5 and CSS3 and by using bootstrap all tiles are responsive on all screen sizes.<br>
     * Users do not have to register if they just want to View Recipes. All Recipes are free to View.<br>
     * Landing page was responsive and working as expected<br>
+    * As stated above, I wanted to recreate a neighbourhood profile where friends, neighbours and relatives can swap and share their favourite recipes, simply and easily<br>
 
 **Add register**
 
-![landingPage](static/media/readme_media/signup_response.jpg)
+![landingPage](/static/img/readme_img/response_reg.jpg)
+![landingPage](/static/img/readme_img/response_login.jpg)
  
 
 * **Implementation**
@@ -597,8 +515,7 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 
 **Profile for members and admin**
 
-![Profile](static/media/readme_media/profile_response.jpg) 
-![Profile](static/media/readme_media/profile_response2.jpg) 
+![Profile](/static/img/readme_img/response_profile.jpg)
 
 * **Implementation**
 
@@ -613,32 +530,45 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
         2. From Listings Admin can **Easily Add and Edit all Recipes** on the website. <br>
         3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
         4. **Easily Delete any Recipes** if the Recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
+    * This is where the Admin can see the listings page<br>
+        1. Admin also has their **own profile** where their recipes come up first. <br>
+        2. From Listings Admin can **Easily Add and Edit ALL recipes** on the website. <br>
+        3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
+        4. **Easily Delete any recipes** if the recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
+    * Admin page was responsive and working as expected<br>
 
 
 **Add Recipes & Edit Recipes**
 
-![Add Recipe](static/media/readme_media/add_response.jpg) 
-![Edit Recipe](static/media/readme_media/edit_response.jpg) 
+![Add Recipe](/static/img/readme_img/response_add.jpg) 
+![Edit Recipe](/static/img/readme_img/response_edit.jpg) 
 
 * **Implementation**
 
     * Both the add_Recipes and the edit_Recipes, have the same framework and based on the same template. <br>
     * edit_Recipes does however pulls all the values from the DB so that User is aware what Recipe they are editing <br>
+        * To start adding your own recipes you would need to register.<br>
+        * Once registered you would have to log in<br>
+        * User is informed if registration is successful if flash message appears "user successfully added" else flashes "user name already used"<br>
+        * Register and Log-in page was responsive and working as expected<br>
+
 
     * This is the second step of the **CRUD** functionality, users can Add or edit the following: <br>
-        1. Restaurant name
-        2. Category 
-        3. Number
-        4. Address 
-        5. Website 
-        6. Recipes name 
-        7. Description 
-        8. Price
-        9. Image
-        10. User
+   
+   Recipes:
 
-    * Also I have added a button for the user to change their mind and go back to profile. <br>
-    * add_Recipes and the edit_Recipes pages was responsive and working as expected<br>
+    * Recipe Name
+    * Category
+    * Cooking time
+    * Prep time
+    * Serves 
+    * Ingredient
+    * Instruction
+    * Upload Pic
+
+
+* Also I have added a button for the user to change their mind and go back to profile. <br>
+* add_Recipes and the edit_Recipes pages was responsive and working as expected<br>
 
 ---
 ---
