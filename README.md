@@ -573,8 +573,8 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 
 **Landing Page**
 
-![landingPage](static/media/readme_media/landing_response.jpg)
-![landingPage](static/media/readme_media/landing_response2.jpg)
+![landingPage](/static/img/readme_img/response1.jpg)
+![landingPage](/static/img/readme_img/response2.jpg)
 
 * **Implementation** 
 
