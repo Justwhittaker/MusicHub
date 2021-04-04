@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
 /* body border styling*/
-body {
+body, html{
+    margin:0;
+    padding:0;
   font-family: "Eczar" !important;
   background-color: #5ac5ff !important;
-  width: 100% !important;
 }
 /* logo styling*/
 .logo {
@@ -77,7 +78,7 @@ h6 {
 .get_recipe_card {
 width: 100%;
   border: 30px;
-  height: 1100px;
+  height: 100%;
   border-width: 1px;
   margin-top: 5em;
   margin-bottom: 5em;
@@ -103,20 +104,25 @@ width: 100%;
 }
 /* recipe CRUD border styling*/
 .recipe_box {
-  width: 80%;
-  border: 30px;
-  border-width: 3px;
-  border-style: solid;
   text-align: left;
   display: block;
-  -moz-box-align: center;
   font-family: "SpicyRice";
-  font-size: x-large;
-  background-size: cover;
+  font-size: large;
   background-image: url("/static/img/bg5flip.png");
-  padding: 50px;
-  border-radius: 10px;
-  margin: 100px;
+  width: 90%;
+  border: 30px;
+  height: 100%;
+  border-width: 1px;
+  margin-bottom: 5em;
+  margin-top: 2em;
+  border-style: solid;
+  text-align: left;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 20px;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
 }
 
 .input {
@@ -162,7 +168,9 @@ width: 100%;
 .private_pol {
   width: 100%;
   border: 30px;
-  border-width: 3px;
+  border-width: 1px;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-style: solid;
   text-align: left;
   display: inline-block;
@@ -170,22 +178,22 @@ width: 100%;
   font-size: x-large;
   background: linear-gradient(21deg, #82cef7, #d6e1ff);
   padding: 50px;
-  border-radius: 2em;
 }
 /* FAQ and about styling*/
 .faq {
   background-image: url("/static/img/bg2flip.png");
   background-size: cover;
-  width: 100%;
+  width: 90%;
   border: 30px;
-  border-width: 3px;
+  border-width: 1px;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-style: solid;
   text-align: left;
   display: inline-block;
   font-family: "SpicyRice";
   font-size: x-large;
   padding: 50px;
-  border-radius: 2em;
   margin: 10px;
 }
 /* footer styling*/
@@ -195,6 +203,7 @@ width: 100%;
   max-width: 100%;
   background: #ffffff;
   height: auto;
+  margin-top: 4em;
   text-align: center;
 }
 /* copyright styling*/
