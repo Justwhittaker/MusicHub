@@ -58,6 +58,12 @@ h6 {
 /* recipe border styling*/
 .recipe_card {
   width: 100%;
+<<<<<<< HEAD
+=======
+  margin: 50px;
+  margin-top: 150px;
+  margin-right: 55px;
+>>>>>>> 54e1b46... style(RecipeCloud):final style adjustment css
   border: 30px;
   height: 600px;
   border-width: 1px;
