@@ -58,12 +58,9 @@ h6 {
 /* recipe border styling*/
 .recipe_card {
   width: 100%;
-<<<<<<< HEAD
-=======
   margin: 50px;
   margin-top: 150px;
   margin-right: 55px;
->>>>>>> 54e1b46... style(RecipeCloud):final style adjustment css
   border: 30px;
   height: 600px;
   border-width: 1px;
@@ -213,8 +210,8 @@ width: 100%;
 /* footer styling*/
 .footer {
   padding: 5px;
-  min-width: 100%;
-  max-width: 100%;
+  min-width: 98%;
+  max-width: 98%;
   background: #ffffff;
   height: auto;
   margin-top: 4em;
