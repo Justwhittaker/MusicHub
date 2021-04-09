@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
 /* body border styling*/
+<<<<<<< HEAD
 body,
 html {
   margin: 0;
   padding: 0;
+=======
+body, html{
+    margin:0;
+    padding:0;
+>>>>>>> 13551ec... chore/style(mealdeals): dealing with responsiveness of the recipe card and add/edit cards, updated Readme.md on responsiveness
   font-family: "Eczar" !important;
   background-color: #5ac5ff !important;
 }
@@ -114,7 +120,11 @@ h6 {
   border: 30px;
   height: 100%;
   border-width: 1px;
+<<<<<<< HEAD
   margin-bottom: 3em;
+=======
+  margin-bottom: 5em;
+>>>>>>> 13551ec... chore/style(mealdeals): dealing with responsiveness of the recipe card and add/edit cards, updated Readme.md on responsiveness
   margin-top: 2em;
   border-style: solid;
   text-align: left;
@@ -209,7 +219,12 @@ h6 {
 .footer {
   font-family: 'SpicyRice';
   background: #ffffff;
+<<<<<<< HEAD
   height: 15%;
+=======
+  height: auto;
+  margin-top: 4em;
+>>>>>>> 13551ec... chore/style(mealdeals): dealing with responsiveness of the recipe card and add/edit cards, updated Readme.md on responsiveness
   text-align: center;
   position: relative;
   position: -webkit-sticky;
