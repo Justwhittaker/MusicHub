@@ -211,12 +211,11 @@ h6 {
   background: #ffffff;
   height: 15%;
   text-align: center;
-  margin-left: 1%;
   position: relative;
   position: -webkit-sticky;
   left: 0;
   bottom: 0;
-  width: 97%;
+  width: 100%;
   margin-bottom: auto;
   margin-top: 2em;
   font: 1.5em;
@@ -224,5 +223,4 @@ h6 {
 /* copyright styling*/
 #copyright {
   background-color: rgba(63, 143, 228, 0.966);
-  padding: 5%;
 }
