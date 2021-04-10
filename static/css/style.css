@@ -111,6 +111,13 @@ h6 {
   border-radius: 10px;
   background-size: cover;
 }
+
+.card_img_get {
+  max-width: 50em;
+  height: 40em;
+  border-radius: 10px;
+  background-size: cover;
+}
 /* recipe CRUD border styling*/
 .recipe_box {
   text-align: left;
