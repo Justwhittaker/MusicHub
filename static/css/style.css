@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
 /* body border styling*/
-body,
-html {
+.body {
   margin: 0;
+  width: 100%;
+  padding: 0;
+  font-family: "Eczar" !important;
+  background-color: #5ac5ff !important;
+}
+
+.html {
+  margin: 0;
+  width: 97%;
   padding: 0;
   font-family: "Eczar" !important;
   background-color: #5ac5ff !important;
@@ -99,7 +107,7 @@ h6 {
 /* recipe image styling*/
 .card_img {
   max-width: 15em;
-  max-height: 15em;
+  height: 15em;
   border-radius: 10px;
   background-size: cover;
 }
@@ -217,7 +225,6 @@ h6 {
   left: 0;
   bottom: 0;
   width: 100%;
-  width: 97%;
   margin-bottom: auto;
   margin-top: 2em;
   font: 1.5em;
@@ -225,4 +232,5 @@ h6 {
 /* copyright styling*/
 #copyright {
   background-color: rgba(63, 143, 228, 0.966);
+  width: 102%;
 }
