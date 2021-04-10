@@ -41,6 +41,7 @@
               Cooking Time &nbsp;&nbsp; {{ recipe.cooking_time }} Minutes<br />
               Difficulty &nbsp;&nbsp; {{ recipe.difficulty_level }} &nbsp;&nbsp; <br />
               Serves &nbsp;&nbsp; {{ recipe.serves }} <br />
+            </p>
                Ingredients <br />
             <ul>
                 {% for ingredient in recipe.ingredient %}
@@ -54,7 +55,6 @@
                 {% endfor %}
             </ul>
             <br />
-          </p>
          <a href="{{ url_for ('get_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Go to Recipe</a>
  <a
             href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
