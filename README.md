@@ -364,7 +364,7 @@ Recipe details view when logged in
 * **Responsiveness** on all screen sizes.
 * **large title** for attractiveness and engagement.
 * **Suggested recipes** on the landing page as an introduction.
-* **User login/logout** so that users can keep a tally of their own recipes added and videos uploaded.
+* **User login/logout** so that users can keep a tally of their own recipes added and pictures uploaded.
 * **Input Recipes** to the website.
 * **Edit Recipes** to the website.
 * **Search Recipes** on the Website.
@@ -372,20 +372,6 @@ Recipe details view when logged in
 * **Immediate** recipes with Easy and simple instructions to make the recipe.
 * **Download success** notation when recipe has successfully saved to the database
 * **upload picture** with the recipe to give people a sense of what can be achieved  with their recipe.
-* **upload video** allows users to upload videos of themselves creating a recipe.
-
-* **Responsiveness** on all screen sizes.
-* **large title** for attractiveness and engagement.
-* **Suggested Recipes** on the landing page as an introduction.
-* **User login/logout** so that users can keep a tally of their own Recipes added and videos uploaded.
-* **Input Recipes** to the website.
-* **Edit Recipes** to the website.
-* **Search Recipes** on the Website.
-* **Instructions** so that the user can grasp the concept immediately.
-* **Immediate** Recipes with Easy and simple instructions to make the Recipes.
-* **Download success** notation when Recipes has successfully saved to the database
-* **upload picture** with the Recipes to give people a sense of what can be achieved with their Recipes.
-* **upload video** allows users to upload videos of themselves creating a Recipes.
 
 <a name="implemented"></a>
 ### Future implemented features ###
@@ -477,8 +463,6 @@ Sites with ownership rules and roles opens a site up to hacking especially if yo
 ---
 ---
 Validation, manual unit, cross browser/cross device, accessibility, travis, coverage, this app has a dash of everything test related. See the separate [TESTING.md](TESTING.md) file for the details.
-
-<<<<<<< HEAD
 <a name="Responsiveness"></a>
 ### Responsiveness ###
 =======
@@ -496,7 +480,6 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 ![test_CSS](static/img/errors_val_w3_css.png)
 * I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
 * All pages passed the HTML,CSS and Python validator final test with no major issues.
->>>>>>> 471ea0c... fix(RecipeCloud):fix css in heroku
 
 **Responsiveness**
 
