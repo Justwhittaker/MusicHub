@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %}
   <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
 
@@ -18,6 +16,7 @@
             <label for="recipe_name">Recipe Name</label>
             <input
               name="recipe_name"
+              id="recipe_name"
               type="text"
               minlength="2"
               maxlength="500"
@@ -32,8 +31,8 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="category">Category</label>
-            <select name="category" class="text_input" required>
-            <option>{{ recipe.category }}</option>
+            <select name="category" id="category" class="text_input">
+              <option>{{ recipe.category }}</option>
               <option>Beef</option>
               <option>Poultry</option>
               <option>Fish</option>
@@ -50,10 +49,8 @@
             <label for="prep_time">Prep Time</label>
             <input
               name="prep_time"
+              id="prep_time"
               type="number"
-              minlength="1"
-              maxlength="5"
-              pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
               value="{{ recipe.prep_time }}"
@@ -66,10 +63,8 @@
             <label for="cooking_time">Cooking Time</label>
             <input
               name="cooking_time"
+              id="cooking_time"
               type="number"
-              minlength="1"
-              maxlength="5"
-              pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
               value="{{ recipe.cooking_time }}"
@@ -80,7 +75,7 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="difficulty_level">Difficulty</label>
-            <select name="difficulty_level" class="text_input" required>
+            <select name="difficulty_level" id="difficulty_level" class="text_input">
               <option>{{ recipe.difficulty_level }}</option>
               <option>Easy</option>
               <option>Tricky</option>
@@ -94,8 +89,8 @@
             <label for="serves">Serves</label>
             <input
               name="serves"
+              id="serves"
               type="number"
-              maxlength="1"
               class="num_input validate"
               required
               value="{{ recipe.serves }}"
@@ -109,6 +104,7 @@
             <label for="ingredient">Edit Ingredient</label>
             <input
               name="ingredient"
+              id="ingredient"
               type="text"
               minlength="2"
               maxlength="30"
@@ -138,6 +134,7 @@
             <label for="instruction">Add Instructions</label>
             <input
               name="instruction"
+              id="instruction"
               type="text"
               minlength="5"
               maxlength="50"
@@ -166,6 +163,7 @@
             <label for="upload_pic">Upload Image URL</label>
             <input
               name="upload_pic"
+              id="upload_pic"
               type="text"
               minlength="5"
               maxlength="150"
