@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-          {% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %}
 <!-- This will be used only be admin for CRUD functionality -->
           <!-- Background -->
   <div
     id="recipe_cloud"
     class="p-5 text-center bg-image"
     style="height: 400px;"
-    src="{{ url_for('static', filename='./img/food.jpg') }}"
   >
     <div class="bgimg-2" style="background-color: rgba(70, 99, 226, 0.774);">
       <div class="d-flex justify-content-center align-items-center h-100">
@@ -16,6 +13,7 @@
           <img
             src="{{ url_for('static', filename='./img/logoCloud.png') }}"
             class="logo"
+            alt="#"
           />
           <h1 class="mb-3">Listings</h1>
         </div>
@@ -75,4 +73,3 @@
     </div>
   </div>
  {{ pagination.links }} {% endblock %}
-</html>

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %}
   <!-- Background -->
   <div
     id="recipe_cloud"
     class="p-5 text-center bg-image"
     style="height: 400px;"
-    src="{{ url_for('static', filename='./img/food.jpg') }}"
   >
     <div class="bgimg-2" style="background-color: rgba(70, 99, 226, 0.774); height: 450px;">
       <div class="d-flex justify-content-center align-items-center h-100">
@@ -86,4 +83,4 @@
   </div>
   <!-- pagination for user to scroll through the lists -->
   {{ pagination.info }} {{ pagination.links }} {% endblock %}
-</html>
+

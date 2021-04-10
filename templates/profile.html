@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 {% extends "base.html" %} {% block content %}
 
 <!-- Background  -->
@@ -56,8 +54,5 @@
         {% endfor %}
     </div>
 </div>
-<div>
 <!-- pagination for user to scroll through the lists -->
- {{ pagination.links }} {% endblock %}
-  </div>
-</html>
+{{ pagination.links }} {% endblock %}
