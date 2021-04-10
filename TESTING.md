@@ -193,3 +193,11 @@ As I had a few learning curves by using Python there were a lot of errors I need
 Takes a while to get to the next page when uploading files - I should add in a file processing status bar so user's know what is going on. The static state of the selected submit button is some visual indicator but I should prevent user input during this wait.
 
 No system timeout - User's login seems to last forever, should auto log users out after half an hour to keep accounts secure
+
+## IMPORTANT ##
+Attempted to change my git commits as I made a mistake with calling them Mealdeals and not RecipeCloud
+* I used Git rebase -i HEAD~10 
+    * I was able to rework and edit however, when doing this it changed my commits and caused errors on my page 
+    * When Git merging and pulling it created additional branches in my code and I struggled to get it working correctly
+    * I have abandoned this due to time constriants and I dont want to put my entire project in jeopardy due to some typos
+* **I have been adding additional information now when create commit messages to let any other users know what was worked on**
