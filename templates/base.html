@@ -90,7 +90,7 @@ collaspable for mobile -->
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
         </li>
-        {% if session.user|lower == "justin"|lower %}
+        {% if session.user|lower == "admin"|lower %}
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('listings') }}"
             >Manage listings</a
