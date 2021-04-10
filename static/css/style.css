@@ -70,7 +70,7 @@ h6 {
   border: 30px;
   height: 600px;
   border-width: 1px;
-  margin-top: 10em;
+  margin-top: 8em;
   border-style: solid;
   text-align: left;
   padding: 20px;
@@ -130,7 +130,7 @@ h6 {
   height: 100%;
   border-width: 1px;
   margin-bottom: 3em;
-  margin-top: 2em;
+  margin-top: 5em;
   border-style: solid;
   text-align: left;
   border-radius: 2px;
@@ -224,7 +224,7 @@ h6 {
 }
 /* footer styling*/
 .footer {
-  font-family: 'SpicyRice';
+  font-family: "SpicyRice";
   background: #ffffff;
   height: 15%;
   text-align: center;
