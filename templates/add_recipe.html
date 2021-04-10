@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %}
   <!--Create Form and basis for the uploading of files 
     download your recipes and videos upload-->
 
@@ -18,6 +16,7 @@
             <label for="recipe_name">Recipe Name</label>
             <input
               name="recipe_name"
+              id="recipe_name"
               type="text"
               minlength="5"
               maxlength="30"
@@ -31,7 +30,8 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="Category">Category</label>
-            <select name="category" class="text_input" required>
+            <select name="category" id="Category" class="text_input">
+              <option>Select</option>
               <option>Beef</option>
               <option>Poultry</option>
               <option>Fish</option>
@@ -49,8 +49,8 @@
             <label for="prep_time">Prep Time</label>
             <input
               name="prep_time"
+              id="prep_time"
               type="number"
-              pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
             />
@@ -62,8 +62,8 @@
             <label for="cooking_time">Cooking Time</label>
             <input
               name="cooking_time"
+              id="cooking_time"
               type="number"
-              pattern="^[a-zA-Z0-9]{5,15}$"
               class="num_input validate"
               required
             />
@@ -73,8 +73,8 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="difficulty_level">Difficulty</label>
-            <select name="difficulty_level" class="text_input" required>
-              <option></option>
+            <select name="difficulty_level" id="difficulty_level" class="text_input" >
+              <option>Select</option>
               <option>Easy</option>
               <option>Tricky</option>
               <option>Hard</option>
@@ -87,6 +87,7 @@
             <label for="serves">Serves</label>
             <input
               name="serves"
+              id="serves"
               type="number"
               class="num_input validate"
               required
@@ -99,6 +100,7 @@
             <label for="ingredient">Edit Ingredient</label>
             <input
               name="ingredient"
+              id="ingredient"
               type="text"
               minlength="2"
               maxlength="500"
@@ -107,21 +109,6 @@
               placeholder="Ingredient"
             />
           </div>
-
-          <!-- To do- Quanity link to object -->
-
-          <!-- <div class="input-field col s12">
-            <label for="Qty">Add Qty</label>
-            <input
-              name="Qty"
-              type="text"
-              minlength="2"
-              maxlength="30"
-              class="num_input validate"
-              required
-              placeholder="Qty"
-            />
-          </div> -->
         </div>
 
         <div id="new-ingredients"></div>
@@ -142,6 +129,7 @@
             <label for="instruction">Add Instructions</label>
             <input
               name="instruction"
+              id="instruction"
               type="text"
               minlength="2"
               maxlength="500"
