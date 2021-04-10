@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-          {% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %}
 
           <!-- Show the selected recipe in full on this page -->
           <div
     id="recipe_cloud"
     class="p-5 text-center bg-image"
     style="height: 400px;"
-    src="{{ url_for('static', filename='./img/food.jpg') }}"
   >
     <div class="bgimg-2" style="background-color: rgba(70, 99, 226, 0.774);">
       <div class="d-flex justify-content-center align-items-center h-100">
@@ -16,6 +13,7 @@
           <img
             src="{{ url_for('static', filename='./img/logoCloud.png') }}"
             class="logo"
+            alt="#"
           />
           <h1 class="mb-3">Recipe</h1>
           <div class="container">
@@ -39,6 +37,7 @@
                     Difficulty &nbsp;&nbsp; {{ recipe.difficulty_level }} &nbsp;&nbsp; <br />
                     Serves &nbsp;&nbsp; {{ recipe.serves }} People <br />
                     Ingredients <br />
+                </p>
                 <ul>
                     {% for ingredient in recipe.ingredient %}
                     <li>{{ingredient}}</li>
@@ -51,7 +50,7 @@
                     {% endfor %}
                 </ul>
                 <br />
-                </p>
+
             </div>
 
         <div class="col d-none d-lg-flex">
