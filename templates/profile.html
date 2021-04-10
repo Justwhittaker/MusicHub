@@ -1,13 +1,12 @@
 {% extends "base.html" %} {% block content %}
 
 <!-- Background  -->
-<div id="recipe_cloud" class="p-5 text-center bg-image" style="height: 400px;"
-    src="{{ url_for('static', filename='./img/food.jpg') }}">
+<div id="recipe_cloud" class="p-5 text-center bg-image" style="height: 400px;">
     <div class="bgimg-2" style="background-color: rgba(70, 99, 226, 0.774);">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
                 <!-- logo -->
-                <img src="{{ url_for('static', filename='./img/logoCloud.png') }}" class="logo" />
+                <img src="{{ url_for('static', filename='./img/logoCloud.png') }}" class="logo" alt="#" />
                 <h1 class="mb-3">Profile</h1>
             </div>
         </div>
@@ -30,6 +29,7 @@
                         Cooking Time &nbsp;&nbsp; {{ recipe.cooking_time }} Minutes<br />
                         Difficulty &nbsp;&nbsp; {{ recipe.difficulty_level }} &nbsp;&nbsp; <br />
                         Serves &nbsp;&nbsp; {{ recipe.serves }} People <br />
+                    </p>
                         Ingredients <br />
                     <ul>
                         {% for ingredient in recipe.ingredient %}
@@ -43,7 +43,7 @@
                         {% endfor %}
                     </ul>
                     <br />
-                    </p>
+
                     <a href="{{ url_for ('get_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Go to
                         Recipe</a>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-warning">Edit</a>
