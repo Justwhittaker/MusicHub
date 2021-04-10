@@ -194,6 +194,13 @@ Takes a while to get to the next page when uploading files - I should add in a f
 
 No system timeout - User's login seems to last forever, should auto log users out after half an hour to keep accounts secure
 
+I have a hozizontal scroll on my pages unable to refactor
+* I attempted the following:
+    * Checking dev tools I identified that my footer row is overflowing
+    * After closer inspection I found that the origin is coming from .row margin -15px in Bootstrap
+    * I attempted creating a dupilcate of the base.html to attempt to start from scratch - as soon as I added the bootstrap col the issue continued
+    * After discussing the issue with my mentor, he agreed that it was not a needed as a part of the pass mark for this project, so ultimately abandoned. 
+
 ## IMPORTANT ##
 Attempted to change my git commits as I made a mistake with calling them Mealdeals and not RecipeCloud
 * I used Git rebase -i HEAD~10 
