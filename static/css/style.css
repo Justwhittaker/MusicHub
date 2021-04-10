@@ -192,6 +192,8 @@ h6 {
 .private_pol {
   width: 100%;
   border: 30px;
+  margin-left: 4px;
+  margin-right: 4px;
   border-width: 1px;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
