@@ -32,6 +32,7 @@
     * [Features that will be implemented in the future](#implemented)
 * [Technologies](#technologies)
 * [Testing](#testing)
+    * [Validation](#valid)
     * [Responsiveness](#Responsiveness)
 * [Troubleshooting](#issues)
 * [Deployment](#deploy)
@@ -68,18 +69,16 @@ quick fixes even grandmas can leave their family recipes down for everyone to en
 * **Keep adding more and more recipes** to the website **again & again**.
 * **List their own Recipes** and **favourite** recipes to go to **time & again**
 
-
-For the UX on this project I wanted to create a simple and user friendly site. My target audience is young and mature adults. <br>
 The site also allows for restaurant customers to find good and decent Recipes in their area!!
 
 #### Scope ####
 * An Eye catching landing page
-* Mass-displaying all or filtered Recipes. Lines of relatively small images, with option to click and view or like
+* Mass-displaying all or searched Recipes. Lines of relatively small images, with option to click and view
 * Search Recipes.
 * Detailed profile for up and coming chefs on top of the simple registration.
 * Dedicated page for uploading new Recipes
 * Full page Recipe view including the Name of the Recipe, Cooking details with Ingredients and Instructions
-* Legal framework is also included, with links to privacy policies and FAQs, as well as corporate info in the about us section of the website.
+* Legal framework is also included, with links to privacy policies, as well as corporate info in the about us section of the website.
 
 #### Registered Users ####
 * **View specific Recipes** with **quick searches** within the **Category** they are looking for, instead of sifting through all the Recipes.
@@ -87,7 +86,6 @@ The site also allows for restaurant customers to find good and decent Recipes in
 * **View** the full list of Recipes on the home page
 * Easily **Register & Create** a Profile, having a User specific profile.
 * Easily **Login or Logout** access to account information
-* **Add, Edit and Delete** Company information as needed in a **personalized User profile**
 * **Add, Edit and Delete** Recipes periodically
 
 #### Out of Scope topics ####
@@ -96,6 +94,7 @@ The site also allows for restaurant customers to find good and decent Recipes in
 
     * Easily **recover my password** in case I forget it.
     * filter and sort Recipes.
+    * The **user** wants to **have the possibility** of **favorites** where their best recipes are **saved for later**.
 
 * Marketing the site itself and utilising advertising opportunities within the site is out of scope, therefore the links to social media sites are merely links for users to go to their own profiles to share their recipes.
 
@@ -115,7 +114,6 @@ The site also allows for restaurant customers to find good and decent Recipes in
 * The **user** wants a **convenient sized recipes box** to be able to read the recipe clearfully.
 * The **user** wants to know the **recipe** details such as **ingredients, method and cooking instructions**
 * The **user** wants to **have the possibility** of their **own profile** where their recipes come up first.
-* The **user** wants to **have the possibility** of **favorites** where their best recipes are **saved for later**.
 * The **user** wants to **know** if **their recipe has been submitted**.
 * The **user** wants to **easily add their own recipe** to the website.
 * The **user** wants to **have the possibility** to **upload pictures**.
@@ -141,7 +139,7 @@ The site also allows for restaurant customers to find good and decent Recipes in
 <a name="fonts"></a>
 ### Fonts ###
 
-* The **landing page** is using the classic website **Google Fonts** **#** for the H1 and H3. 
+* The **landing page** is using the classic website **Google Fonts** **SpicyRice** for the H1 and H3. 
 * I paired it with the **Google Fonts** **Eczar & SpicyRice** for readability.
 * I kept the **SpicyRice** font for **better user experience**
 
@@ -267,7 +265,7 @@ href = https://balsamiq.cloud/srsmfvs/pt96bgn/r7C4D
 
 * Herewith the **wireframe** and I pushed a few changes for better readability and engagement:
 * I added **a jumbotron hero image** on the landing page.
-* I added **a full-screen background image** on all the other pages.
+* I added **a full-screen background image** on all the other pages, but removed this as it was causing slow reactions and loading times.
 * I used a **form** to allow for the user to add & edit recipes.
 * I added an easy link to **upload** videos.
 
@@ -444,8 +442,6 @@ Sites with ownership rules and roles opens a site up to hacking especially if yo
 2. Users cannot Update or Delete others' Recipes. 
 3. Users cannot Update profiles for other users. The Profile Update view checks the user's id against the logged in user's id before allowing updates.
 4. Users cannot Update User Information for other users. The User Update view checks the user's id against the logged in user's id before allowing updates.
-5. Users cannot Checkout and enter a payment unless they are logged in and payments cannot be attributed to other profiles.
-6. Changing passwords requires sending a registered email link and does not auto log in a user. While it's annoying to have to wait for a password reset email, then to login after setting it, this step prevents users from taking account ownership over if they manipulate a password reset for their account and attempt to hack another's and it leads to better retention of the password.
 
 **Custom Validation**
 
@@ -462,26 +458,32 @@ Sites with ownership rules and roles opens a site up to hacking especially if yo
 ## Testing ##
 ---
 ---
-Validation, manual unit, cross browser/cross device, accessibility, travis, coverage, this app has a dash of everything test related. See the separate [TESTING.md](TESTING.md) file for the details.
-<a name="Responsiveness"></a>
-### Responsiveness ###
-=======
+Validation, manual unit, cross browser/cross device, accessibility, coverage, this app has a dash of everything test related. See the separate [TESTING.md](TESTING.md) file for the details.
+
+---
+<a name="valid"></a>
+### Validation Testing ###
+---
+
 * I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
 ![pdb](static/img/pdb_debugger.png)
 * Also used this **Automated Testing** to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
-![test_flask](static/img/test_flask.png)
+![test_flask](static/img/readme_img/errors_img/test_flask.png)
 * I used **Pylint** to lint my code by Linting my python code - http://pylint.pycqa.org/en/latest/
-![test_Pylint](static/img/pylint.png)
+![test_Pylint](static/img/readme_img/errors_img/pylint.png)
 * I tested the responsiveness of the website by using the [**Google Chrome Developer Tool**](https://developers.google.com/web/tools/chrome-devtools) as well as the plug-in **Unicorn Revealer** to control my overflow and the website [**Am I Responsive**](http://ami.responsivedesign.is/). 
 * I also tested my website on **different browsers and real devices** : **Iphone 6s, Ipad Pro 12", Ipad Mini, Google Chrome, Safari, Mozilla Firefox and Samsung A70.**
 * I used a first **dirty version** of this project on **Gitpod** and **refactored** my code **step by step** to remove any **useless classes**
 * I tested my CSS file and my HTML files using [**CSS Validator**](https://jigsaw.w3.org/css-validator/) and [**HTML Validator**](https://validator.w3.org/) then fixed the issues needed to be fixed.
-![test_Html](static/img/errors_val_w3.png)
-![test_CSS](static/img/errors_val_w3_css.png)
+![test_Html](static/img/readme_img/errors_img/errors_val_w3.png)
+![test_CSS](static/img/readme_img/errors_img/errors_val_w3_css.png)
 * I tested every **functions** of my script.js using multiple **console.log** and checking for **errors** in the **Google Chrome console**.
 * All pages passed the HTML,CSS and Python validator final test with no major issues.
 
-**Responsiveness**
+---
+<a name="Responsiveness"></a>
+### Responsiveness ###
+---
 
 * **Implementation** 
 
@@ -520,14 +522,14 @@ Validation, manual unit, cross browser/cross device, accessibility, travis, cove
 * **Implementation**
 
     * This is where the real fun begins, as a user you can <br>
-        1. Their **own Recipes** where their Recipes come up first. <br>
+        1. To have a Profile of thier **own Recipes** where only thier Recipes are displayed <br>
         2. **Easily Add and Edit their own Recipes** to the website. <br>
         3. **Have the possibility** to **upload pictures** <br>
         4. **Easily Delete their own Recipes** if they no longer want to be on the website. <br>
     * Profile page was responsive and working as expected<br>
      * This is where the Admin can see all the listings page<br>
         1. Admin also has their **own profile** where their Recipes come up first. <br>
-        2. From Listings Admin can **Easily Add and Edit all Recipes** on the website. <br>
+        2. From **Manage Listings** Admin can **Easily Add and Edit all Recipes** on the website. <br>
         3. **Have the possibility** to edit **upload pictures** which do not subscribe to the user agreement on the page <br>
         4. **Easily Delete any Recipes** if the Recipe does not prescribe to the user agreement and is no longer allowed on the website. <br>
     * This is where the Admin can see the listings page<br>
