@@ -12,7 +12,7 @@
 ---
 **During development**
 ---
-As I had afew learning curves by using Python frameworks there was alot of errros I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project.
+As I had afew learning curves by using Python frameworks there was alot of errors I needed to work through and understand, I wanted to document a lot of my learning opportunities through this project.
 
 ---
 ## Errors & Issues ##
@@ -92,10 +92,5 @@ I also has few errors passing through my GitPod, basic house cleaning fixed most
 * With most of my inhertence working and recipe details pulling in I was struggling with getting my dropdowns to pull their information.
 * After refactoring the code I figured out that I wasnt calling it correctly from the DB, and was solved by removing it as a value and instead adding the jinja templating directly in as an option
 
-![RecipeDetail Errors](static/media/errors/Recipedetailerror1.jpg)
-
-
-
-
-
-
+![RecipeDetail Errors](static/img/readme_img/errors_img/edit_recipe_error.jpg)
+![RecipeDetail Errors](/static/img/readme_img/errors_img/edit_recipe_solve.jpg)
