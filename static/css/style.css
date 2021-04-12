@@ -190,7 +190,6 @@ h6 {
 }
 /* private policy styling*/
 .private_pol {
-  width: 100%;
   border: 30px;
   margin-left: 4px;
   margin-right: 4px;
@@ -223,23 +222,22 @@ h6 {
   margin: 10px;
 }
 /* footer styling*/
-.footer {
+.footer_style {
   font-family: "SpicyRice";
   background: #ffffff;
   height: 15%;
-  text-align: center;
+  text-align: right;
+  padding-right: 5em;
   margin-left: 1%;
   position: relative;
   position: -webkit-sticky;
   left: 0;
   bottom: 0;
-  width: 100%;
   margin-bottom: auto;
   margin-top: 10em;
   font: 1.5em;
 }
 /* copyright styling*/
 #copyright {
-  background-color: rgba(63, 143, 228, 0.966);
-  width: 102%;
+  width: 100%;
 }
