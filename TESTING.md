@@ -199,7 +199,9 @@ I have a hozizontal scroll on my pages unable to refactor
     * Checking dev tools I identified that my footer row is overflowing
     * After closer inspection I found that the origin is coming from .row margin -15px in Bootstrap
     * I attempted creating a dupilcate of the base.html to attempt to start from scratch - as soon as I added the bootstrap col the issue continued
-    * After discussing the issue with my mentor, he agreed that it was not a needed as a part of the pass mark for this project, so ultimately abandoned. 
+    * After discussing the issue with my mentor, he agreed that it was not a needed as a part of the pass mark for this project, so ultimately abandoned and rather refactored my code.
+* To remove the default Bootstrap issue, meant I had to remove the class="row" from the footer which worked however the it did change my view of my footer into a listed
+* I also removed any visable colour scheme to create a sleak look and feel. 
 
 ## IMPORTANT ##
 Attempted to change my git commits as I made a mistake with calling them Mealdeals and not RecipeCloud

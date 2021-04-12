@@ -32,7 +32,7 @@
     * [Features that will be implemented in the future](#implemented)
 * [Technologies](#technologies)
 * [Testing](#testing)
-    * [Validation](#valid)
+    * [Validation Summary](#valid)
     * [Responsiveness](#Responsiveness)
 * [Troubleshooting](#issues)
 * [Deployment](#deploy)
@@ -462,11 +462,11 @@ Validation, manual unit, cross browser/cross device, accessibility, coverage, th
 
 ---
 <a name="valid"></a>
-### Validation Testing ###
+### Validation Summary ###
 ---
 
 * I tested the python code with **Python Debugger** - https://realpython.com/python-debugging-pdb/
-![pdb](static/img/pdb_debugger.png)
+![pdb](static/img/readme_img/errors_img/pdb_debugger.png)
 * Also used this **Automated Testing** to test my flask applications - https://www.patricksoftwareblog.com/unit-testing-a-flask-application
 ![test_flask](static/img/readme_img/errors_img/test_flask.png)
 * I used **Pylint** to lint my code by Linting my python code - http://pylint.pycqa.org/en/latest/
